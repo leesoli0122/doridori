@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Type Ahead 👀</title>
+  <link rel="stylesheet" href="/resources/css/type_ahead.css">
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+
+  <form class="search-form">
+    <input type="text" class="search" placeholder="City or State">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+  <script>
+    // 도시 데이터를 가져올 엔드포인트 URL을 정의
+    const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+
+    // 도시 데이터를 저장할 빈 배열을 초기화
+    const cities = [];
+
+    // fetch 함수를 사용하여 엔드포인트에서 데이터를 비동기로 가져오기
+    fetch(endpoint)
+      // 응답 데이터를 JSON 형식으로 변환
+      .then(blob => blob.json())
+      // 변환된 JSON 데이터를 cities 배열에 추가
+      .then(data => cities.push(...data));
+
+    // 사용자가 입력한 단어와 일치하는 도시 또는 주를 찾아내는 함수
+    function findMatches(wordToMatch, cities) {
+      return cities.filter(place => {
+        // 사용자가 입력한 단어와 일치하는 도시 또는 주 이름을 찾기 위해 정규식을 생성
+        const regex = new RegExp(wordToMatch, 'gi');
+        // 도시 이름 또는 주 이름이 정규식과 일치하면 true를 반환
+        return place.city.match(regex) || place.state.match(regex);
+      });
+    }
+
+    // 숫자에 천 단위 구분 기호(콤마)를 추가하는 함수
+    function numberWithCommas(x) {
+      // 정규식을 사용하여 숫자에 콤마를 추가
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    // 입력된 검색어에 맞는 결과를 화면에 표시하는 함수
+    function displayMatches() {
+      // 사용자가 입력한 값과 일치하는 도시 및 주를 찾기
+      const matchArray = findMatches(this.value, cities);
+      // 일치하는 결과를 HTML 형식으로 변환하여 표시하기
+      const html = matchArray.map(place => {
+        // 사용자가 입력한 단어를 강조 표시하기 위해 정규식을 사용하기
+        const regex = new RegExp(this.value, 'gi');
+        // 일치하는 부분을 <span> 태그로 감싸서 강조하기
+        const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+        const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+        // 도시와 주 이름, 인구 수를 포함하는 리스트 항목을 생성하기
+        return `
+            <li>
+                <span class="name">${cityName}, ${stateName}</span>
+                <span class="population">${numberWithCommas(place.population)}</span>
+            </li>
+        `;
+      }).join(''); // 배열을 문자열로 결합하여 HTML에 삽입할 준비하기
+      // 생성된 HTML을 suggestions 요소에 추가하여 화면에 표시하기
+      suggestions.innerHTML = html;
+    }
+
+    // 검색 입력 필드와 결과를 표시할 요소를 DOM에서 선택하기
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions');
+
+    // 입력 필드에 값이 변경될 때 displayMatches 함수를 실행하여 검색 결과를 업데이트하기
+    searchInput.addEventListener('change', displayMatches);
+    // 입력 필드에서 키를 누를 때마다 displayMatches 함수를 실행하여 실시간으로 검색 결과를 업데이트하기
+    searchInput.addEventListener('keyup', displayMatches);
+  </script>
+</body>
+
+</html>

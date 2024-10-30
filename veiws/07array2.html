@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Cardio 💪💪</title>
+  <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+<body>
+  <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+  <script>
+    // ## Array Cardio Day 2
+
+    const people = [
+      { name: 'Wes', year: 1988 },
+      { name: 'Kait', year: 1986 },
+      { name: 'Irv', year: 1970 },
+      { name: 'Lux', year: 2015 }
+    ];
+
+    const comments = [
+      { text: 'Love this!', id: 523423 },
+      { text: 'Super good', id: 823423 },
+      { text: 'You are the best', id: 2039842 },
+      { text: 'Ramen is my fav food ever', id: 123523 },
+      { text: 'Nice Nice Nice!', id: 542328 }
+    ];
+
+    // Array.prototype.some(); 배열 안의 어떤 요소라도 주어진 판별 함수를 적어도 하나라도 통화하는지 테스트
+
+    // 현재 날짜를 기준으로 만 19세 이상인 사람이 배열에 있는지 확인하기
+    const isAdult = people.some(person => ((new Date()).getFullYear()) - person.year >= 19);
+
+    //getFullYear(); 주어진 날짜의 현지 시간 기준 연도를 반환
+
+    // isAdult 결과를 콘솔에 출력
+    console.log({isAdult}); // { isAdult: true}
+
+    // Array.prototype.every(); 배열의 모든 요소가 제공된 함수로 구현된 테스트를 통과하는지 테스트
+
+    // 배열의 모든 사람이 만 19세 이상인지 확인하기
+    const allAdults = people.every(person => ((new Date()).getFullYear()) - person.year >=19);
+
+    // allAdults 결과를 콘솔에 출력
+    console.log({ allAdults }); // { allAdults: false }
+
+    // Array.prototype.find() filter와 비슷하지만, 조건에 맞는 첫 번째 항목만 반환
+
+    // 특정 ID(823423)를 가진 댓글을 찾기
+    const comment = comments.find(comment => comment.id === 823423);
+
+    // 찾은 객체를 콘솔에 출력
+    console.log(comment); // {text: 'Super good', id: 823423}
+
+    // Array.prototype.findIndex(); 조건에 맞는 첫 번째 항목의 인덱스를 반환
+
+    // 특정 ID(823423)를 가진 댓글의 인덱스를 찾기
+    const index = comments.findIndex(comment => comment.id === 823423);
+
+    // 찾은 인덱스를 콘솔에 출력
+    console.log(index); // 1
+
+    // comments 배열에서 해당 인덱스의 항목을 삭제
+    // comments.splice(index, 1);  // 기존 방식으로 삭제하는 코드 (주석 처리되어 있음)
+
+    // Array.prototype.slice(); 어떤 배열의 begin 부터 end 까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환한다. 원본 배열은 바뀌지 않는다.
+
+    // 삭제된 댓글을 제외한 새로운 배열을 생성합니다.
+    const newComments = [
+        // 삭제할 인덱스 이전의 모든 항목을 포함합니다.
+        ...comments.slice(0, index),
+        // 삭제할 인덱스 이후의 모든 항목을 포함합니다.
+        ...comments.slice(index + 1)
+    ];
+  </script>
+</body>
+</html>

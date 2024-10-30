@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Key Detection</title>
+    <script type="text/javascript" src="../resources/js/cornify.js"></script>
+    <link rel="icon" href="https://fav.farm/🔥" />
+</head>
+
+<body>
+    <script>
+        // // 사용자가 누른 키들을 저장할 배열
+        // const pressed = [];
+        // // 감지할 비밀 코드 (사용자가 입력해야 하는 문자열)
+        // const secretCode = "wesbos";
+
+        // // 사용자가 키를 눌렀을 때 발생하는 이벤트를 처리
+        // window.addEventListener("keyup", (e) => {
+        //     // 콘솔에 사용자가 누른 키를 출력
+        //     console.log(e.key);
+        //     // 사용자가 누른 키를 배열에 추가
+        //     pressed.push(e.key);
+        //     // 배열의 길이를 비밀 코드 길이에 맞게 유지 (오래된 입력 제거)
+        //     pressed.splice(
+        //         -secretCode.length - 1, // 배열에서 제거할 시작 위치
+        //         pressed.length - secretCode.length // 배열에서 제거할 개수
+        //     );
+        //     // 사용자가 입력한 키들이 비밀 코드와 일치하는지 확인
+        //     if (pressed.join("").includes(secretCode)) {
+        //         console.log("DING DING!"); // 일치하면 콘솔에 메시지 출력
+        //         cornify_add(); // cornify 효과 추가 (예: 유니콘이나 재미있는 효과)
+        //     }
+        //     // 현재 입력된 키들을 콘솔에 출력
+        //     console.log(pressed);
+        // });
+        
+        // 사용자가 누른 키들을 저장할 배열
+        const pressed = [];
+        // 감지할 비밀 코드 (사용자가 입력해야 하는 문자열)
+        const secretCode = "안녕하세요"; // 한글 비밀 코드
+
+        // 입력을 감지하기 위해 숨겨진 input 요소를 추가합니다.
+        const hiddenInput = document.createElement("input");
+        hiddenInput.type = "text";
+        hiddenInput.style.position = "absolute";
+        hiddenInput.style.opacity = 0;
+        document.body.appendChild(hiddenInput);
+        hiddenInput.focus();
+
+        // input 이벤트를 사용하여 키 입력을 감지
+        hiddenInput.addEventListener("input", () => {
+            // 입력된 값을 가져옵니다.
+            const key = hiddenInput.value;
+            
+            // 입력된 값을 배열에 추가
+            pressed.push(key);
+            
+            // 배열의 길이를 비밀 코드 길이에 맞게 유지 (오래된 입력 제거)
+            pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
+            
+            // 사용자가 입력한 키들이 비밀 코드와 일치하는지 확인
+            if (pressed.join("").includes(secretCode)) {
+                console.log("DING DING!"); // 일치하면 콘솔에 메시지 출력
+                cornify_add(); // cornify 효과 추가 (예: 유니콘이나 재미있는 효과)
+            }
+            
+            // 현재 입력된 키들을 콘솔에 출력
+            console.log(pressed);
+
+            // 입력 필드를 초기화하여 다음 입력을 받도록 설정
+            hiddenInput.value = "";
+        });
+
+        // 페이지를 클릭하면 숨겨진 input 요소에 포커스 설정
+        document.addEventListener("click", () => hiddenInput.focus());
+    </script>
+</body>
+
+</html>

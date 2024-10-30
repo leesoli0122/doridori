@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hold Shift to Check Multiple Checkboxes</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+    <link rel="stylesheet" href="../resources/css/hold_shift_and_check_checkboxes.css">
+</head>
+
+<body>
+    <!--
+        다음은 이메일 클라이언트에서 볼 수 있는 일반적인 레이아웃이다
+        사용자가 확인란을 클릭하고 Shift를 누른 다음 몇 행 아래에 있는 다른 확인란을 클릭하면 이 두 확인란 사이의 모든 확인란을 선택된다.
+    -->
+    <div class="inbox">
+        <div class="item">
+            <input type="checkbox">
+            <p>This is an inbox layout.</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check one item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Hold down your Shift key</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Check a lower item</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Everything in between should also be set to checked</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Try to do it without any libraries</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Just regular JavaScript</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Good Luck!</p>
+        </div>
+        <div class="item">
+            <input type="checkbox">
+            <p>Don't forget to tweet your result!</p>
+        </div>
+    </div>
+
+    <script>
+        // .inbox 클래스 내의 모든 체크박스 입력 요소를 선택
+        const checkboxes = document.querySelectorAll('.inbox input[type="checkbox"]');
+
+        // 마지막으로 체크된 체크박스를 저장할 변수
+        let lastChecked;
+
+        // 체크박스 클릭 시 호출되는 함수
+        function handleCheck(e) {
+            // shift 키가 눌려 있고, 현재 체크박스가 체크되었을 때
+            let inBetween = false; // 체크박스 범위 선택 상태를 나타내는 함수
+
+            // shift 키와 현재 체크박스가 체크된 상태인지 확인
+            if (e.shiftKey && this.checked) {
+                // 체크박스 배열을 순회
+                checkboxes.forEach(checkbox => {
+                    //현재 체크박스와 마지막으로 체크된 체크박스를 출력
+                    console.log(checkbox);
+
+                    // 현재 체크박스 또는 마지막으로 체크된 체크박스와 일치할 경우, 'inBetween' 상태를 반전시킨다
+                    if (checkbox === this || checkbox === lastChecked) { // checkbox === this인 두번째 클릭한 요소를 클릭하거나 checkbox === lastCheck인 첫번째 요소는 lastCheck변수에 checkbox담아둠(첫번째 체크했던 체크박스 기억하기 위해)
+                        inBetween = !inBetween; //중복체크 설정, 한번 체크시 false가 true로 바뀌고, 두번 체크시 true가 false로 바뀌어 이후 checkbox들이 체크 안됨
+                        console.log('Starting to check them in between!');
+                    }
+                    // inBetween이 true라면 체크박스를 true상태로 변경
+                    if (inBetween) {
+                        checkbox.checked = true;
+                    }
+                })
+            }
+            // 현재 체크박스를 'lastChecked' 변수에 저장하여 다음 클릭 시 참조할 수 있도록 한다.
+            lastChecked = this;
+        }
+        // 모든 체크박스에 'click' 이벤트 리스너를 추가하여 체크 시 'handleCheck' 함수를 호출한다.
+        checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck));
+
+    </script>
+</body>
+
+</html>
