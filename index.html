@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Doridori worklist</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keyword" content="">
+    <meta name="description" content="ia, worklist">
+    <meta name="author" content="kys">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <link rel="stylesheet" type="text/css" href="../resources/css/lib/worklist.css" />
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="container">
+
+            <div class="header">
+                <h1>doridori</h1>
+                <ul>
+                    <li></li>
+                    <li><span id="delCnt"></span></li>
+                    <li>
+                        <h3>전체페이지 나온 이후 수정진척률 확인용</h3>
+                        <span id="wipCnt"></span> (남은 화면 수)
+                    </li>
+                    <li><span id="totCnt"></span> (총 본수)</li>
+                    <li style="margin-bottom:30px;"></li>
+                </ul>
+                <div class="progressArea"><span></span></div>
+
+                <dl>
+                    <dt>메모사항</dt>
+                </dl>
+            </div>
+
+            <div class="cont">
+                <!-- s: 가이드 -->
+                <div class="guide">
+                    <h3 class="tit">가이드</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="20%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">분류</th>
+                                <th scope="col">설명</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">추가 작업 필요</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>기본레이아웃</td>
+                                <td>기본레이아웃</td>
+                                <td class="fileName"><a href="./views/COMMON/layout.html" target="_blank">layout</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>text</td>
+                                <td class="fileName"><a href="./GUIDE/text.html" target="_blank">text</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>color</td>
+                                <td class="fileName"><a href="./views/COMMON/color.html" target="_blank">color</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>input</td>
+                                <td class="fileName"><a href="./GUIDE/input.html" target="_blank">input</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>button</td>
+                                <td class="fileName"><a href="./GUIDE/button.html" target="_blank">button</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>step</td>
+                                <td class="fileName"><a href="./GUIDE/step.html" target="_blank">step</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>popup</td>
+                                <td class="fileName"><a href="./GUIDE/popup.html" target="_blank">popup</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>공통</td>
+                                <td>tab</td>
+                                <td class="fileName"><a href="./GUIDE/tab.html" target="_blank">tab</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>레이아웃</td>
+                                <td>table</td>
+                                <td class="fileName"><a href="./GUIDE/table.html" target="_blank">table</a></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>레이아웃</td>
+                                <td>result</td>
+                                <td class="fileName"><a href="./GUIDE/result.html" target="_blank">result</a></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 가이드 -->
+
+				<!-- s: 로그인 -->
+                <div class="guide">
+                    <h3 class="tit">로그인</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">종료날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>로그인</td>
+                                <td></td>
+                                <td></td>
+                                <td class="fileName"><a href="#none" target="_blank"></a></td>
+                                <td></td>
+                                <td class="toDate"></td>
+                                <td class="state"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 로그인 -->
+
+                <!-- s: 공지사항 -->
+                <div class="guide">
+                    <h3 class="tit">공지사항</h3>
+                    <summary></summary>
+                    <table style="display:table;">
+                        <caption></caption>
+                        <colgroup>
+                            <col width="12%">
+                            <col width="10%">
+                            <col width="8%">
+                            <col width="15%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="8%">
+                            <col width="*">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">1depth</th>
+                                <th scope="col">2depth</th>
+                                <th scope="col">3depth</th>
+                                <th scope="col" class="fileName">화면ID</th>
+                                <th scope="col">담당</th>
+                                <th scope="col">종료날짜</th>
+                                <th scope="col">상태</th>
+                                <th scope="col">비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">공지사항</td>
+                                <td>list</td>
+                                <td></td>
+                                <td class="fileName"><a href="#none" target="_blank"></a></td>
+                                <td></td>
+                                <td class="toDate"></td>
+                                <td class="state"></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>view</td>
+                                <td class="fileName"><a href="#none" target="_blank"></a></td>
+                                <td></td>
+                                <td class="toDate"></td>
+                                <td class="state ok"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- e: 공지사항 -->
+            </div>
+        </section>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+
+            //var fromDate = [],
+                //toDate = [],
+                //dateGap = [];
+
+            var totCnt, wipCnt = 0, compCnt = 0;
+
+            pjState();
+
+            // var headerH = $(".container .header").outerHeight();
+
+            //alert(headerH);
+            // $(".container .cont").css("margin-top", headerH + "px");
+
+
+            function pjState() {
+                $(".guide table tbody tr").each(function (i, e) {
+                    // fromDate[i] = new Date($(".fromDate").eq(i).text());
+                    // toDate[i] = new Date($(".toDate").eq(i).text());
+                    // dateGap[i] = Math.ceil((toDate[i].getTime() - fromDate[i].getTime()) / (1000 * 3600 * 24));
+
+                    // dateGap[i] >= 0 ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text(""); 기존소스 - 시작날짜 없는 화면의 진척률 파악 위해 아래와 같이 임시 수정(종료날짜만 입력하면 완료 상태로 처리)
+                    
+                    !!($(".toDate").eq(i).text()) ? $(".state").eq(i).text("완료").closest("tr").addClass("comp") : $(".state").eq(i).text("");
+
+                    ($(".state").eq(i).text() == "완료") ? compCnt++ : wipCnt++;
+
+                });
+
+                var allpage = $(".guide table tbody tr").length; //전체
+                var Nonpage = $('tr.Non').length; //제외
+                var Okpage = $('tr.comp').length; //완료
+                totCnt = $(".guide table tbody tr").length;
+
+                compCnt = Okpage; //완료본수
+                test = allpage - Nonpage; //실질적인화면수
+                wipCnt = totCnt - compCnt - Nonpage; //남은본수
+
+                $("#totCnt").text(totCnt); //전체
+                $("#wipCnt").text(wipCnt);  //남은본수
+                $("#compCnt").text(compCnt); //완료
+                $("#delCnt").text(Nonpage); //제외
+
+                $(".progressArea > span").animate({ "width": (compCnt / test) * 100 + "%" }, 1500);
+                // $(".progressArea > span").after("종합 진척률 : " + Math.floor((compCnt / test) * 100) + "%"); 2023-07-14 수정 진척률로 변경 전 백업
+                $(".progressArea > span").after("수정 진척률 : " + Math.floor((compCnt / test) * 100) + "%");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사이드바</title>
+    
+    <link rel="stylesheet" href="../resources/css/side.css">
+
+    <script src="../resources/js/jquery-1.9.1.min.js"></script>
+    <script src="../resources/js/side.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            <div class="right">
+                <div class="menu"><img src="../resources/images/menu.png" alt="메뉴아이콘"></div>
+                <h1><a href="javascript:void(0);"><img src="../resources/images/logo.png" alt="로고"></a></h1>
+            </div>
+            <div class="mypage">MY</div>
+        </div>
+        
+        <div id="container" class="contents-wrap">
+            <div class="l-sidebar">
+                <ul>
+                    <li class="received"><span>받은편지함</span></li>
+                    <li class="star"><span>별표편지함</span></li>
+                    <li class="again"><span>다시 알림 항목</span></li>
+                    <li class="sent"><span>보낸편지함</span></li>
+                    <li class="address"><span>주소록</span></li>
+                </ul>
+            </div>
+            <div class="contents">
+                <section class="tabs-wrap">
+					<div class="tabs">
+						<ul class="tab-item type1">
+							<li class="on" title="선택됨" data-tab="tab-cont01"><a href="javascript:void(0);">탭1</a></li>
+							<li data-tab="tab-cont02"><a href="javascript:void(0);">탭2</a></li>
+							<li data-tab="tab-cont03"><a href="javascript:void(0);">탭3</a></li>
+						</ul>
+					</div>
+				</section>
+                <form>
+                    <div class="tab">
+                        <div id="tab-cont01" class="tab-content">
+                            내용1
+                        </div>
+                        <div id="tab-cont02" class="tab-content dp-none">
+                            내용2
+                        </div>
+                        <div id="tab-cont03" class="tab-content dp-none">
+                            내용3
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="r-sidebar">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
