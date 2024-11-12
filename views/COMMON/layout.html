@@ -3,62 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사이드바</title>
+    <title>DoriDori</title>
     
-    <link rel="stylesheet" href="../../resources/css/ui/side.css">
+    <link rel="stylesheet" href="../../resources/css/ui/common.css">
+    <link rel="stylesheet" href="../../resources/css/ui/default.css">
 
     <script src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
     <script src="../../resources/js/ui/ui_common.js"></script>
+    <script src="../../resources/js/ui/default.js"></script>
 </head>
 <body>
     <div class="wrap">
-        <div class="header">
-            <div class="right">
-                <div class="menu"><img src="../../resources/images/menu.png" alt="메뉴아이콘"></div>
-                <h1><a href="javascript:void(0);"><img src="../../resources/images/logo.png" alt="로고"></a></h1>
-            </div>
-            <div class="mypage">MY</div>
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
         </div>
+        <!-- //e:header -->
 
         <div id="container" class="contents-wrap">
-            <div class="l-sidebar">
-                <ul>
-                    <li class="received"><span>공통</span></li>
-                    <li class="portfolio"><span>포토폴리오</span></li>
-                    <!-- <li class="again"><span>다시 알림 항목</span></li>
-                    <li class="sent"><span>보낸편지함</span></li>
-                    <li class="address"><span>주소록</span></li> -->
-                </ul>
+            <!-- s:sidebar -->
+            <div id="sideBar">
+                <script>
+                    $(document).ready(function(){
+                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
+                    });
+                </script>
             </div>
-            <div class="contents">
-                <section class="tabs-wrap">
-					<div class="tabs">
-						<ul class="tab-item type1">
-							<li class="on" title="선택됨" data-tab="tab-cont01"><a href="javascript:void(0);">탭1</a></li>
-							<li data-tab="tab-cont02"><a href="javascript:void(0);">탭2</a></li>
-							<li data-tab="tab-cont03"><a href="javascript:void(0);">탭3</a></li>
-						</ul>
-					</div>
-				</section>
-                <form>
-                    <div class="tab">
-                        <div id="tab-cont01" class="tab-content">
-                            내용1
-                        </div>
-                        <div id="tab-cont02" class="tab-content dp-none">
-                            내용2
-                        </div>
-                        <div id="tab-cont03" class="tab-content dp-none">
-                            내용3
-                        </div>
+            <!-- //e:sidebar -->
+            <!-- s:contents -->
+            <div id="contentWrap" class="content">
+                <!-- s:subvisual-wrap -->
+                <div class="subvisual-wrap">
+                    <div class="text-wrap">
+                        <h2>TITLE</h2>
                     </div>
-                </form>
-            </div>
-            <div class="r-sidebar">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
+                </div>
+                <!-- //e:subvisual-wrap -->
+            <!-- //e:contents -->
         </div>
     </div>
 </body>
