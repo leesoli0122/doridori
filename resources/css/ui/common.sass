@@ -1,0 +1,125 @@
+//*********************************************************************
+// header
+//*********************************************************************
+.header
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 15px 18px
+    width: 100%
+    height: 70px
+
+    .menu
+        display: inline-block
+        padding: 10px
+        margin-right: 18px
+        width: 40px
+        height: 40px
+        vertical-align: top
+        &:hover
+            border-radius: 50%
+            background-color: var(--hover)
+            cursor: pointer
+
+    h1
+        display: inline-block
+        width: 160px
+
+    .mypage
+        padding: 8px 0
+        width: 40px
+        height: 40px
+        border-radius: 50%
+        background-color:#AEDC64
+        font-weight: 700
+        text-align: center
+        color: var(--title)
+
+//*********************************************************************
+// 사이드 메뉴
+//*********************************************************************
+.contents-wrap
+    display: flex
+
+    .sidebar
+        padding: 0 20px
+        width: 76px
+        height: 100%
+
+        li
+            margin-bottom: 8px
+            height: 36px
+            font-size: 0
+            color: var(--title)
+            cursor: pointer
+            &:last-child
+                margin-bottom: 0
+            &::before
+                content: ""
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                left: 0
+                display: inline-block
+                width: 36px
+                height: 36px
+            &.common::before
+                background: url("../../images/common.png")no-repeat 50%/36px auto
+            &.portfolio::before
+                background: url("../../images/portfolio.png")no-repeat 50%/36px auto
+
+        &.on
+            width: 250px
+            li
+                padding: 8px 0 8px 56px
+                font-size: var(--font-14)
+                &.on
+                    font-weight:700
+                    border-radius: 0 30px 30px 0
+                    background-color: var(--focus)
+        li.on::before
+            background-color: var(--focus)
+            border-radius: 50%
+
+    .content
+        margin-bottom: 20px
+        margin-right: 18px
+        // padding: 10px
+        width: 100%
+        background-color: var(--white)
+        border-radius: 20px
+
+.tabs
+
+    ul.tab-item.type1
+        width: 100%
+        border-bottom: 2px solid var(--focus)
+        li
+            display: inline-block
+            padding: 15px 10px
+            width: 100%
+            max-width:150px
+            text-align: center
+            font-size: var(--font-16)
+            font-weight: 700
+            color: var(--subtitle)
+            &.on
+                background-color: var(--focus)
+                a
+                    color: var(--title)
+
+.content
+    .form-wrap.search
+        width: 100%
+        .form-group
+            margin: 0 auto
+            input.form-control
+                border-radius: 12px
+
+    .list-wrap
+        margin: 50px 0 30px
+        width: 100%
+        ul
+            margin: 0 auto
+            max-width: 956px
+            background-color: #F6F8FC

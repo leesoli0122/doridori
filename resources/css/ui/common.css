@@ -1,0 +1,133 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 18px;
+  width: 100%;
+  height: 70px;
+}
+.header .menu {
+  display: inline-block;
+  padding: 10px;
+  margin-right: 18px;
+  width: 40px;
+  height: 40px;
+  vertical-align: top;
+}
+.header .menu:hover {
+  border-radius: 50%;
+  background-color: var(--hover);
+  cursor: pointer;
+}
+.header h1 {
+  display: inline-block;
+  width: 160px;
+}
+.header .mypage {
+  padding: 8px 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #AEDC64;
+  font-weight: 700;
+  text-align: center;
+  color: var(--title);
+}
+
+.contents-wrap {
+  display: flex;
+}
+.contents-wrap .sidebar {
+  padding: 0 20px;
+  width: 76px;
+  height: 100%;
+}
+.contents-wrap .sidebar li {
+  margin-bottom: 8px;
+  height: 36px;
+  font-size: 0;
+  color: var(--title);
+  cursor: pointer;
+}
+.contents-wrap .sidebar li:last-child {
+  margin-bottom: 0;
+}
+.contents-wrap .sidebar li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+}
+.contents-wrap .sidebar li.common::before {
+  background: url("../../images/common.png") no-repeat 50%/36px auto;
+}
+.contents-wrap .sidebar li.portfolio::before {
+  background: url("../../images/portfolio.png") no-repeat 50%/36px auto;
+}
+.contents-wrap .sidebar.on {
+  width: 250px;
+}
+.contents-wrap .sidebar.on li {
+  padding: 8px 0 8px 56px;
+  font-size: var(--font-14);
+}
+.contents-wrap .sidebar.on li.on {
+  font-weight: 700;
+  border-radius: 0 30px 30px 0;
+  background-color: var(--focus);
+}
+.contents-wrap .sidebar li.on::before {
+  background-color: var(--focus);
+  border-radius: 50%;
+}
+.contents-wrap .content {
+  margin-bottom: 20px;
+  margin-right: 18px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 20px;
+}
+
+.tabs ul.tab-item.type1 {
+  width: 100%;
+  border-bottom: 2px solid var(--focus);
+}
+.tabs ul.tab-item.type1 li {
+  display: inline-block;
+  padding: 15px 10px;
+  width: 100%;
+  max-width: 150px;
+  text-align: center;
+  font-size: var(--font-16);
+  font-weight: 700;
+  color: var(--subtitle);
+}
+.tabs ul.tab-item.type1 li.on {
+  background-color: var(--focus);
+}
+.tabs ul.tab-item.type1 li.on a {
+  color: var(--title);
+}
+
+.content .form-wrap.search {
+  width: 100%;
+}
+.content .form-wrap.search .form-group {
+  margin: 0 auto;
+}
+.content .form-wrap.search .form-group input.form-control {
+  border-radius: 12px;
+}
+.content .list-wrap {
+  margin: 50px 0 30px;
+  width: 100%;
+}
+.content .list-wrap ul {
+  margin: 0 auto;
+  max-width: 956px;
+  background-color: #F6F8FC;
+}/*# sourceMappingURL=common.css.map */

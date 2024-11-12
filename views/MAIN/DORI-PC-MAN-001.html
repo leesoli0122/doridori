@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoriDori</title>
+    
+    <link rel="stylesheet" href="../../resources/css/ui/common.css">
+    <link rel="stylesheet" href="../../resources/css/ui/default.css">
+
+    <script src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script src="../../resources/js/ui/ui_common.js"></script>
+    <script src="../../resources/js/ui/default.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+
+        <div id="container" class="contents-wrap">
+            <!-- s:sidebar -->
+            <div id="sideBar">
+                <script>
+                    $(document).ready(function(){
+                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
+                    });
+                </script>
+            </div>
+            <!-- //e:sidebar -->
+            <!-- s:contents -->
+            <div id="contentWrap" class="content">
+                <!-- s:subvisual-wrap -->
+                <div class="subvisual-wrap">
+                    <div class="text-wrap">
+                        <h2>COMMON</h2>
+                    </div>
+                </div>
+                <!-- //e:subvisual-wrap -->
+                <form>
+                    <div class="form-wrap search">
+                        <div class="form-group">
+                            <div class="form-row">
+                                <div class="col-10">
+                                    <input id="" title="" type="text" name="" class="form-control" maxlength="11" placeholder="search">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="list-wrap">
+                    <ul>
+                        <li class="item"><a href="../COMMON/">폰트</a></li>
+                        <li class="item"><a href="">form요소</a></li>
+                        <li class="item"><a href="">버튼</a></li>
+                        <li class="item"><a href="">툴팁/라벨</a></li>
+                        <li class="item"><a href="">탭</a></li>
+                        <li class="item"><a href="">알럿</a></li>
+                        <li class="item"><a href="">팝업</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- //e:contents -->
+        </div>
+    </div>
+</body>
+</html>
