@@ -26,12 +26,11 @@
 
         <div id="container" class="contents-wrap">
             <!-- s:sidebar -->
-            <div id="sideBar">
-                <script>
-                    $(document).ready(function(){
-                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
-                    });
-                </script>
+            <div class="sidebar">
+                <ul>
+                    <li class="common" data-target="sidebar01"><a href="#none">공통</a></li>
+                    <li class="portfolio" data-target="sidebar02"><a href="#none">포토폴리오</a></li>
+                </ul>
             </div>
             <!-- //e:sidebar -->
             <!-- s:contents -->
@@ -43,27 +42,34 @@
                     </div>
                 </div>
                 <!-- //e:subvisual-wrap -->
-                <form>
-                    <div class="form-wrap search">
-                        <div class="form-group">
-                            <div class="form-row">
-                                <div class="col-10">
-                                    <input onkeyup="filter()" id="value" title="search" type="text" name="" class="form-control" placeholder="Type to Search">
+                <div class="side-content-area">
+                    <div id="sidebar01" class="sideBar-cont">
+                        <form>
+                            <div class="form-wrap search">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <div class="col-10">
+                                            <input onkeyup="filter()" id="value" title="search" type="text" name="" class="form-control" placeholder="Type to Search">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                        </form>
+                        <div class="list-wrap">
+                            <ul>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-01.html" class="name">폰트</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-02.html" class="name">form요소</a></li>
+                                <li class="item"><a href="../COMMON/" class="name">버튼</a></li>
+                                <li class="item"><a href="../COMMON/" class="name">툴팁/라벨</a></li>
+                                <li class="item"><a href="../COMMON/" class="name">탭</a></li>
+                                <li class="item"><a href="../COMMON/" class="name">알럿</a></li>
+                                <li class="item"><a href="../COMMON/" class="name">팝업</a></li>
+                            </ul>
                         </div>
                     </div>
-                </form>
-                <div class="list-wrap">
-                    <ul>
-                        <li class="item"><a href="../COMMON/" class="name">폰트</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">form요소</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">버튼</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">툴팁/라벨</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">탭</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">알럿</a></li>
-                        <li class="item"><a href="../COMMON/" class="name">팝업</a></li>
-                    </ul>
+                    <div id="sidebar02" class="sideBar-cont dp-none">
+                        <p>Sidebar Content 2</p>
+                    </div>
                 </div>
             </div>
             <!-- //e:contents -->

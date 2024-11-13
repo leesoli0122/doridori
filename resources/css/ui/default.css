@@ -10,23 +10,9 @@
 
 @font-face {
 	font-family: 'Pretendard';
-	font-weight: 800;
-	font-display: swap;
-	src: local('Pretendard ExtraBold'), url(../../font/otf/Pretendard-ExtraBold.otf) format('opentype'), url(../../font/ttf/Pretendard-ExtraBold.ttf) format('truetype'), url(./woff2/Pretendard-ExtraBold.woff2) format('woff2'), url(./woff/Pretendard-ExtraBold.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
 	font-weight: 700;
 	font-display: swap;
 	src: local('Pretendard Bold'), url(../../font/otf/Pretendard-Bold.otf) format('opentype'), url(../../font/ttf/Pretendard-Bold.ttf) format('truetype'), url(./woff2/Pretendard-Bold.woff2) format('woff2'), url(./woff/Pretendard-Bold.woff) format('woff');
-}
-
-@font-face {
-	font-family: 'Pretendard';
-	font-weight: 600;
-	font-display: swap;
-	src: local('Pretendard SemiBold'), url(../../font/otf/Pretendard-SemiBold.otf) format('opentype'), url(../../font/ttf/Pretendard-SemiBold.ttf) format('truetype'), url(./woff2/Pretendard-SemiBold.woff2) format('woff2'), url(./woff/Pretendard-SemiBold.woff) format('woff');
 }
 
 @font-face {
@@ -89,7 +75,9 @@ ul, ol, li, dl, dt, dd  { list-style:none; margin:0; padding:0; box-sizing: bord
 	--font50:3.125rem;
 
     --w-regular:400;
+	--w-medium:500;
     --w-bold:700;
+	--w--black:900;
 
     --white:#FFFFFF;
     --title:#111111;

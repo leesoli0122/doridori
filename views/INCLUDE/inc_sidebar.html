@@ -1,33 +1,26 @@
 <div class="sidebar">
     <ul>
-        <li class="common"><span>공통</span></li>
-        <li class="portfolio"><span>포토폴리오</span></li>
-        <!-- <li class="star"><span>별표편지함</span></li>
-        <li class="again"><span>다시 알림 항목</span></li>
-        <li class="sent"><span>보낸편지함</span></li>
-        <li class="address"><span>주소록</span></li> -->
+        <li class="common" data-target="sidebar01"><a href="#none">공통</a></li>
+        <li class="portfolio" data-target="sidebar02"><a href="#none">포토폴리오</a></li>
     </ul>
 </div>
 
 <script>
     $(document).ready(function(){
-        // 메뉴 버튼 클릭 시 이벤트 핸들러
-        $('.menu').on('click', function () {
-            const $sidebar = $('.sidebar');
-
-            // .sidebar에 'on' 클래스를 토글
-            $sidebar.toggleClass('on');
-
-            // .sidebar에서 'on' 클래스가 제거되면 내부 li 요소의 'on' 클래스도 제거
-            if (!$sidebar.hasClass('on')) {
-                $sidebar.find('ul > li').removeClass('on');
-            }
+        // HTML 요소를 선택합니다.
+        const menuButton = document.querySelector('.menu');
+        const sidebar = document.querySelector('.sidebar');
+        
+        // 메뉴 버튼 클릭 시 이벤트 핸들러를 추가합니다.
+        menuButton.addEventListener('click', () => {
+            // .sidebar에 'on' 클래스를 토글합니다.
+            sidebar.classList.toggle('on');
         });
-
-        // .sidebar의 각 li 요소 클릭 시 이벤트 핸들러
-        $('.sidebar ul > li').on('click', function (e) {
-            e.stopPropagation();
-            $(this).addClass('on').siblings().removeClass('on');
-        });
+        
+        // .sidebar의 각 li 요소를 클릭 시 이벤트 핸들러를 추가합니다.
+        // $('.sidebar ul > li').click(function(e){
+        //     e.stopPropagation();
+        //     $(this).addClass('on').siblings().removeClass('on');
+        // });
     })
 </script>
