@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoriDori</title>
+    
+    <link rel="stylesheet" href="../../resources/css/ui/common.css">
+    <link rel="stylesheet" href="../../resources/css/ui/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+
+        <div id="container" class="contents-wrap">
+            <!-- s:sidebar -->
+            <div id="sideBar">
+                <script>
+                    $(document).ready(function(){
+                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
+                    });
+                </script>
+            </div>
+            <!-- //e:sidebar -->
+            <!-- s:contents -->
+            <div id="contentWrap" class="content">
+                <!-- s:subvisual-wrap -->
+                <div class="subvisual-wrap">
+                    <div class="text-wrap">
+                        <h2>TOOLTIP/LABEL</h2>
+                    </div>
+                    <div class="breadcrumb-wrap">
+                        <ul>
+                            <li class="home"><a href="../MAIN/DORI-PC-MAN-001.html">홈</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //e:subvisual-wrap -->
+                <div id="mainContent">
+                    <div class="border">
+                        <div class="scroll">
+                            <h4>탭(스크립트O)</h4>
+                            <div class="tabs-wrap">
+                                <div class="tabs">
+                                    <ul class="tab-item">
+                                        <li class="on" data-tab="tab-cont01" title="" title="선택됨"><a href="#none">TAB1</a></li>
+                                        <li data-tab="tab-cont02"><a href="#none">TAB2</a></li>
+                                        <li data-tab="tab-cont03" title="" class=""><a href="#none">TAB3</a></li>
+                                        <li data-tab="tab-cont04" class="" title=""><a href="#none">TAB4</a></li>
+                                        <li data-tab="tab-cont05" class="" title=""><a href="#none">TAB5</a></li>
+                                    </ul>
+                                    <div class="tab-content-area">
+            
+                                        <div id="tab-cont01" class="tab-content">
+                                            <h4 class="title">1번 본문 타이틀</h4>
+                                        </div>
+                                        <div id="tab-cont02" class="tab-content dp-none">
+                                            <h4 class="title">2번 본문 타이틀</h4>
+                                        </div>
+                                        <div id="tab-cont03" class="tab-content dp-none">
+                                            <h4 class="title">3번 본문 타이틀</h4>
+                                        </div>
+                                        <div id="tab-cont04" class="tab-content dp-none">
+                                            <h4 class="title">4번 본문 타이틀</h4>
+                                        </div>
+                                        <div id="tab-cont05" class="tab-content dp-none">
+                                            <h4 class="title">5번 본문 타이틀</h4>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                            </div>
+                            <h4>탭(스크립트x)</h4>
+                            <div class="tabs-wrap">
+                                <div class="tabs">
+                                    <ul class="tab-list">
+                                        <li class="on" data-tab="tab-cont06"><a href="#none">TAB1</a></li>
+                                        <li data-tab="tab-cont07" class=""><a href="#none">TAB2</a></li>
+                                        <li data-tab="tab-cont08"><a href="#none">TAB3</a></li>
+                                        <li data-tab="tab-cont09" class=""><a href="#none">TAB4</a></li>
+                                        <li data-tab="tab-cont10" class=""><a href="#none">TAB5</a></li>
+                                        </ul>
+                                    <div class="tab-content-area">
+                                        <div id="tab-cont06" class="tab-content">
+                                            <h4 class="title">1번 본문 타이틀</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+        </div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <div class="sidebar">
     <ul>
-        <li class="common" data-target="sidebar01"><a href="#none">공통</a></li>
-        <li class="portfolio" data-target="sidebar02"><a href="#none">포토폴리오</a></li>
+        <li class="common"><a href="../MAIN/DORI-PC-MAN-001.html">공통</a></li>
+        <li class="portfolio"><a href="../PORTFOLIO/DORI-PC-PF-001.html">포토폴리오</a></li>
     </ul>
 </div>
 
@@ -10,17 +10,30 @@
         // HTML 요소를 선택합니다.
         const menuButton = document.querySelector('.menu');
         const sidebar = document.querySelector('.sidebar');
-        
-        // 메뉴 버튼 클릭 시 이벤트 핸들러를 추가합니다.
-        menuButton.addEventListener('click', () => {
-            // .sidebar에 'on' 클래스를 토글합니다.
-            sidebar.classList.toggle('on');
-        });
-        
+
+        // menuButton 요소가 있을 때만 이벤트 핸들러를 추가합니다.
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                // .sidebar에 'on' 클래스를 토글합니다.
+                sidebar.classList.toggle('on');
+            });
+        }
+
         // .sidebar의 각 li 요소를 클릭 시 이벤트 핸들러를 추가합니다.
-        // $('.sidebar ul > li').click(function(e){
-        //     e.stopPropagation();
-        //     $(this).addClass('on').siblings().removeClass('on');
-        // });
+        $('.sidebar ul > li').click(function(e){
+            e.stopPropagation();
+            const index = $(this).index();
+
+            $(this).addClass('on').siblings().removeClass('on');
+
+            // 선택된 메뉴의 인덱스를 localStorage에 저장합니다.
+            localStorage.setItem('selectedMenu', index);
+        });
+
+        // 페이지 로드 시 localStorage에서 선택된 메뉴 index를 불러와 적용합니다.
+        const selectedMenu = localStorage.getItem('selectedMenu');
+        if (selectedMenu !== null) {
+            $('.sidebar ul > li').eq(selectedMenu).addClass('on');
+        }
     })
 </script>

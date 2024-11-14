@@ -1,40 +1,5 @@
 $(document).ready(function () {
     /*********************************************************************
-    .list-wrap ul li 클릭 시 #contentWrap 안에 있는 내용만 변경되게
-    *********************************************************************/
-    // .list-wrap ul li 클릭 이벤트 처리
-    $('.list-wrap .item a, breadcrumb-wrap ul li a').on('click', function (e) {
-        e.preventDefault(); // 기본 링크 동작 방지
-
-        const href = $(this).attr('href'); // 클릭된 링크의 href 값
-        loadContent(href); // AJAX로 내용 로드
-    });
-
-    // AJAX로 콘텐츠 로드 함수
-    function loadContent(url) {
-        $('#contentWrap').load(url + ' #contentWrap > *', function (response, status) {
-            if (status === 'error') {
-                alert('페이지를 로드할 수 없습니다.');
-            }
-        });
-    }
-
-    /*********************************************************************
-    sidebar ul li 클릭 시 내용 변경
-    *********************************************************************/
-    $(".sidebar ul > li").click(function (e) {
-        e.stopPropagation();
-		var selectedTab  = $(this).attr("data-tab");
-		var tabContents  = $(this).closest(".contents-wrap").find(".side-content-area > .sideBar-content");
-
-		tabContents.addClass("dp-none");
-		$("#" + selectedTab).toggleClass("dp-none");
-
-		$(this).addClass("on").attr('title', '선택됨').siblings().removeClass("on").attr('title', '');
-        console.log(tabContents)
-	});
-
-    /*********************************************************************
 		SELECT #셀렉트
 	*********************************************************************/
 	/*---------------------------------------------

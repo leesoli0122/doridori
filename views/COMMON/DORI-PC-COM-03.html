@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DoriDori</title>
+    
+    <link rel="stylesheet" href="../../resources/css/ui/common.css">
+    <link rel="stylesheet" href="../../resources/css/ui/default.css">
+
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- s:header -->
+        <div id="headerWrap">
+            <script>
+                $(document).ready(function(){
+                    $("#headerWrap").load("../INCLUDE/inc_header.html");
+                });
+            </script>
+        </div>
+        <!-- //e:header -->
+
+        <div id="container" class="contents-wrap">
+            <!-- s:sidebar -->
+            <div id="sideBar">
+                <script>
+                    $(document).ready(function(){
+                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
+                    });
+                </script>
+            </div>
+            <!-- //e:sidebar -->
+            <!-- s:contents -->
+            <div id="contentWrap" class="content">
+                <!-- s:subvisual-wrap -->
+                <div class="subvisual-wrap">
+                    <div class="text-wrap">
+                        <h2>BUTTON</h2>
+                    </div>
+                    <div class="breadcrumb-wrap">
+                        <ul>
+                            <li class="home"><a href="../MAIN/DORI-PC-MAN-001.html">홈</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- //e:subvisual-wrap -->
+                <div id="mainContent">
+                    <div class="border">
+                        <div class="scroll">
+                            <h4>하단 버튼</h4>
+                            <div class="btn-wrap bottom">
+                                <button type="button" name="button" class="btn btn-secondary">이전</button>
+                                <button type="button" name="button" class="btn btn-primary">다음</button>
+                            </div>
+                            <h4>하단 버튼-disabled</h4>
+                            <div class="btn-wrap bottom">
+                                <button type="button" name="button" class="btn btn-primary disabled">버튼명</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //e:contents -->
+        </div>
+    </div>
+</body>
+</html>

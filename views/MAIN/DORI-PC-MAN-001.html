@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="../../resources/css/ui/common.css">
     <link rel="stylesheet" href="../../resources/css/ui/default.css">
 
-    <script src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
-    <script src="../../resources/js/ui/ui_common.js"></script>
-    <script src="../../resources/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../../resources/js/lib/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_plugin.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/default.js"></script>
+    <script type="text/javascript" src="../../resources/js/ui/ui_common.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -26,11 +28,12 @@
 
         <div id="container" class="contents-wrap">
             <!-- s:sidebar -->
-            <div class="sidebar">
-                <ul>
-                    <li class="common" data-target="sidebar01"><a href="#none">공통</a></li>
-                    <li class="portfolio" data-target="sidebar02"><a href="#none">포토폴리오</a></li>
-                </ul>
+            <div id="sideBar">
+                <script>
+                    $(document).ready(function(){
+                        $("#sideBar").load("../INCLUDE/inc_sidebar.html");
+                    });
+                </script>
             </div>
             <!-- //e:sidebar -->
             <!-- s:contents -->
@@ -59,11 +62,11 @@
                             <ul>
                                 <li class="item"><a href="../COMMON/DORI-PC-COM-01.html" class="name">폰트</a></li>
                                 <li class="item"><a href="../COMMON/DORI-PC-COM-02.html" class="name">form요소</a></li>
-                                <li class="item"><a href="../COMMON/" class="name">버튼</a></li>
-                                <li class="item"><a href="../COMMON/" class="name">툴팁/라벨</a></li>
-                                <li class="item"><a href="../COMMON/" class="name">탭</a></li>
-                                <li class="item"><a href="../COMMON/" class="name">알럿</a></li>
-                                <li class="item"><a href="../COMMON/" class="name">팝업</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-03.html" class="name">버튼</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-04.htm" class="name">툴팁/라벨</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-05.htm" class="name">탭</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-06.htm" class="name">알럿</a></li>
+                                <li class="item"><a href="../COMMON/DORI-PC-COM-07.htm" class="name">팝업</a></li>
                             </ul>
                         </div>
                     </div>
