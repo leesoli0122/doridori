@@ -171,11 +171,17 @@
   max-width: 956px;
   background-color: #F6F8FC;
 }
+.content .list-wrap ul::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 2px;
+  background: var(--border2);
+}
 .content .list-wrap ul li.item {
   padding: 20px 10px;
   border-bottom: 1px solid var(--border2);
 }
 .content .list-wrap ul li.item:hover {
-  border-radius: 5px;
   background: var(--focus);
 }/*# sourceMappingURL=common.css.map */
