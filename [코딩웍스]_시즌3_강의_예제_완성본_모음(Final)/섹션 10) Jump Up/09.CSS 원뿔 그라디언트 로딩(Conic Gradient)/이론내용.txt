@@ -1,0 +1,17 @@
+inset ==> top right bottom left 축약
+
+inset : 상 우 하 좌 <== 콤마(,) 없음
+ex) inset: 10px 20px 10px 20px
+
+inset : 상하 좌우 <== 콤마(,) 없음
+ex) inset : 10px 20px
+
+inset(상하좌우) 
+ex) inset : 0 ==> top: 0; left: 0; right: 0;	bottom: 0;
+ex) inset : -20px ==> top: -20px; left: -20px; right: -20px;	bottom: -20px;
+
+※ inset 수치가 +이면 작아지고, - 이면 커진다.
+
+inset: 20px 50px;
+▼
+top: 20px; right: 50px; bottom: 20px; left: 50px;

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
+		body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+			margin: 0;
+    }
+		.container {
+			position: relative;
+		}
+		picture img {
+			width: 100%;
+		}
+		picture.logo {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+  </style>
+</head>
+<body>
+
+	<!--
+		반응형에 따른 이미지 변경(picture tag)
+		
+		<picture>
+			<source srcset="이미지3" media="(뷰포트 너비)"">
+			<source srcset="이미지2" media="(뷰포트 너비)">
+			<img src="이미지1"> 
+		</picture>
+		
+		🚩아래부터 위로 갈 때 뷰포트 너비가 큰 순서로 코딩
+	-->
+	
+	<div class="container">
+		<picture class="dance">
+			<source srcset="images/dance03-mobile.jpg" media="(max-width: 768px)">
+			<source srcset="images/dance02-tablet.jpg" media="(max-width: 1024px)">
+			<img src="images/dance01-pc.jpg">
+		</picture>
+		<picture class="logo">
+			<source srcset="images/logo03-mobile.png" media="(max-width: 768px)">
+			<source srcset="images/logo02-tablet.png" media="(max-width: 1024px)">
+			<img src="images/logo01-pc.png">
+		</picture>
+	</div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

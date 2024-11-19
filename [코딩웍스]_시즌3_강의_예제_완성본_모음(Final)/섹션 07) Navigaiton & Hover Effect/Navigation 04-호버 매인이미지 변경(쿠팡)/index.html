@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 네비게이션 호버 매인이미지 변경(쿠팡)</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <section class="banner">
+    <div class="banner-inner">
+      <ul class="navi-item">
+        <li>
+          <a href="#none" data-src="images/banner-big-01.jpg"><img src="images/trigger-thum-01.png" alt="thum"></a>
+        </li>
+        <li>
+          <a href="#none" data-src="images/banner-big-02.jpg"><img src="images/trigger-thum-02.png" alt="thum"></a>
+        </li>
+        <li>
+          <a href="#none" data-src="images/banner-big-03.jpg"><img src="images/trigger-thum-03.png" alt="thum"></a>
+        </li>
+        <li>
+          <a href="#none" data-src="images/banner-big-04.jpg"><img src="images/trigger-thum-04.png" alt="thum"></a>
+        </li>
+        <li>
+          <a href="#none" data-src="images/banner-big-05.jpg"><img src="images/trigger-thum-05.png" alt="thum"></a>
+        </li>
+        <li>
+          <a href="#none" data-src="images/banner-big-06.jpg"><img src="images/trigger-thum-06.png" alt="thum"></a>
+        </li>
+      </ul>
+    </div>
+    <div class="image-holder">
+      <img src="images/banner-big-01.jpg" alt="banner">
+    </div>
+  </section>
+
+  <script>
+    $('.navi-item li a').mouseenter(function(){
+      var imageSwap = $(this).attr('data-src');
+      $('.image-holder img').attr('src', imageSwap);
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,135 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	background-color: #fff;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.section-inner {
+	/* border: 1px solid #000; */
+	width: 1280px;
+}
+.accordion-content {
+	display: flex;
+}
+.focus {
+	background: url(images/banner-back.jpg) center center;
+	flex: 1;
+}
+.accordion {
+	flex: 4;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+.accordion * {
+	transition: 0.5s;
+}
+.accordion li {
+	height: 600px;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 20px;
+	border-right: 1px solid #ddd;
+	position: relative;
+	cursor: pointer;
+	/* transition: 0.5s; */
+}
+/* Accordion Hover Effect */
+.accordion:hover li {
+	flex: 1;
+}
+.accordion li:hover {
+	flex: 2;
+	background-color: #f8f8f8;
+}
+.accordion li:hover .number {
+	color: crimson;
+}
+.accordion li:hover .number:after {
+	background-color: crimson;
+}
+
+
+/* .accordion li:before {
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+.accordion li:nth-child(1):before {
+	content: 'package #01';
+}
+.accordion li:nth-child(2):before {
+	content: 'package #02';
+}
+.accordion li:nth-child(3):before {
+	content: 'package #03';
+} */
+.accordion li:before {
+	content: attr(data-text);
+	text-transform: uppercase;
+	position: absolute;
+	top: 0;
+	left: 20px;
+}
+.accordion li .number {
+	font-size: 12em;
+	position: relative;
+	transform: translateY(-120px);
+}
+.accordion li .number:after {
+	content: '';
+	position: absolute;
+	height: 10px;
+	width: 100%;
+	background-color: #000;
+	bottom: -90px;
+	left: 0;
+}
+.accordion li .info span {
+	color: crimson;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 순수 HTML 어코디언 만들기(details, summary)</title>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <!-- 
+    HTML5에서 새롭게 추가 된<details>태그는 하위 요소로 
+    <summary> 태그를 사용해 내용을 어코디언 형식으로 보여줌.
+    
+    <details>
+      <summary>...</summary>
+      <div>내용</div>
+    </details>
+  -->
+
+  <div class="html-accordion">
+    <h1>FAQ Examples with HTML</h1>
+    <details>
+      <summary>Q) Use service data to identify your most common questions.</summary>
+      <div class="details-content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum esse nihil, nostrum sed doloremque earum ex magni a cum dolore minima nobis harum. Quos officiis cumque facere voluptatibus consequuntur?
+      </div>
+    </details>
+    <details open>
+      <summary>Q) Include space for live support options.</summary>
+      <div class="details-content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum esse nihil, nostrum sed doloremque earum ex magni a cum dolore minima nobis harum. Quos officiis cumque facere voluptatibus consequuntur?
+      </div>
+    </details>
+    <details>
+      <summary>Q) Showcases expertise, trust, and authority within</summary>
+      <div class="details-content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum esse nihil, nostrum sed doloremque earum ex magni a cum dolore minima nobis harum. Quos officiis cumque facere voluptatibus consequuntur?
+      </div>
+    </details>
+    <details>
+      <summary>Q) Update content and add more solutions over time.</summary>
+      <div class="details-content">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum eum esse nihil, nostrum sed doloremque earum ex magni a cum dolore minima nobis harum. Quos officiis cumque facere voluptatibus consequuntur?
+      </div>
+    </details>
+  </div>
+  
+</body>
+</html>

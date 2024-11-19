@@ -1,0 +1,17 @@
+/* Setting Variables */
+:root {
+	/*변수명: 값;*/
+	--primary: skyblue;
+	--secondary: black;
+	--positive: yellowgreen;
+	--nagative: crimson;
+	--headingFontSize: 2em;
+	--headingFontColor: dodgerblue;
+	--headingTextAlign: center;
+	
+	/* Size */
+	--mainWidth: 1280px;
+	
+	/* Color */
+	--mainColor: #33;
+}

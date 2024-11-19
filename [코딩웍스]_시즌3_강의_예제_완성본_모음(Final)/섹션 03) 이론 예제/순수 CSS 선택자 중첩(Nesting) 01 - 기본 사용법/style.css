@@ -1,0 +1,106 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 기존 방식 CSS */
+/* .frame {
+	width: 80%;
+	margin: auto;
+}
+.frame .frame-inner h1 {
+	text-transform: uppercase;
+	font-size: 1.5em;
+	text-align: center;
+}
+.frame .frame-inner p {
+	font-size: 1.2em;
+	font-style: italic;
+	text-align: center;
+}
+.frame .frame-inner p a {
+	display: block;
+	font-style: normal;
+	background-color: orange;
+	width: 200px;
+	margin: auto;
+	padding: 5px;
+	margin-top: 20px;
+}
+.frame .frame-inner > a {
+	display: block;
+	width: 200px;
+	margin: auto;
+	text-align: center;
+	background-color: purple;
+	padding: 5px;
+	color: #fff;
+}
+.frame .frame-inner a span {
+	display: block;
+	background-color: gold;
+} */
+
+/* 선택자 중첩 방식 CSS */
+.frame {
+	width: 80%;
+	margin: auto;
+	.frame-inner {
+		& h1 {
+			text-transform: uppercase;
+			font-size: 1.5em;
+			text-align: center;
+			&:before {
+				content: '❤️';
+			}
+			+ h2 {
+				text-align: center;
+				color: red;
+			}
+		}
+		& p {
+			font-size: 1.2em;
+			font-style: italic;
+			text-align: center;
+			& a {
+				display: block;
+				font-style: normal;
+				background-color: orange;
+				width: 200px;
+				margin: auto;
+				padding: 5px;
+				margin-top: 20px;
+			}
+		}
+		> a {
+			display: block;
+			width: 200px;
+			margin: auto;
+			text-align: center;
+			background-color: purple;
+			padding: 5px;
+			color: #fff;
+			.notice {
+				display: block;
+				background-color: gold;
+			}
+		}
+	}
+}

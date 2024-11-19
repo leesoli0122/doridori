@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+  	/* Google Web Font */
+  	@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+  	* {
+  		font-family: "Montserrat", sans-serif;
+  	}
+  	body {
+  		font-weight: 300;
+  		margin: 50px;
+  	}
+
+  	/* 이론활용 CSS */
+		.parent {}
+		.parent div {
+			border: 5px solid #000;
+			width: 200px;
+			height: 300px;
+			display: inline-block;
+			font-size: 3em;
+		}
+		.parent div:nth-child(1) {}
+		.parent div:nth-child(2) {
+			border-color: gold;
+			cursor: pointer;
+			/* display: none; */
+			/* opacity: 0; */
+			visibility: hidden;
+		}
+		.parent div:nth-child(3) {}
+
+		input[type=text] {}
+		input[type=text]:focus::placeholder {
+			/* display: none; */
+			visibility: hidden;
+			opacity: 0;
+		}
+  </style>
+</head>
+<body>
+	
+	<div class="parent">
+		<div>01</div>
+		<div>02</div>
+		<div>03</div>
+	</div>
+
+	<p>
+		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid, iusto?
+	</p>
+
+	<input type="text" placeholder="User Email">
+
+	<!-- 
+		HTML 태그 vs 엘리먼트(Element)
+
+		HTML 태그 : 문서에 사용 관계없이 부르는 용어
+		엘리먼트(Element) : HTML 태그 중에서 해당 문서에 사용된 특정 태그를 말합니다.
+	 -->
+  
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+.mockup
+	.mackbook-mockup
+		h1
+		.screen
+			.screen-frame
+				iframe
+			.screen-logo
+				img
+		.stand
+
+
+
+
+
+
+    Responsive Website Clone Publishing

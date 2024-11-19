@@ -1,0 +1,17 @@
+section.intro
+	.section-inner
+		.section-content
+			.name
+				div
+					h1 > span
+					p
+					.watch-intro
+						button.btn-watch
+						span
+			.photo
+				img
+				.yrs
+					h2
+					span
+					
+					

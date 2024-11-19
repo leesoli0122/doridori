@@ -1,0 +1,42 @@
+.container
+	header
+		nav
+			.logo
+				a > img
+			.gnb
+				a * 5
+			.lnb
+				span
+				a.btn-more
+				.mode
+	section
+		.section-inner
+			.about-items
+				.info
+					h1.headline
+					h4
+					p
+					a.btn-more
+				.skill
+					.skill-items
+						.skill-item
+							img
+							h1.headline
+							p
+						.skill-item
+							img
+							h1.headline
+							p	
+					.skill-items
+						.skill-item
+							img
+							h1.headline
+							p
+						.skill-item
+							img
+							h1.headline
+							p	
+	
+.trigger-outer
+	.trigger
+		span * 3

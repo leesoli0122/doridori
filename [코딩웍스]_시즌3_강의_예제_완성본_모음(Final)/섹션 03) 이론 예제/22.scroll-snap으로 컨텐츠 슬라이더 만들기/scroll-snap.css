@@ -1,0 +1,58 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #eee;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 이론 CSS */
+.card-frame {
+	/* border: 1px solid #000; */
+	width: 300px;
+	display: flex;
+	gap: 30px;
+	/* overflow-y: hidden; */
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+}
+.card-frame .card {
+	scroll-snap-align: center;
+	width: inherit;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,168 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* Box Icons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	background: url('images/ocean-back.jpg') no-repeat center center;
+	background-size: cover;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Reset CSS */
+input, button, textarea {
+	outline: none;
+}
+button {
+	cursor: pointer;
+	border: none;
+}
+
+/* Shark World User Login */
+.login {
+	width: 400px;
+	background-color: #fff;
+	padding: 25px;
+	border-radius: 5px;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+}
+.login-header {
+	text-align: center;
+}
+.login-header h1 {
+	font-weight: 500;
+	font-size: 26px;
+	letter-spacing: -1px;
+	margin-top: 0;
+}
+.fields {}
+.fields > span {
+	font-weight: 500;
+	text-transform: uppercase;
+	font-size: 13px;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	display: block;
+}
+.field {
+	position: relative;
+}
+.field * {
+	transition: 0.35s;
+}
+
+#user-email {}
+#user-pw {}
+
+/* #user-email, #user-pw {} */
+:is(#user-email, #user-pw) {
+	width: 100%;
+	padding: 13px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding-left: 40px;
+}
+:is(#user-email, #user-pw)::placeholder {
+	text-transform: capitalize;
+	transition: 0.35s;
+}
+:is(#user-email, #user-pw):focus {
+	border: 1px solid #2ecc71;
+}
+:is(#user-email, #user-pw):focus + i {
+	color: #2ecc71;
+}
+:is(#user-email, #user-pw):focus::placeholder {
+	/* display: none; */
+	visibility: hidden;
+	opacity: 0;
+}
+
+.input-icon {
+	font-size: 20px;
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.toggle-pw {
+	/* display: none; */
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+}
+
+.status {
+	display: flex;
+	justify-content: space-between;
+	margin: 15px 0;
+	font-weight: 300;
+	font-size: 14px;
+}
+.status label {
+	cursor: pointer;
+}
+.status label input[type=checkbox] {
+	accent-color: crimson;
+	/* vertical-align: middle; */
+	transform: translateY(2px);
+}
+.status label input[type=checkbox]:checked + span {
+	color: crimson;
+	font-weight: 400;
+}
+.status a:hover {
+	text-decoration: underline;
+}
+
+.btn-login {
+	background-color: #2ecc71;
+	color: #fff;
+	font-size: 20px;
+	text-transform: uppercase;
+	padding: 10px;
+	width: 100%;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

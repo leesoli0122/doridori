@@ -1,0 +1,115 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+section {
+	background-color: #fff;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.section-inner {
+	width: 1280px;
+	display: flex;
+	gap: 40px;
+	height: 400px;
+	align-items: center;
+}
+.section-inner .photo {}
+.section-inner .photo .image {
+	/* border: 2px solid #000; */
+	height: 400px;
+	aspect-ratio: 1/1;
+	position: relative;
+	z-index: 1;
+}
+.section-inner .photo .image:before {
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-color: gold;
+	border-radius: 50%;
+	top: -30px;
+  left: -30px;
+	z-index: -1;
+}
+.section-inner .photo .image:after {
+	content: '';
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: 20px solid dodgerblue;
+	bottom: -40px;
+  right: -40px;
+	z-index: -1;
+}
+.section-inner .photo .image img {
+	width: 100%;
+	height: inherit;
+	object-fit: cover;
+	object-position: right;
+	border-radius: 10px;
+}
+.section-inner .desc {}
+.section-inner .desc div {
+	/* display: flex;
+	flex-direction: column; */
+}
+.section-inner .desc div p {
+	font-size: 1.2em;
+	text-align: justify;
+}
+.section-inner .desc div p q b {
+	color: dodgerblue;
+}
+.section-inner .desc div .name {
+	/* align-self: flex-end; */
+	float: right;
+	font-weight: bold;
+	margin-top: 50px;
+	text-align: right;
+}
+.section-inner .desc div .name span {
+	display: block;
+	font-weight: normal;
+	font-size: 13px	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

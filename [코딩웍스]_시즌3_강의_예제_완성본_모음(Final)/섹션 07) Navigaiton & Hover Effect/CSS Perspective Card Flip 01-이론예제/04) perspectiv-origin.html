@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 - CSS Perspective Card Flip</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .frame {
+      border: 5px solid #000;
+      perspective: 500px;
+      perspective-origin: bottom left;
+    }
+    .frame div {
+      width: 400px;
+      height: 400px;
+      background-color: yellowgreen;
+      transform: rotateX(45deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    ✅Perspective-origin : 소실점의 왼쪽 오른쪽 치우침 조정
+    
+    ex) perspective-origin: 20% 30%;
+    ex) perspective-origin: right top;
+    기본값 perspective-origin: 50% 50%;
+
+    https://www.w3schools.com/cssref/playdemo.php?filename=playcss_perspective-origin
+   -->
+
+  <div class="frame">
+    <div></div>
+  </div>
+  
+</body>
+</html>

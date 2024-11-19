@@ -1,0 +1,25 @@
+section.portfolio
+	.section-inner
+		.section-content
+			.section-index
+				span
+				h1.headline
+			.portfolio-items
+				.portfolio-item
+					.thum
+						img
+					.caption
+						h4
+						p
+						
+
+section.epilogue
+	.section-inner
+		.section-content
+			h1.focus
+						
+
+footer
+	p
+	
+	

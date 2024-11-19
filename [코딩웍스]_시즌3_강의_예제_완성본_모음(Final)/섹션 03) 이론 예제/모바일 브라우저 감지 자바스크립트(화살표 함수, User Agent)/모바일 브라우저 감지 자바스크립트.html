@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모바일 브라우저 감지 자바스크립트</title>
+  <script>
+    // 문서 곧, body의 내용을 모두 읽은 후 실행하기
+    // $(function(){...});
+    // document.addEventListener('DOMContentLoaded', function(){...})
+    document.addEventListener('DOMContentLoaded', ()=>{
+
+      // navigator.userAgent 접속한 브라우저 체크
+      document.write(navigator.userAgent)
+      
+      // 일정 시간 후 특정 주소로 보내기(setTimeout, location.href)
+      // setTimeout(()=>{
+      //   alert('3초가 지났습니다.')
+      //   location.href = 'mobile.html'
+      // }, 3000)
+      
+      const mobileList = ['Android', 'iPhone', 'iPad', 'BlackBerry', 'Windows Phone', 'Samsung', 'LG', 'Window CE', 'SonyEricsson', 'Nokia']
+      
+      for(let i in mobileList) {
+        if(navigator.userAgent.match(mobileList[i])) {
+          // alert('This is Mobile device')
+          location.href = 'mobile.html'
+        }
+      }
+
+    })
+  </script>
+</head>
+<body>
+
+
+
+  <!-- 
+    ✅수업내용
+
+    1. 문서 로딩 후 스크립트 실행(화살표 함수 사용법)
+    2. navigator.userAgent 접속한 브라우저 체크
+    3. 모바일 기기 접속 확인
+    4. 일정 시간 후 특정 주소로 보내기(setTimeout, location.href)
+    5. 위 4가지를 활용해 모바일 기기 접속하면 특정 페이지로 이동시키기
+   -->
+
+  <!-- 
+    Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36 
+  -->
+
+  <!-- 
+    Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1 
+  -->
+  
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
+		body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+    }
+		
+		.frame div {
+			border: 2px solid #000;
+			width: 400px;
+			height: 400px;
+			margin: 10px;
+			background-image: url(images/logo.png);
+		}
+		.frame div:nth-child(1) {
+			background-repeat: repeat;
+		}
+		.frame div:nth-child(2) {
+			background-repeat: repeat-x;
+		}
+		.frame div:nth-child(3) {
+			background-repeat: repeat-y;
+		}
+		.frame div:nth-child(4) {
+			background-repeat: space;
+		}
+		.frame div:nth-child(5) {
+			background-repeat: round;
+		}
+		
+		.box div {
+			border: 2px solid red;
+			width: 600px;
+			height: 300px;
+			margin: 10px;
+		}
+		.box div:nth-child(1) {
+			background: yellowgreen url(images/logo.png) no-repeat;
+			background-size: 100px;
+			/*background-color: yellowgreen;*/
+		}
+		.box div:nth-child(2) {
+			background: url(images/logo.png) no-repeat, linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+			background-size: 100px, cover;
+			background-position: center center;
+		}
+  </style>
+</head>
+<body>
+	
+	<div class="frame">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	
+	<hr>
+	
+	<div class="box">
+		<div></div>
+		<div></div>
+	</div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - 그라디언트(Gradient) 보더 버튼 만들기</title>
+  <style>
+    /* Google Web Font */
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+    * {
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 15px;
+      line-height: 1.5em;
+      color: #222;
+      background-color: #222;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 이론예제 CSS */
+    button {
+      border: none;
+      background-color: #333;
+      color: #fff;
+      padding: 1em 2em;
+      border-radius: 100px;
+      cursor: pointer;
+      position: relative;
+    }
+    button:after {
+      content: '';
+      position: absolute;
+      /* background-color: #4158D0; */
+      background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+      width: calc(100% + 4px);
+      height: calc(100% + 4px);
+      /* width: 104%; */
+      /* height: 110%; */
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 100px;
+      z-index: -1;
+      background-size: 100%;
+      transition: 0.5s;
+    }
+    button:hover {
+      /* z-index: 0; */
+    }
+    button:hover:after {
+      /* z-index: 0; */
+      /* background-size: 500%; */
+      transform: translate(-50%, -50%) rotateX(180deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    ✅아래 예시처럼 보더 색상은 단색 말고 그라디언트 색상을 가질 수 없습니다.
+    button {
+      border: 1px solid linear-graient(to top, crimson, royalblue);
+    }  
+  -->
+	
+  <button>Gradient Button</button>
+  
+</body>
+</html>

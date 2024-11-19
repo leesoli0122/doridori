@@ -1,0 +1,56 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 이론예제 CSS */
+.frame {
+	border: 1px solid red;
+	display: flex;
+	display: none;
+}
+.frame div {
+	border: 1px solid #000;
+	/* display: inline-block; */
+	/* margin-right: -5px; */
+	height: 100px;
+}
+
+.box {
+	border: 5px solid #000;
+	display: inline-block;
+	display: flex;
+}
+.box img {
+	/* margin-right: -5px;
+	margin-bottom: -7px; */
+	/* display: block; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

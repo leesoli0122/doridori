@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Small Mission(2) - 이미지 갤러리 01</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="Small Mission(1).js"></script>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+    * {
+      font-family: 'Montserrat', sans-serif;
+      box-sizing: border-box;
+    }
+    body { 
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; 
+    }
+    /* Custom CSS */
+    .image-gallery {
+      width: 600px;
+    }
+    .buttons {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .buttons button {
+      border: none;
+      padding: 5px;
+      flex: 1;
+      cursor: pointer;
+    }
+    .buttons button.active {
+      background-color: crimson;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="image-gallery">
+    <h1>Simple image gallery</h1>
+    <div class="buttons">
+      <button class="active" data-image="../images/zoo-01.jpg">Zoo Image #01</button>
+      <button data-image="../images/zoo-02.jpg">Zoo Image #02</button>
+      <button data-image="../images/zoo-03.jpg">Zoo Image #03</button>
+    </div>
+    <div class="image">
+      <img src="../images/zoo-01.jpg">
+    </div>
+  </div>
+
+</body>
+</html>

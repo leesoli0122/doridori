@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>반응형 텍스트 사이즈 clamp</title>
+  <style>
+    /* Google Web Font */
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+    * {
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      line-height: 1.5em;
+      color: #222;
+      background-color: #fff;
+      text-align: center;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    /* 이론예제 CSS */
+    /* h1 {
+      font-size: 100px;
+    }
+    @media (max-width: 1200px) {
+      h1 {
+        font-size: 80px;
+      }
+    }
+    @media (max-width: 900px) {
+      h1 {
+        font-size: 60px;
+      }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 40px;
+      }
+    } */
+
+    h1 {
+      font-size: clamp(30px, 5vw, 100px);
+    }
+    p {
+      line-height: 1.5em;
+      font-size: clamp(14px, 2vw, 20px);
+    }
+    span {
+      font-size: 20px;
+    }
+    img {
+      width: clamp(500px, 100%, 1200px);
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    clamp(최소값, 가변값(선호값), 최대값) 
+
+    - clamp 고정시키다
+    - vh & vw (vertical height & vertical width)
+    - 뷰포트의 높이값과 너비값에 맞춰 크기 변화
+    - 가변값(선호값)에 주로 vw, rem, em을 사용함.
+    
+    ex) 브라우저 너비 1000px ==> 1vw는 10px
+    ex) 브라우저 높이 500px ==> 1vh는 5px
+  -->
+
+  <h1>코딩웍스 온라인 클래스</h1>
+  <p>
+    모든 국민은 거주·이전의 자유를 가진다. 모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.
+  </p>
+  <span>
+    모든 국민은 거주·이전의 자유를 가진다. 모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다. 대통령은 법률안의 일부에 대하여 또는 법률안을 수정하여 재의를 요구할 수 없다.
+  </span>
+  <img src="images/yellow-fruits.jpg">
+  
+</body>
+</html>

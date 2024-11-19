@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+    * { font-family: 'Montserrat', sans-serif; }
+		body { 
+			font-weight: 300; 
+			margin: 0; 
+			background-color: #eee;
+		}
+
+    /* 이론활용 CSS */
+		.portfolio {}
+		.portfolio .headline {
+			text-align: center;	
+			text-transform: uppercase;
+		}
+		.portfolio .items {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+		}
+		.portfolio .items .item {
+			width: 270px;
+			height: 300px;
+			border-radius: 15px;
+			box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+			overflow: hidden;
+		}
+		.portfolio .items .item a {
+			width: inherit;
+			height: inherit;
+		}
+		.portfolio .items .item img {
+			width: inherit;
+			height: inherit;
+			object-fit: cover;
+			object-position: top;
+			transition: 1s;
+		}
+		.portfolio .items .item:hover img {
+			object-position: bottom;
+		}
+  </style>
+</head>
+<body>
+	
+  <div class="portfolio">
+    <h1 class="headline">portfolio hover with background image</h1>
+    <div class="items">
+      <div class="item">
+      	<a href="#none"><img src="images/temp-01.png" alt=""></a>
+      </div>
+      <div class="item">
+      	<a href="#none"><img src="images/temp-02.png" alt=""></a>
+      </div>
+      <div class="item">
+      	<a href="#none"><img src="images/temp-03.png" alt=""></a>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

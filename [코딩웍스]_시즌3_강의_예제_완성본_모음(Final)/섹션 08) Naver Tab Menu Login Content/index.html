@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 네이버 로그인(탭 메뉴 콘텐츠)</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="icon" href="images/favicon.png">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <div class="login-frame">
+    <div class="naver-login">
+      <img src="images/logo-naver.png" alt="logo" class="main-logo">
+      <div class="tab-inner">
+        <!-- Checked Function -->
+        <input type="radio" name="tabmenu" id="tab1" checked>
+        <input type="radio" name="tabmenu" id="tab2">
+        <input type="radio" name="tabmenu" id="tab3">
+        <!-- Checked Function -->
+        <div class="tab-btn">
+          <label for="tab1"><i class="ri-logout-box-r-line"></i> ID 로그인</label>
+          <label for="tab2"><i class="ri-repeat-one-line"></i> 일회용 로그인</label>
+          <label for="tab3"><i class="ri-qr-code-line"></i> QR코드</label>
+          <div class="tooltip">
+            PC방 등 공용PC라면 QR코드 로그인이 더 안전해요. <i class="ri-close-line"></i>
+          </div>
+        </div>
+        <div class="tabs">
+          <div class="tab id-login">
+            <div class="fields">
+              <div class="field">
+                <input type="text" placeholder="아이디"><i class="ri-user-3-line"></i>
+              </div>
+              <div class="field">
+                <input type="password" placeholder="비밀번호"><i class="ri-lock-2-line"></i>
+              </div>
+            </div>
+            <div class="status">
+              <label><input id="chk-save" type="checkbox"><em></em>로그인 상태 유지</label>
+              <label class="ip">IP보안 <input id="chk-ip" type="checkbox"></label>
+            </div>
+            <button class="btn-login">로그인</button>
+          </div>
+          <div class="tab disposable-login" >
+            <p>
+              네이버앱의 <em>네이버앱의 메뉴 > 설정  > 로그인 아이디 관리 > 일회용 로그인 번호 받기 네이버앱</em>에 보이는 번호를 입력해 주세요.
+            </p>
+            <input type="password" placeholder="번호를 입력하세요.">
+            <button class="btn-login">로그인</button>
+          </div>
+          <div class="tab qr-login">
+            <div class="qr-inner">
+              <div class="qr-image">
+                <img src="images/qr.png" alt="qr">
+                <span class="time">남은시간 <em>02분 23초</em></span>
+              </div>
+              <div class="qr-info">
+                <p>
+                  공용 네트워크, 공용 PC라면 안전을 위해 QR코드로 로그인해주세요.
+                </p>
+                <p>
+                  네이버 앱 <i class="ri-record-circle-fill" style="color: var(--mainColor)"></i> > 렌즈  <i class="ri-camera-2-line" style="color: var(--mainColor)"></i>를 눌러 QR코드를 스캔하여 보이는 숫자 중 <em>40</em>를 선택하면 로그인 됩니다. 도움말
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="find-register">
+        <a href="#none">비밀번호 찾기</a>
+        <a href="#none">아이디 찾기</a>
+        <a href="#none">회원가입</a>
+      </div>
+      <div class="banner">
+        <img src="images/banner.jpg" alt="banner">
+      </div>
+      <div class="login-footer">
+        <div class="footer-link">
+          <a href="#none">이용약관</a>
+          <a href="#none">개인정보처리방침</a>
+          <a href="#none">책임의 한계와 법적고지</a>
+          <a href="#none">회원정보 고객센터</a>
+        </div>
+        <p class="copyright">
+          <a href="#none"><img src="images/logo-naver.png" alt="logo"></a>
+          <span>Copyright ⓒ <b>NAVER Corp.</b> All Rights Reserved. <i class="ri-question-fill"></i></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.tooltip i ').click(function(){
+      $('.tooltip').hide();
+    });
+  </script>
+  
+</body>
+</html>

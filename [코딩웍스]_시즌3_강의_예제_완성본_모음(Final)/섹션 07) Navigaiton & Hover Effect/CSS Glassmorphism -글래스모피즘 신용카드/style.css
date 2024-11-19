@@ -1,0 +1,189 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background: url('images/colorful-background.jpg') no-repeat;
+	background-size: cover;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+section {}
+.card-inner {
+	display: flex;
+	gap: 70px;
+	/* perspective: 500px; */
+}
+.card-item {
+	/* border: 1px solid #000; */
+	width: 450px;
+	aspect-ratio: 16/9;
+	border-radius: 20px;
+	padding: 20px 30px;
+	background-color: rgba(255, 255, 255, 0.15);
+	transition: 0.5s;
+	position: relative;
+	color: #fff;
+	backdrop-filter: blur(10px);
+	/* box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); */
+}
+.card-item.front {
+	transform: perspective(500px) rotateX(20deg) rotateY(-20deg) rotateZ(5deg);
+	box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.15);
+}
+.card-item.front .content {}
+.visa-bank {
+	display: flex;
+	justify-content: space-between;
+}
+.visa-bank b {
+	font-weight: 500;
+}
+.visa-bank b:first-child {
+	font-size: 1.2em;
+	text-transform: capitalize;
+}
+.visa-bank b:last-child {
+	font-size: 1.4em;
+}
+.card-chip {
+	margin: 15px;
+}
+.number-expire {}
+.number-expire .number {
+	display: flex;
+	justify-content: space-between;
+}
+.number-expire .number em {
+	font-style: normal;
+	font-size: 1.9em;
+	letter-spacing: 2px;
+	font-family: "Orbitron", sans-serif;
+	text-shadow: 0 0 3px black;
+}
+.number-expire .expire {
+	display: flex;
+	align-items: center;
+	margin: 15px 0;
+}
+.number-expire .expire .text {
+	font-size: 0.7em;
+	text-transform: capitalize;
+	line-height: 1.2em;
+	text-align: right;
+	margin-right: 10px;
+}
+.number-expire .expire .date {
+	font-size: 1.4em;
+}
+.number-expire .expire .sapn {}
+.card-holder {
+	text-transform: uppercase;
+	font-size: 1.5em;
+	text-shadow: 0 0 3px black;
+}
+.visa-logo {
+	/* border: 1px solid #000; */
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	right: 50px;
+  bottom: 15px;
+}
+.visa-logo:before,
+.visa-logo:after {
+	position: absolute;
+	content: '';
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	mix-blend-mode: hard-light;
+}
+.visa-logo:before {
+	background-color: crimson;
+}
+.visa-logo:after {
+	background-color: gold;
+	transform: translateX(60%);
+}
+
+
+.card-item.back {
+	background-color: rgba(0, 0, 0, 0.15);
+	transform: perspective(500px) rotateX(-20deg) rotateY(20deg) rotateZ(5deg);
+	box-shadow: -20px -20px 50px rgba(0, 0, 0, 0.15);
+}
+.magnetic {
+	background-color: #000;
+	height: 40px;
+	width: calc(100% + 60px);
+	transform: translate(-30px, 10px);
+}
+.signature {
+	padding-top: 15px;
+}
+.signature .sign-info {
+	text-transform: capitalize;
+	font-size: 0.8em;
+}
+.signature .sign-here {
+	background-color: #fff;
+	width: 90%;
+	height: 40px;
+	position: relative;
+}
+.signature .sign-here .cvc-num {
+	position: absolute;
+	background-color: lightgray;
+	color: #000;
+	font-weight: 500;
+	padding: 0 5px;
+	right: -30px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.notice {
+	margin-top: 20px;
+	font-size: 0.9em;
+	line-height: 1.2em;
+}
+/* Hover Functon */
+.card-item:hover {
+	transform: translate(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

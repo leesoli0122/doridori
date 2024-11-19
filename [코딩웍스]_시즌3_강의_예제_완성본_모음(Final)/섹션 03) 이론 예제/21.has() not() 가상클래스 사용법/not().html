@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - has() not() 가상클래스 사용법</title>
+  <style>
+    /* Google Web Font */
+  	@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+  	* {
+  		font-family: "Montserrat", sans-serif;
+  	}
+		
+		body {
+      margin: 0;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .frame button {
+      border: none;
+      text-transform: uppercase;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: yellowgreen;
+      color: #fff;
+    }
+    .frame button:not(:last-child) {
+      background-color: crimson;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    :not(선택자)
+    선택자를 제외하는 가상클래스
+
+    ex) a:not(:first-child) { color: crimson; }
+   -->
+
+   <div class="frame">
+     <button>button #01</button>
+     <button>button #02</button>
+     <button>button #03</button>
+     <button>button #04</button>
+     <button>button #05</button>
+   </div>
+  
+</body>
+</html>

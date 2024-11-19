@@ -1,0 +1,113 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+
+:root {
+	--whiteColor: #fff;
+	--blackolor: #000;
+	--mainColor: #aaa;
+	--validColor: #2ecc71;
+	--invalidColor: #e74c3c;
+}
+
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.login {
+	width: 350px;
+}
+.login header {
+	text-align: center;
+}
+.login header img {
+	width: 150px;
+}
+.login header p {
+	color: var(--mainColor);
+}
+.login header p a {
+	color: var(--whiteColor);
+}
+.login header p a:hover {
+	text-decoration: underline;
+}
+
+.login .fields {}
+.login .fields input,
+.login .fields button[type=submit] {
+	display: block;
+	width: 100%;
+	margin: 15px 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	border: 1px solid var(--mainColor);
+	padding: 13px;
+	border-radius: 50px;
+	text-align: center;
+	color: var(--whiteColor);
+}
+.login .fields input:focus::placeholder {
+	visibility: hidden;
+}
+.login .fields button[type=submit] {
+	border: none;
+	background-color: var(--blackolor);
+	text-transform: uppercase;
+	cursor: pointer;
+}
+.login .fields p {
+	text-align: center;
+	color: var(--invalidColor);
+	font-size: 14px;
+	display: none;
+}
+/* Validation Check */
+.login .fields input:invalid:not(:placeholder-shown) {
+	border-color: var(--invalidColor);
+	background: url('images/check-invalid.png') no-repeat center right 20px;
+}
+.login .fields input:valid:not(:placeholder-shown) {
+	background: url('images/check-valid.png') no-repeat center right 20px;
+}
+.login .fields input[type=password]:invalid:not(:placeholder-shown) + p {
+	display: block;
+}
+.login .fields input:invalid ~ button[type=submit] {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

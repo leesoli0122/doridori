@@ -1,0 +1,66 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+	font-family: 'Raleway', sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	background-color: #1B173C;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* 실전예제 CSS */
+.text-frame {
+	line-height: 4em;
+	/*border: 2px solid #fff;*/
+}
+.text-frame span {
+	font-size: 5em;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 800;
+	display: block;
+	/*margin-bottom: 40px;*/
+}
+.text-frame span:nth-child(1) {
+	letter-spacing: 25px;
+}
+.text-frame span:nth-child(2) {
+	letter-spacing: 4px;
+}
+.text-frame span:nth-child(3) {
+	letter-spacing: 16px;
+}
+.text-frame span:first-letter {
+	color: #ff6b6b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

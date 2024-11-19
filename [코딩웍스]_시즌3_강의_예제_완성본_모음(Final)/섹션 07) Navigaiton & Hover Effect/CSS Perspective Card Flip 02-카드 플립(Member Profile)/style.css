@@ -1,0 +1,105 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* BoxIcons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 카드 플립(Team Member) */
+.card-item {
+	/* border: 1px solid #000; */
+	width: 320px;
+	aspect-ratio: 9/12;
+	perspective: 1000px;
+}
+/* Hover Function */
+.card-item:hover .card {
+	transform: rotateY(180deg);
+}
+.card {
+	width: inherit;
+	height: 100%;
+	position: relative;
+	transition: 0.5s;
+	transform-style: preserve-3d;
+}
+.card > div {
+	width: inherit;
+	height: 100%;
+	position: absolute;
+}
+.front {}
+.front img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.back {
+	background-color: #222;
+	padding: 20px;
+	color: #fff;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+.back .comment {}
+.back .comment b {
+	font-size: 2em;
+}
+.back .comment .sns {
+	margin-bottom: 25px;
+}
+.back .comment .sns a {
+	border: 1px solid #fff;
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	/* 수직중앙정렬 */
+	/* line-height: 28px; */
+	padding-top: 2px;
+}
+.btn-view {
+	background-color: yellowgreen;
+	padding: 7px;
+	border-radius: 3px;
+	display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

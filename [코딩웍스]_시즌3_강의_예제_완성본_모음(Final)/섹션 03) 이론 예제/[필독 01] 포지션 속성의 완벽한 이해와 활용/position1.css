@@ -1,0 +1,115 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 이론예제 CSS 01 */
+.parent {
+	border: 5px solid #000;
+	width: 400px;
+	height: 400px;
+	position: relative;
+	display: none;
+}
+.child-absolute {
+	background-color: gold;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+}
+.child-fixed {
+	background-color: pink;
+	width: 100px;
+	height: 100px;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+}
+
+/* 이론예제 CSS 02 */
+.frame {
+	border: 5px solid #000;
+	width: 400px;
+	height: 400px;
+	position: relative;
+	display: none;
+}
+.item1 {
+	width: 300px;
+	height: 300px;
+	background-color: crimson;
+	position: absolute;
+	z-index: 1;
+}
+.item2 {
+	width: 300px;
+	height: 300px;
+	background-color: royalblue;
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	z-index: 0;
+}
+
+/* 이론예제 CSS 03 */
+.btn {
+	background-color: slategray;
+	color: #fff;
+	padding: 10px;
+	position: relative;
+	z-index: 1;
+}
+.btn:before {
+	content: '';
+	position: absolute;
+	width: 30px;
+	aspect-ratio: 1/1;
+	background-color: crimson;
+	border-radius: 50%;
+	top: 6px;
+	left: 5px;
+	z-index: -1;
+}
+
+/* 이론예제 CSS 04 */
+
+
+/* 이론예제 CSS 05 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

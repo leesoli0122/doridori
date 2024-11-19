@@ -1,0 +1,87 @@
+/* Google Web Font : Noto Sans KR */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	font-weight: 300;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* 실전예제 CSS */
+.heading {
+	width: 700px;
+	text-align: center;
+	line-height: 1.4em;
+	font-size: 38px;
+	position: relative;
+}
+.heading:before {
+	content: '{';
+	left: 0;
+}
+.heading:after {
+	content: '}';
+	right: 0;
+}
+.heading:before,
+.heading:after {
+	position: absolute;
+	font-size: 110px;
+	color: #ddd;
+	top: 20px;
+}
+
+.heading span {
+	display: block;
+	font-weight: normal;
+	/*font-size: 32px;*/
+	font-size: 0.8em;
+}
+.heading span:before {
+	content: '❤️';
+	animation: heart 0.7s linear infinite;
+	display: inline-block;
+}
+.heading em {
+	font-style: normal;
+	color: crimson;
+}
+
+@keyframes heart {
+	0%, 100% {
+		transform: scale(0.7);
+	}
+	50% {
+		transform: scale(1.2)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

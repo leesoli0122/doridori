@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+    }
+    
+    .frame img {
+      width: 300px;
+    }
+    .frame img:nth-child(1) {
+      filter: blur(5px)
+    }
+    .frame img:nth-child(2) {
+      filter: brightness(200%);
+    }
+    .frame img:nth-child(3) {
+      filter: contrast(200%);
+    }
+    .frame img:nth-child(4) {
+      filter: grayscale(100%);
+    }
+    .frame img:nth-child(5) {
+      filter: opacity(20%);
+    }
+    .frame img:nth-child(6) {
+      filter: sepia(50%)
+    }
+    .frame img:nth-child(7) {
+      filter: blur(5px) grayscale(100%);
+    }
+    
+    .box img:nth-child(1) {
+      width: 100px;
+    }
+    .box img:nth-child(1):hover {
+      filter: invert(38%) sepia(87%) saturate(3032%) hue-rotate(231deg) brightness(94%) contrast(91%);
+    }
+    .box img:nth-child(2) {
+      filter: invert(91%) sepia(97%) saturate(6452%) hue-rotate(308deg) brightness(103%) contrast(109%);
+    }
+    .box img:nth-child(3) {
+      width: 300px;
+      filter: invert(91%) sepia(97%) saturate(6452%) hue-rotate(308deg) brightness(103%) contrast(109%);
+    }
+  </style>
+</head>
+<body>
+ 
+  <!--
+    filter속성은 요소에 대한 시각효과로 포토샵에서 보정(adjustment) 기능이라고 생각하면 됩니다.
+    요즘의 최신 브라우저에서 가능(올드 브라우저 안됨 ex.인터넷익스플로러)
+  -->
+  
+  <div class="frame">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+  </div>
+  
+  <div class="box">
+    <img src="images/icon-download.svg" alt="">
+    <img src="images/icon-mask.svg" alt="">
+    <img src="images/codingworks.jpg" alt="">
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

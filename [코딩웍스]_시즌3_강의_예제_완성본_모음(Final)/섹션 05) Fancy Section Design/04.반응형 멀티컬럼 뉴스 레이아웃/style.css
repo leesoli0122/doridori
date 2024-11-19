@@ -1,0 +1,120 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+* {
+	font-family: 'Noto Sans KR', sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	font-weight: 300;
+	color: #ccc;
+	background-color: #000;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 0;
+}
+
+/* 
+column-count			컬럼의 갯수
+column-width			컬럼의 너비
+columns						column-width와 column-count 단축 속성	columns: 400px 4; (너비, 컬럼 개수)
+
+column-rule-style	컬럼 보더 스타일
+column-rule-color	컬럼 보더 색상
+column-rule-width	컬럼 보더의 두께
+column-gap				컬럼 사이의 간격
+
+column-rule				단축 속성	column-rule: 2px dotted red; (너비, 스타일, 색상)
+
+column-span: all;	나뉜 단의 관계없이 모든 단을 합치는 속성
+*/
+
+/* multi columns newspaper headline */
+.container {}
+section {}
+section .inner {
+	width: 1200px;
+	margin: auto;
+	margin-top: 50px;
+}
+section .inner h1 {
+	color: #fff;
+	font-size: 4em;
+	text-align: center;
+}
+section .inner .news-item {
+	background-color: #333;
+	padding: 25px;
+	column-count: 3;
+	column-gap: 50px;
+	column-rule: 1px dashed #999;
+	margin: 20px 0;
+}
+section .inner .news-item h2 {
+	column-span: all;
+	position: relative;
+	z-index: 1;
+}
+section .inner .news-item h2:before {
+	content: '';
+	position: absolute;
+	background-color: crimson;
+	width: 200px;
+	height: 20px;
+	z-index: -1;
+	transform: translateX(-35px);
+}
+section .inner .news-item img {
+	width: 100%;
+}
+
+@media (max-width: 767px) {
+	section .inner {
+		width: 100%;
+	}
+	section .inner h1 {
+		font-size: 2em;
+	}
+	section .inner .news-item {
+		column-count: 1;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+	section .inner {
+		width: 100%;
+	}
+	section .inner h1 {
+		font-size: 3em;
+	}
+	section .inner .news-item {
+		column-count: 2;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

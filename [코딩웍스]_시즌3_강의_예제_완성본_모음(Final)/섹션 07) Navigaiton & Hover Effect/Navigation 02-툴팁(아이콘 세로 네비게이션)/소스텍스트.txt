@@ -1,0 +1,7 @@
+식품        <i class='bx bxs-bowl-hot' ></i>
+가전디지털  <i class='bx bxs-tv' ></i>
+문구       <i class='bx bxs-pencil'></i>
+도서       <i class='bx bxs-book-open' ></i>
+스포츠     <i class='bx bx-football'></i>
+자동차용품  <i class='bx bxs-car' ></i>
+게임        <i class='bx bxs-game'></i>

@@ -1,0 +1,10 @@
+.mockup
+  .mobile-mockup
+    .camera
+      span * 2
+    .speaker
+      span * 3  
+    .power
+      span  
+    .iframe-url
+      iframe  

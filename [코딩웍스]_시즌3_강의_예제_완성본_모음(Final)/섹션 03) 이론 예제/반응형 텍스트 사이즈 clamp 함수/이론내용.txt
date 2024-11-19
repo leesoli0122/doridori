@@ -1,0 +1,9 @@
+clamp(최소값, 가변값(선호값), 최대값) 
+
+- clamp 고정시키다
+- vh & vw (vertical height & vertical width)
+- 뷰포트의 높이값과 너비값에 맞춰 크기 변화
+- 가변값(선호값)에 주로 vw, rem, em을 사용함.
+
+ex) 브라우저 너비 1000px ==> 1vw는 10px
+ex) 브라우저 높이 500px ==> 1vh는 5px

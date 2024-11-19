@@ -24,14 +24,19 @@
   width: 160px;
 }
 .header .mypage {
-  padding: 8px 0;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
-  background-color: #AEDC64;
   font-weight: 700;
   text-align: center;
   color: var(--title);
+}
+.header .mypage a {
+  font-size: 0;
+}
+.header .mypage a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .contents-wrap {

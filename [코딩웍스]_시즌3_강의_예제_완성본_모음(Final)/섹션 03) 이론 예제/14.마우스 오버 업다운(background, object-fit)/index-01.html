@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+    * { font-family: 'Montserrat', sans-serif; }
+		body { 
+			font-weight: 300; 
+			margin: 0; 
+			background-color: #eee;
+		}
+
+    /* 이론활용 CSS */
+		.portfolio {}
+		.portfolio .headline {
+			text-align: center;	
+			text-transform: uppercase;
+		}
+		.portfolio .items {
+			display: flex;
+			justify-content: center;
+			gap: 40px;
+		}
+		.portfolio .items .item {
+			width: 270px;
+			height: 300px;
+			border-radius: 15px;
+			box-shadow: 0 5px 45px rgba(0, 0, 0, 0.15);
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: top;
+			transition: 1s;
+		}
+		.portfolio .items .item:hover {
+			background-position: bottom;
+		}
+		.portfolio .items .item:nth-child(1) {
+			background-image: url(images/temp-01.png);
+		}
+		.portfolio .items .item:nth-child(2) {
+			background-image: url(images/temp-02.png);
+		}
+		.portfolio .items .item:nth-child(3) {
+			background-image: url(images/temp-03.png);
+		}
+  </style>
+</head>
+<body>
+	
+  <div class="portfolio">
+    <h1 class="headline">portfolio hover with background image</h1>
+    <div class="items">
+      <div class="item" ></div>
+      <div class="item"></div>
+      <div class="item"></div>
+    </div>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

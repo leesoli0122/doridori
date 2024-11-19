@@ -1,0 +1,389 @@
+/* Google Web Fonts CDN */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900&display=swap');
+
+/* Remix Icon */
+@import url('https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css');
+
+/* Variables */
+:root {
+	--mainColor: #00D05D;
+	--mainBorder: #E0E0E0;
+}
+
+/* Defaul CSS */
+* {
+  box-sizing: border-box;
+  outline: none;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+body {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5em;
+  color: #333;
+  margin: 0;
+  background-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ######### Naver Tab Login ######### */
+
+/* Entire Wireframe */
+.login-frame {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.naver-login {
+	width: 400px;
+	/* text-align: center; */
+}
+.main-logo {
+	height: 35px;
+	margin: auto;
+	display: block;
+	margin-bottom: 50px;
+}
+
+/* Tab Menu Content */
+.tab-inner {
+	margin-bottom: 20px;
+}
+.tab-btn {
+	/* border: 1px solid #000; */
+	display: flex;
+	position: relative;
+}
+.tab-btn label {
+	flex: 1;
+	height: 40px;
+	border: 1px solid var(--mainBorder);
+	border-bottom: none;
+	border-radius: 7px 7px 0 0;
+	text-align: center;
+	line-height: 40px;
+	background-color: #F5F5F5;
+	cursor: pointer;
+}
+.tab-btn label i {}
+
+.tabs {}
+.tabs .tab {
+	border: 1px solid var(--mainBorder);
+	height: 260px;
+	border-radius: 0 0 7px 7px;
+	padding: 30px;
+	display: none;
+	/* border-top: none; */
+}
+
+/* Checked Function */
+input[name=tabmenu] {
+	display: none;
+}
+input[id=tab1]:checked ~ .tabs .id-login,
+input[id=tab2]:checked ~ .tabs .disposable-login,
+input[id=tab3]:checked ~ .tabs .qr-login {
+	display: block;
+}
+input[id=tab1]:checked ~ .tab-btn label[for=tab1],
+input[id=tab2]:checked ~ .tab-btn label[for=tab2],
+input[id=tab3]:checked ~ .tab-btn label[for=tab3] {
+	background-color: #fff;
+	transform: translateY(1px);
+} 
+input[id=tab1]:checked ~ .tab-btn label[for=tab1] i,
+input[id=tab2]:checked ~ .tab-btn label[for=tab2] i,
+input[id=tab3]:checked ~ .tab-btn label[for=tab3] i {
+	color: var(--mainColor);
+}
+
+/* Common CSS */
+.btn-login {
+	background-color: var(--mainColor);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 500;
+	/* width: 85%; */
+	margin: auto;
+	display: block;
+	width: 100%;
+	padding: 15px;
+	cursor: pointer;
+}
+
+/* Tab : ID login */
+.tab.id-login {}
+.tab.id-login .fields {}
+.tab.id-login .fields .field {
+	position: relative;
+	/* border: 1px solid red; */
+}
+
+.tab.id-login .fields .field :is( input[type=text],input[type=password]), .tab.disposable-login input[type=password]
+ {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	border: 1px solid var(--mainBorder);
+	cursor: pointer;
+	border-radius: 5px;
+	padding-left: 40px;
+}
+
+/* .tab.id-login .fields .field input[type=text],
+.tab.id-login .fields .field input[type=password] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	border: 1px solid var(--mainBorder);
+	cursor: pointer;
+	border-radius: 5px;
+} */
+.tab.id-login .fields .field :is( input[type=text],input[type=password])::placeholder {
+	color: var(--mainBorder);
+}
+.tab.id-login .fields .field :is( input[type=text],input[type=password]):focus {
+	border-color: var(--mainColor);
+	border-bottom: 1px solid var(--mainColor);
+}
+
+.tab.id-login .fields .field :is( input[type=text],input[type=password]):focus + i {
+	color: var(--mainColor);
+}
+
+.tab.id-login .fields .field input[type=text] {
+	border-radius: 5px 5px 0 0;
+	border-bottom: 1px solid transparent;
+}
+.tab.id-login .fields .field input[type=password] {
+	border-radius: 0 0 5px 5px;
+}
+.tab.id-login .fields .field i {
+	position: absolute;
+	/* top: 10px; */
+	top: 50%;
+	transform: translateY(-50%);
+	left: 15px;
+	font-size: 20px;
+	color: #B0B0B0;
+}
+
+/* Tab : disposable-login */
+.tab.disposable-login {}
+.tab.disposable-login p {
+	font-size: 13px;
+	letter-spacing: -1px;
+}
+.tab.disposable-login p em {
+	color: var(--mainColor);
+	font-style: normal;
+}
+.tab.disposable-login input[type=password] {
+	margin-bottom: 10px;
+}
+.tab.disposable-login input[type=password]::placeholder {
+	color: var(--mainBorder);
+}
+.tab.disposable-login input[type=password]:focus {
+	border-color: var(--mainColor);
+}
+
+/* Tab : QR-login */
+.tab.qr-login {}
+.qr-inner {
+	text-align: center;
+}
+.qr-image {
+	width: 180px;
+	margin: auto;
+	display: flex;
+}
+.qr-image img {
+	width: 90px;
+	margin-right: 5px;
+}
+.qr-image .time {
+	align-self: flex-end;
+}
+.qr-image .time em {
+	display: block;
+	font-style: normal;
+	color: var(--mainColor);
+	font-weight: 500;
+}
+.qr-info {}
+.qr-info p {}
+.qr-info p em {
+	background-color: #000;
+	color: #fff;
+	font-style: normal;
+	border-radius: 20px;
+	padding: 2px 5px;
+	font-size: 10px;
+}
+
+/* Status */
+.status {
+	margin: 15px 0;
+	display: flex;
+	justify-content: space-between;
+}
+.status label {
+	cursor: pointer;
+}
+input[id=chk-save] {
+	display: none;
+}
+input[id=chk-save] + em {
+	/* border: 1px solid #000; */
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url('images/icon-radio.png') no-repeat;
+	background-position: left;
+	transform: translateY(4px);
+	margin-right: 3px;
+}
+input[id=chk-save]:checked + em {
+	background-position: right;
+}
+.ip {}
+input[id=chk-ip] {
+	/* border: 1px solid #000; */
+	-webkit-appearance: none;
+	background-color: var(--mainColor);
+	width: 27px;
+	height: 16px;
+	border-radius: 20px;
+	cursor: pointer;
+	transform: translateY(6px);
+	position: relative;
+	transition: 0.2s;
+}
+input[id=chk-ip]:before {
+	content: '';
+	position: absolute;
+	background-color: #fff;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	right: 2px;
+	top: 2px;
+	transition: 0.2s;
+}
+input[id=chk-ip]:checked {
+	background-color: #bbb;
+}
+input[id=chk-ip]:checked:before {
+	/* left: 2px; */
+	right: 12px;
+}
+
+/* Tooltip */
+.tooltip {
+	position: absolute;
+	font-size: 11px;
+	border: 1px solid var(--mainColor);
+	color: var(--mainColor);
+	background-color: #fff;
+	border-radius: 20px;
+	padding: 0 15px;
+	right: -50px;
+	top: -12px;
+}
+.tooltip i {
+	cursor: pointer;
+}
+
+/* Find & Register */
+.find-register {
+	text-align: center;
+}
+.find-register a:hover {
+	text-decoration: underline;
+}
+.find-register a:after {
+	content: '|';
+	font-size: 12px;
+	color: #ddd;
+	margin-right: 5px;
+	margin-left: 7px;
+}
+.find-register a:last-child:after {
+	display: none;
+}
+
+/* Banner */
+.banner {
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+.banner img {
+	width: 100%;
+}
+
+/* Login Footer */
+.login-footer {
+	text-align: center;
+}
+.footer-link {}
+.footer-link a {
+	font-size: 12px;
+}
+.footer-link a:nth-child(2) {
+	font-weight: bold;
+}
+.footer-link a:hover {
+	text-decoration: underline;
+}
+.footer-link a:after {
+	content: '|';
+	margin-right: 3px;
+	margin-left: 7px;
+	color: #ddd;
+}
+.footer-link a:last-child:after {
+	display: none;
+}
+.copyright {
+	font-size: 12px;
+}
+.copyright a {}
+.copyright a img {
+	height: 14px;
+}
+.copyright span {}
+.copyright span b {}
+.copyright span i {
+	color: #90B5DB;
+	font-size: 14px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

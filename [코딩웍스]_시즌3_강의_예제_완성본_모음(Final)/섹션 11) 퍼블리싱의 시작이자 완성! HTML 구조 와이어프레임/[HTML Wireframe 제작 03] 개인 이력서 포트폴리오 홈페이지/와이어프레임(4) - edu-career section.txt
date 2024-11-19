@@ -1,0 +1,30 @@
+section.edu-career
+	.section-inner
+		.section-content
+			.section-index
+				span
+				h1.headline
+			.timeline
+				.edu-timeline
+					h3
+					.timeline-items
+						.timeline-item
+							.title
+								b
+								span
+							.detail
+								b
+								p
+				.career-timeline
+					h3
+					.timeline-items
+						.timeline-item
+							.title
+								b
+								span
+							.detail
+								b
+								p
+								
+								
+								

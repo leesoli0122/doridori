@@ -1,0 +1,102 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* BoxIcons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	background-color: #222;
+	color: #fff;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.icon-frame {
+	/* border: 1px solid #fff; */
+	width: 600px;
+	display: flex;
+	gap: 10px;
+}
+.icon-frame * {
+	transition: 0.35s;
+}
+.btn-icon {
+	flex: 1;
+	height: 70px;
+	position: relative;
+}
+.btn-icon i {
+	background-color: #000;
+	font-size: 36px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: gray;
+	/* display: none; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform-origin: top;
+}
+.btn-icon .detail {
+	position: absolute;
+	top: -100%;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2em;
+	transform: translateY(0) rotateX(90deg);
+	transform-origin: bottom;
+}
+.btn-icon:nth-child(1) .detail {
+	background-color: dodgerblue;
+}
+.btn-icon:nth-child(2) .detail {
+	background-color: crimson;
+}
+.btn-icon:nth-child(3) .detail {
+	background-color: yellowgreen;
+}
+
+/* Hover Function */
+.btn-icon:hover i {
+	transform: translateY(100%) rotateX(90deg);
+}
+.btn-icon:hover .detail {
+	transform: translateY(100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 다크모드 기본형(greeting)</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <div class="container">
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="images/logo.png" alt="logo">
+        </div>
+        <div class="gnb">
+          <a href="#none">home</a>
+          <a href="#none">about</a>
+          <a href="#none">portfolio</a>
+          <a href="#none">contact</a>
+        </div>
+        <div class="mode"></div>
+      </nav>
+    </header>
+    <section>
+      <div class="section-inner">
+        <h1>Dear CodingWorks students...</h1>
+        <p>
+          It may be unfamiliar and difficult, but I believe that if you endure it well, you will surely receive rewards for your hard work and patience. Choosing a course for the job of web publishing may not be easy, but Teacher Andrew will always support you.
+        </p>
+        <div class="like"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    $('.mode').click(function(){
+      $('.container').toggleClass('dark');
+    });
+  </script>
+  
+</body>
+</html>

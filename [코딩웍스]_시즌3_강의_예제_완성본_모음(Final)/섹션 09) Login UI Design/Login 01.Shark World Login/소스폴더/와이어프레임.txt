@@ -1,0 +1,22 @@
+.login
+	.login-header
+		img
+		h1
+	.fields
+		span
+		.field
+			input[type=email]
+			font-icon
+		span	
+		.field
+			input[type=password]
+			font-icon	
+			font-icon	
+		.status
+			label
+				input[type=checkbox], span
+			a
+	button.btn-login
+
+
+	

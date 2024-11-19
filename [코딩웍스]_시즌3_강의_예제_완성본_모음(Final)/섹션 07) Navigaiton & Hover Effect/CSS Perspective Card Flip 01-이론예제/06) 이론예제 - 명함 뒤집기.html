@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 - CSS Perspective Card Flip</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 100px;
+    }
+    .card-frame {
+      border: 5px solid #000;
+      width: 500px;
+      height: 280px;
+      perspective: 800px;
+    }
+    .card-frame:hover .card-items {
+      transform: rotateX(180deg);
+    }
+    .card-items {
+      position: relative;
+      width: inherit;
+      height: inherit;
+      transition: 1s;
+      transform-style: preserve-3d;
+    }
+    .card-item {
+      position: absolute;
+    }
+    .card-item.front {}
+    .card-item.back {
+      transform: rotateX(180deg);
+      backface-visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card-frame">
+    <div class="card-items">
+      <div class="card-item front">
+        <img src="images/name-card-front.png">
+      </div>
+      <div class="card-item back">
+        <img src="images/name-card-back.png">
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

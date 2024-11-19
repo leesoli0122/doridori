@@ -1,0 +1,113 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.5em;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+section {
+	padding: 100px 0;
+}
+.section-inner {
+	display: flex;
+	gap: 30px;
+	height: 400px;
+}
+.section-inner:hover .photo img {
+	transform: scale(1.2);
+}
+.photo {
+	flex-basis: 600px;
+	overflow: hidden;
+}
+.photo img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 1.5s;
+}
+.promotion {
+	flex: 1;
+	background-color: #48494B;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.banner-logo {
+	position: absolute;
+	left: -120px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.banner-logo img {
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+.heading {
+	color: #fff;
+	/* border: 1px solid #000; */
+}
+.heading h1 {
+	font-weight: 500;
+	font-size: 2em;
+}
+.heading p {
+	font-weight: 300;
+}
+.heading p em {
+	font-style: normal;
+	background-color: #000;
+	color: crimson;
+	font-size: 15px;
+	padding: 2px;
+}
+.heading span {
+	font-size: 14px;
+	color: #999;
+	/* display: block; */
+}
+.heading .btn-event {
+	display: block;
+	/* display: inline-block; */
+	/* border: 1px solid #000; */
+	width: max-content;
+	margin-top: 20px;
+	padding: 5px 15px;
+	background-color: yellowgreen;
+	border-radius: 30px;
+	font-size: 16px;
+	/* margin: 20px auto; */
+	/* float: right; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

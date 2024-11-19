@@ -1,0 +1,92 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.card-inner {
+	/* border: 1px solid #000; */
+	width: 300px;
+	aspect-ratio: 9/16;
+	perspective: 1000px;
+}
+.card-inner:hover .card {
+	transform: rotateY(180deg);
+}
+.card {
+	width: inherit;
+	height: 100%;
+	position: relative;
+	transform-style: preserve-3d;
+	transition: 4s;
+}
+.card > div {
+	width: inherit;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+.card > div h2 {
+	font-size: 3em;
+	text-transform: uppercase;
+	transform: translateZ(25px);
+}
+.card > div .outline {
+	/* display: none; */
+	border: 10px solid #000;
+	position: absolute;
+	width: 85%;
+	height: 90%;
+	transform: translateZ(25px);
+}
+.front {
+	background: url('images/front.jpg') no-repeat;
+	background-size: cover;
+}
+.back {
+	background: url('images/back.jpg') no-repeat;
+	background-size: cover;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

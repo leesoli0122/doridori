@@ -1,0 +1,71 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 50px;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	/* display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; */
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Reset CSS */
+input, button, select {
+	outline: none;
+}
+button {
+	cursor: pointer;
+}
+
+input {
+	border: 1px solid #000;
+	padding: 10px;
+	border-radius: 5px;
+}
+input::placeholder {
+	color: red;
+	font-style: italic;
+}
+input:focus {
+	border-color: red;
+}
+input:focus::placeholder {
+	visibility: hidden;
+}
+
+select {
+	appearance: none;
+	-webkit-appearance:none; /* for chrome */
+	-moz-appearance:none; /*for firefox*/
+	border: 1px solid crimson;
+	padding: 5px 10px;
+	border-radius: 5px;
+	padding-right: 30px;
+	background: url('arrow-down.png') no-repeat center right 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

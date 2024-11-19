@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.logo {
+	/* border-top: 1px solid #000;
+	border-bottom: 1px solid #000; */
+	/*border-block: 1px solid #999; */
+	width: 1000px;
+	overflow: hidden;
+	padding: 20px 0;
+	white-space: nowrap;
+	/* background-color: red; */
+	-webkit-mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
+}
+.logo:hover .logo-slide {
+	animation-play-state: paused;
+}
+.logo-slide {
+	display: inline-block;
+	animation: slide 30s linear infinite;
+}
+.logo-slide a img {
+	width: 100px;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	margin-inline: 5px;
+}
+
+@keyframes slide {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+

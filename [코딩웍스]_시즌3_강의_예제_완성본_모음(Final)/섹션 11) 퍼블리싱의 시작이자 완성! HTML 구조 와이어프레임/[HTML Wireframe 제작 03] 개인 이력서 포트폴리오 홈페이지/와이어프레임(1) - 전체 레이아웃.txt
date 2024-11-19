@@ -1,0 +1,12 @@
+.container
+	section.intro
+	section.about
+	section.edu-career
+	section.skills
+	section.work-portfolio
+	section.epilogue
+	footer
+	
+	
+	
+	

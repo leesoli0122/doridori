@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 타이핑 애니메이션 JS 플러그인(Typed.js)</title>
+  <!-- Typed.js CDN -->
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <!-- Custom CSS & JS -->
+  <style>
+    /* Google Web Font */
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+    * {
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.5em;
+      color: #222;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 실전예제 CSS */
+    .frame h1 {
+      color: #fff;
+      font-size: 3em;
+    }
+    .frame h1 span {
+      color: crimson;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="frame">
+    <h1>I'm <span class="typing"></span></h1>
+  </div>
+	
+  <!-- 
+    ✅Typed.js 대표적인 옵션
+
+    strings: ['<i>First Text Content.</i>.', 'Second Text Content.'],
+    typeSpeed: 80, //타이핑속도
+    backSpeed: 30, //백스페이스 속도
+    smartBackspace: true, //???
+    showCursor: true, // 커서 보이기(기본값 : true)
+    cursorChar: '|', //커서모양
+    backDelay: 1000, //백스페이스 문자 지우기 전에 딜레이
+    loop: true, // 타이핑 반복하기(기본값 : false)
+
+    ✅Typed.js 공식 웹사이트
+    https://mattboldt.com/demos/typed-js/
+  -->
+  
+  <script>
+    var typed = new Typed('.typing', {
+      strings: ["CodingWorks.", "a web publisher.", "waiting for ^1500 your call."],
+      typeSpeed: 50, //타이핑속도
+      backSpeed: 50, //백스페이스 속도
+      smartBackspace: true,
+      // showCursor: false,
+      cursorChar: '❤️', //커서모양
+      loop: true,
+      backDelay: 1000, //백스페이스 문자 지우기 전에 딜레이
+    });
+
+  </script>
+
+</body>
+</html>

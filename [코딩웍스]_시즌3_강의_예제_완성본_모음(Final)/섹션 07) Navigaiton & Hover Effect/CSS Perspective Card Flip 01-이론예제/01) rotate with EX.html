@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 - CSS Perspective Card Flip</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .frame {
+      perspective: 500px;
+    }
+    .frame div {
+      width: 400px;
+      height: 300px;
+      background-color: yellowgreen;
+      font-size: 3em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateX(20deg) rotateY(-20deg) rotateZ(5deg);
+      background: url('images/mongol.jpg') no-repeat;
+      background-size: cover;
+      box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3);
+      transition: 0.5s;
+    }
+    .frame:hover div {
+      transform: rotate(0);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    ✅rotateX : x축을 기준으로 돌기
+    ✅rotateY : y축을 기준으로 돌기
+    ✅rotateZ : z축을 기준으로 돌기
+   -->
+
+  <div class="frame">
+    <div></div>
+  </div>
+  
+</body>
+</html>

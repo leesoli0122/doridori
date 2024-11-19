@@ -1,0 +1,171 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Pure CSS Accordion Image Gallery */
+.gallery {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	height: 100vh;
+	display: flex;
+}
+.gallery li {
+	/* border: 1px solid #000; */
+	flex: 1;
+	height: 100%;
+	transition: 0.5s;
+	position: relative;
+	overflow: hidden;
+}
+.gallery li:before {
+	content: attr(data-text);
+	position: absolute;
+	background-color: crimson;
+	color: #fff;
+	padding: 5px 10px;
+	top: -100px;
+	left: 0;
+	transition: 0.5s;
+	/* transition-delay: 1s; */
+	z-index: 1;
+}
+.gallery li img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+.gallery li .content {
+	background-color: yellowgreen;
+	color: #fff;
+	position: absolute;
+	bottom: -200px;
+	width: 100%;
+	height: 180px;
+	padding: 30px;
+	text-align: center;
+	z-index: 1;
+	transition: 0.5s;
+	/* transition-delay: 0.5s; */
+}
+.gallery li .content:before {
+	content: '';
+	width: 0;
+	height: 0;
+	border: 0 solid transparent;
+	border-right-width: 12px;
+	border-left-width: 12px;
+	border-bottom: 14px solid yellowgreen;
+	position: absolute;
+	top: -12px;
+}
+.gallery li .content h2 {}
+.gallery li .content p {}
+.gallery li .content .btn-learn {
+	padding: 10px 30px;
+	font-size: 13px;
+	text-transform: uppercase;
+	position: relative;
+}
+.gallery li .content .btn-learn:before,
+.gallery li .content .btn-learn:after {
+	content: '';
+	border: 2px solid #fff;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 0.35s;
+}
+.gallery li .content .btn-learn:hover:before {
+	transform: translate(-3px, -3px);
+}
+.gallery li .content .btn-learn:hover:after {
+	transform: translate(3px, 3px);
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* display: none; */
+}
+.overlay h1 {
+	font-size: 5em;
+	line-height: 1em;
+	color: crimson;
+	text-align: center;
+}
+.overlay h1 span {
+	display: block;
+	font-weight: normal;
+	font-size: 30px;
+	color: #000;
+}
+
+/* Hover Function */
+.gallery:hover li {
+	flex: 1;
+}
+.gallery li:hover {
+	flex: 3;
+}
+.gallery li:hover:before {
+	top: 0;
+}
+.gallery li:hover img {
+	filter: grayscale();
+}
+.gallery li:hover .content {
+	bottom: 0;
+	transition-delay: 0.5s;
+}
+.container:hover .overlay {
+	display: none;
+}
+.gallery li:hover:before {
+	top: 0;
+	transition-delay: 1s;
+}
+
+@media (max-width: 767px) {
+	.gallery {
+		flex-direction: column;
+	}
+	.overlay h1 {
+		font-size: 4em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

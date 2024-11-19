@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - has() not() 가상클래스 사용법</title>
+  <style>
+    /* Google Web Font */
+  	@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+  	* {
+  		font-family: "Montserrat", sans-serif;
+  	}
+
+    :root {
+      --backColor: white;
+      --textColor: black;
+    }
+
+    body:has(option[value=dark]:checked) {
+      --backColor: black;
+      --textColor: white;
+    }
+		
+		body {
+      margin: 0;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: var(--backColor);
+      color: var(--textColor);
+    }
+    section {
+      width: 50%;
+      text-align: center;
+    }
+    section select {
+      background-color: var(--textColor);
+      color: var(--backColor);
+      padding: 5px;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    :has(선택자)
+    선택자를 포함(has)하는 경우를 선택함
+
+    ex) button:has(.btn) { color: crimson; }
+   -->
+
+  <section>
+    <h1>CodingWorks Online Class</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus voluptatibus, similique dignissimos eaque quam, iste esse in ex quia sit laboriosam suscipit reprehenderit ipsum consequuntur, aliquid molestias minima modi adipisci.
+    </p>
+    <select>
+      <option value="light">Light Mode</option>
+      <option value="dark">Dark Mode</option>
+    </select>
+  </section> 
+  
+</body>
+</html>

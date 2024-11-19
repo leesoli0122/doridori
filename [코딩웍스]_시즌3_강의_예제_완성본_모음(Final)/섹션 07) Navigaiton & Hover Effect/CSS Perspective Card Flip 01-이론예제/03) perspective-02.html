@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 - CSS Perspective Card Flip</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .frame {
+      border: 5px solid #000;
+      display: flex;
+      gap: 50px;
+      /* perspective: 500px; */
+    }
+    .frame div {
+      width: 200px;
+      height: 200px;
+      background-color: yellowgreen;
+      transform: perspective(500px) rotateY(45deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    ✅Perspective : 원근법(관점,전망,시각)
+
+    멀리 떨어진 부분은 작게 보이고, 가까운 부분은 크게 보이는 원근감
+    
+    값이 작으면 작을 수록 원근감이 커짐
+
+    Perspective가 적용된 부모요소에 여러개의 자식요소가 있으면 투영점과 소실점이 달라져서 다르게 보임. 다르게 보이게 하기 위해서는 자식요소에 transform: perspective(픽셀)을 주어야 함.
+   -->
+
+  <div class="frame">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  
+</body>
+</html>

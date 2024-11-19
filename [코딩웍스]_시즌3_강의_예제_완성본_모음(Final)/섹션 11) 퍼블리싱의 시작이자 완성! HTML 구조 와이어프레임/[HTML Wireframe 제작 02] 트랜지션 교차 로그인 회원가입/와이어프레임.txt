@@ -1,0 +1,40 @@
+.swap-login-form
+	.swap-content.register
+		.photo
+			img
+			button.btn-swap
+		.swap-form
+			h1 > span
+			.fields
+				.field
+					input[type=email]
+					font-icon
+				.field
+					input[type=password]
+					font-icon
+				.field
+					input[type=password]
+					font-icon	
+			button		
+	.swap-content.login
+		.photo
+			img
+			button.btn-swap
+		.swap-form
+			h1 > span
+			.fields
+				.field
+					input[type=email]
+					font-icon
+				.field
+					input[type=password]
+					font-icon
+			.status
+				label
+					input[type=checkbox]
+				a	
+			button
+			.quick-login
+				span.or
+				.sns-items
+					(a > font-icon) * 5

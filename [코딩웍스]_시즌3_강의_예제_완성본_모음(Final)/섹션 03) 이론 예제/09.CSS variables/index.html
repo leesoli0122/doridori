@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <link rel="stylesheet" href="variables.css">
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
+		body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+    }
+
+		.frame .btn {
+			border: none;
+			padding: 5px 20px;
+			border-radius: 5px;
+			color: #fff;
+			cursor: pointer;
+		}
+		.btn.primary {
+			background-color: var(--primary);
+		}
+		.btn.secondary {
+			background-color: var(--secondary);
+		}
+		.btn.positive {
+			background-color: var(--positive);
+		}
+		.btn.nagative {
+			background-color: var(--nagative);
+		}
+		
+		.heading {
+			font-size: var(--headingFontSize);
+			color: var(--headingFontColor);
+			text-align: var(--headingTextAlign);
+		}
+  </style>
+</head>
+<body>
+	
+	<!--
+		변수(variables) 설정 
+		
+		:root { --변수명: 값; }
+		ex) :root { --focusColor: crimson; }
+		
+		변수 사용 
+		selector { 속성: var(변수명) }
+		ex) .heading { color: var(--focusColor); }
+		
+		🚩대소문자 구분함 ex) focusColor ≠ focuscolor
+		🚩특수문자 사용할 경우 - 또는 _ 사용 ex) focus-color, focus_color
+	-->
+	
+	<div class="frame">
+		<button class="btn primary">primary</button>
+		<button class="btn secondary">secondary</button>
+		<button class="btn positive">positive</button>
+		<button class="btn nagative">nagative</button>
+	</div>
+	
+	<div class="heading">CodingWorks Online Class</div>
+	
+	<h1 class="heading">This is Headline</h1>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

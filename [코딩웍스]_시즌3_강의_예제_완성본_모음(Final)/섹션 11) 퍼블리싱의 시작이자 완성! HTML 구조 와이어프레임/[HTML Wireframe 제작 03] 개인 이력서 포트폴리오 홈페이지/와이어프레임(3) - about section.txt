@@ -1,0 +1,36 @@
+section.about
+	.section-inner
+		.section-content
+			.profile
+				div
+					h1.headline
+					p
+				div
+					button.download-cv
+			.personal-ability
+				ul.personal
+					li > b
+					li > b
+					li > b
+					li > b
+					li > b
+				.ability
+					.ability-item
+						em
+						div
+							span
+					.ability-item
+						em
+						div
+							span
+					.ability-item
+						em
+						div
+							span
+					.ability-item
+						em
+						div
+							span		
+							
+							
+							

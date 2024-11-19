@@ -1,0 +1,111 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* BoxIcons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	/* justify-content: center;
+	align-items: center;
+	height: 100vh; */
+	height: 200vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.frame {
+	font-size: 13px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 5px;
+	position: fixed;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.frame .btn {
+	/* border: 1px solid #000; */
+	/* display: block; */
+	width: 50px;
+	/* height: 50px; */
+	aspect-ratio: 1/1;
+	font-size: 36px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* margin: 5px 0; */
+	border-radius: 3px;
+	background-color: #eee;
+	color: #999;
+	position: relative;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+.frame .btn i {}
+.frame .btn span {
+	/* display: none; */
+	background-color: #333;
+	font-size: 14px;
+	color: #fff;
+	position: absolute;
+	padding: 4px 7px;
+	border-radius: 3px;
+	left: 120%;
+	/* width: 60px; */
+	width: max-content;
+	/* display: none; */
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.35s;
+}
+.frame .btn span:before {
+	content: '';
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	background-color: #333;
+	left: -3px;
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+/* Hover Function */
+.frame .btn:hover {
+	color: #333;
+}
+.frame .btn:hover span {
+	/* display: block; */
+	opacity: 1;
+	visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

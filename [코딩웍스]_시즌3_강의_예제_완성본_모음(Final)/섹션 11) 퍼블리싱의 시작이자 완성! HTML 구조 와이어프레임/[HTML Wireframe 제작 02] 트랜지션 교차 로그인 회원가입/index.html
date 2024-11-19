@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>트랜지션 교차 로그인 회원가입</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="swap-login-form">
+    <div class="swap-content register">
+      <div class="photo">
+        <img src="images/swap-image-01.png">
+        <button class="btn-swap">Register Now</button>
+      </div>
+      <div class="swap-form">
+        <h1>Welcome CodingWorks<span>It's good to have you.</span></h1>
+        <div class="fields">
+          <div class="field">
+            <input type="email" placeholder="Enter Email">
+            <i class='bx bx-envelope'></i>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Enter Password">
+            <i class='bx bx-lock-alt' ></i>
+          </div>
+          <div class="field">
+            <input type="password" placeholder="Confirm Password">
+            <i class='bx bx-lock-alt' ></i>
+          </div>
+        </div>
+        <button class="buttons btn-register">Register</button>
+        <p class="notice">
+          In each case, the company processes personal information for the following purposes in accordance with relevant laws and regulations. Personal information being processed will not be used for purposes other than the following.
+        </p>
+      </div>
+    </div>
+    <div class="swap-content login">
+      <div class="photo">
+        <img src="images/swap-image-02.png">
+        <button class="btn-swap">Login Now</button>
+      </div>
+      <div class="swap-form">
+        <h1>Hello Again<span>Welcome back you've been missed.</span></h1>
+          <div class="fields">
+            <div class="field">
+              <input type="email" placeholder="Enter Email">
+              <i class='bx bx-envelope'></i>
+            </div>
+            <div class="field">
+              <input type="password" placeholder="Enter Password">
+              <i class='bx bx-lock-alt' ></i>
+            </div>
+          </div>
+          <div class="status">
+            <label>
+              <input type="checkbox"> Save ID
+            </label>
+            <a href="#none">Forgot password?</a>
+          </div>
+          <button class="buttons btn-login">Register</button>
+          <div class="quick-login">
+            <span class="or">Quick Login</span>
+            <div class="sns-items">
+              <a href="#none"><i class='bx bxs-message-rounded'></i></a>
+              <a href="#none"><i class='bx bxl-google' ></i></a>
+              <a href="#none"><i class='bx bxl-github' ></i></a>
+              <a href="#none"><i class='bx bxl-facebook' ></i></a>
+              <a href="#none"><i class='bx bxl-apple' ></i></a>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.btn-swap').click(function(){
+      $('.swap-login-form').toggleClass('active')
+    });
+  </script>
+  
+</body>
+</html>

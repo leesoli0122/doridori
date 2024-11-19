@@ -1,0 +1,101 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	margin: 30px;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.recommed {}
+.section-inner {
+	width: 1100px;
+}
+.section-inner > h1 {
+	font-size: 2em;
+}
+.md-tab-inner {
+	/* border: 1px solid red; */
+}
+.md-tab-btn {
+	display: flex;
+}
+.md-tab-btn label {
+	border: 1px solid #000;
+	flex: 1;
+	text-align: center;
+	padding: 15px 10px;
+	cursor: pointer;
+}
+.md-tabs {}
+.md-tab-content {
+	/* display: none; */
+	position: absolute;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(50px);
+	transition: 0.5s;
+}
+
+/* Checked Function */
+input[name=md-tab] {
+	display: none;
+}
+input[id=md-tab1]:checked ~ .md-tabs .md-tab1,
+input[id=md-tab2]:checked ~ .md-tabs .md-tab2,
+input[id=md-tab3]:checked ~ .md-tabs .md-tab3,
+input[id=md-tab4]:checked ~ .md-tabs .md-tab4,
+input[id=md-tab5]:checked ~ .md-tabs .md-tab5,
+input[id=md-tab6]:checked ~ .md-tabs .md-tab6 {
+	display: block;
+}
+input[id=md-tab1]:checked ~ .md-tab-btn label[for=md-tab1],
+input[id=md-tab2]:checked ~ .md-tab-btn label[for=md-tab2],
+input[id=md-tab3]:checked ~ .md-tab-btn label[for=md-tab3],
+input[id=md-tab4]:checked ~ .md-tab-btn label[for=md-tab4],
+input[id=md-tab5]:checked ~ .md-tab-btn label[for=md-tab5],
+input[id=md-tab6]:checked ~ .md-tab-btn label[for=md-tab6] {
+	background-color: #000;
+	color: #fff;
+}
+input[id=md-tab1]:checked ~ .md-tabs .md-tab1,
+input[id=md-tab2]:checked ~ .md-tabs .md-tab2,
+input[id=md-tab3]:checked ~ .md-tabs .md-tab3,
+input[id=md-tab4]:checked ~ .md-tabs .md-tab4,
+input[id=md-tab5]:checked ~ .md-tabs .md-tab5,
+input[id=md-tab6]:checked ~ .md-tabs .md-tab6 {
+	opacity: 1;
+	transform: translateY(0);
+	visibility: visible;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

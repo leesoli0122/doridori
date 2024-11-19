@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - 말줄임 표시 설정</title>
+  <style>
+    /* Google Web Font */
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+    * {
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+      transition: 0.5s;
+    }
+    body {
+      font-size: 15px;
+      line-height: 1.5em;
+      color: #222;
+      background-color: #fff;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 이론예제 CSS */
+    .single-line,
+    .multi-line {
+      width: 500px;
+    }
+    .single-line p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .multi-line p {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    한글 입숨 : http://guny.kr/stuff/klorem/
+
+    아직까지는 표준이 아니라 브라우저 접두어(-webkit-)를 사용해야 합니다.
+    ex) display: -webkit-box;
+    ex) -webkit-box-orient: vertical;
+    ex) -webkit-line-clamp: 3;
+  -->
+
+  <div class="single-line">
+    <h2>Single Line</h2>
+    <p>
+      지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다. 국회에서 의결된 법률안은 정부에 이송되어 15일 이내에 대통령이 공포한다.
+    </p>
+  </div>
+  <div class="multi-line">
+    <h2>Multi Lines</h2>
+    <p>
+      언론·출판에 대한 허가나 검열과 집회·결사에 대한 허가는 인정되지 아니한다. 재의의 요구가 있을 때에는 국회는 재의에 붙이고, 재적의원과반수의 출석과 출석의원 3분의 2 이상의 찬성으로 전과 같은 의결을 하면 그 법률안은 법률로서 확정된다. 국정감사 및 조사에 관한 절차 기타 필요한 사항은 법률로 정한다.
+    </p>
+  </div>
+  
+</body>
+</html>

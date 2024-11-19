@@ -1,0 +1,30 @@
+section.skills
+	.section-inner
+		.section-content
+			.section-index
+				span
+				h1.headline
+			.skills-items-inner
+				.skills-items
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p
+				.skills-items
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p
+					.skills-item
+						img, h4, p		
+
+
+
+
+						

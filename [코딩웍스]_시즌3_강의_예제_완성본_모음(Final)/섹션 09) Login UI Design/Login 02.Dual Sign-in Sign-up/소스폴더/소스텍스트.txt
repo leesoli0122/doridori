@@ -1,0 +1,22 @@
+welcome back!
+Please log in using your current account.
+
+email
+password
+Save ID
+forgot password?
+sign in
+Or connet using
+facebook google
+Don't have an account? sign up
+==========================
+let's get started!
+Create an account to use now.
+
+name
+email
+password
+confirm password
+phone number
+create
+Already have an account? login here

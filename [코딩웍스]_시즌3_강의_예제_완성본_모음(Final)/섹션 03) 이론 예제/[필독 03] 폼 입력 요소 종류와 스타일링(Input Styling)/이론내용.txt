@@ -1,0 +1,43 @@
+✅<form> 태그 내 태그 종류
+
+input		  사용자로 부터 정보를 입력받는 부분
+textarea	다중 라인 입력
+select		드롭다운 항목 정의
+fieldset  폼 입력요소들을 그룹핑하는 태그
+legend    fieldset 내 제목 태그
+label     폼 요소에 레이블(텍스트) 태그
+============================================
+✅<input> 태그 내 type 값
+
+text      텍스트 입력 필드
+email     이메일 입력 필드(@ 형식의 유효성 체크)
+password	비밀번호 입력 필드
+search	  검색어 입력 필드
+checkbox	체크박스(복수 선택 가능)
+radio	    라디오 버튼(단일 선택만 가능)
+tel	      전화번호 입력 필드
+number	  숫자 입력 필드(위아래 화살표로 표시)
+
+button    폼 내부에서 클릭 이벤트 발생 
+submit	  폼 내용을 서버전송
+reset	    폼 내용을 리셋
+
+file	    파일 첨부
+image	    submit 버튼 대신 사용
+range	    숫자 범위 조절(슬라이드 막대)
+color	    시스템 색상표
+url	      URL 주소 입력 필드
+hidden    (사용자 보이지 않는) 폼 내용을 서버전송
+============================================
+✅<input> 태그 내 사용하는 속성들
+
+type                    input 태그의 타입을 지정(텍스트, 이메일, 비밀번호)
+value                   미리 입력값을 적어 놓은 것
+name                    폼(form)이 제출 후 서버에서 폼 데이터를 참조하기 위해 사용
+readonly	              읽기 전용 필드(사용자 수정 불가)
+placeholder             입력 필드에 미리보기 텍스트 표시
+required                필수 입력 필드(비워두면 폼 내용이 서버로 전달되지 않음) 
+autofocus               페이지 로드할 때 특정 부분에 마우스 커서가 표시
+autocomplete            입력 필드 자동 완성 설정
+min / max               <input> 필드의 최대값과 최소값 지정(숫자)
+minlength / maxlength   텍스트 필드에 최소값 / 최대값 지정(문자)

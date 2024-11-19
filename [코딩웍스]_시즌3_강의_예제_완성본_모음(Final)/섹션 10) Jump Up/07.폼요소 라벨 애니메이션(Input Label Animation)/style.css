@@ -1,0 +1,110 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #2f3542;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+
+/* Reset CSS */
+input,
+button {
+	border: none;
+	outline: none;
+}
+
+.login-form {
+	width: 300px;
+}
+.login-form > h1 {
+	color: #fff;
+	font-size: 1.7em;
+	text-align: center;
+	font-weight: 500;
+	margin-bottom: 30px;
+}
+.fields {}
+.field {
+	position: relative;
+	margin: 15px 0;
+}
+.field input {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	padding: 10px;
+	border-radius: 5px;
+	border: 2px solid #ced6e0;
+	color: #fff;
+}
+.field input:focus,
+.field input:valid {
+	border-color: #1e90ff;
+}
+.field input + .label-text {
+	position: absolute;
+	color: #fff;
+	left: 15px;
+	top: 8px;
+	pointer-events: none;
+	transition: 0.25s;
+	background-color: #2f3542;
+	padding: 0 10px;
+}
+.field input:focus + .label-text,
+.field input:valid + .label-text {
+	color: #1e90ff;
+	/* transform: translateY(-20px) scale(0.9);
+	transform-origin: left; */
+	transform: translateY(-20px);
+}
+.btn-login {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	background-color: #1e90ff;
+	color: #fff;
+	opacity: 0.9;
+}
+.btn-login:hover {
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

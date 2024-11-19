@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - has() not() 가상클래스 사용법</title>
+  <style>
+    /* Google Web Font */
+  	@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+  	* {
+  		font-family: "Montserrat", sans-serif;
+  	}
+		
+		body {
+      margin: 0;
+      font-weight: 300;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    .frame {
+      width: 400px;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+    }
+    .frame ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .frame ul li {
+      border: 2px solid #000;
+      border-radius: 5px;
+      margin: 10px 0;
+      padding: 15px;
+    }
+    .frame ul li input[type=radio]:checked {
+      accent-color: crimson;
+    }
+    .frame li:has(input[type=radio]:checked) {
+      border-color: crimson;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    :has(선택자)
+    선택자를 포함(has)하는 경우를 선택함
+
+    ex) button:has(.btn) { color: crimson; }
+   -->
+
+  <div class="frame">
+    <h2>어떻게 가입하셨나요?</h2>
+    <ul>
+      <li><input type="radio" name="path"> 구글</li>
+      <li><input type="radio" name="path"> 페이스북</li>
+      <li><input type="radio" name="path"> 지인소개</li>
+    </ul>
+  </div>
+  
+</body>
+</html>

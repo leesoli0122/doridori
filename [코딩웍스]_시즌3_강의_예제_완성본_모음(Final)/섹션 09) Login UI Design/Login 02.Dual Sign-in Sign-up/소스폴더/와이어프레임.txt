@@ -1,0 +1,46 @@
+.mobile-signup-outer
+	.mobile-signup
+	
+		.signup-content
+			.signup-header
+				img, h1, p
+			.fields
+				.field
+					input[type=email]
+					font-icon
+				.field
+					input[type=password]
+					font-icon	
+			.status
+				label > input[type=checkbox]
+				a
+			button.btn-signup
+			.sns-signup
+				span
+				div
+					(a > font-icon) * 2
+			.swap-account > a
+		
+		.signup-content
+			.signup-header
+				img, h1, p
+			.fields
+				.field
+					input[type=text]
+					font-icon	
+				.field
+					input[type=email]
+					font-icon	
+				.field
+					input[type=password]
+					font-icon	
+				.field
+					input[type=password]
+					font-icon	
+				.field
+					input[type=tel]
+					font-icon	
+			button.btn-create
+			.swap-account > a
+				
+				

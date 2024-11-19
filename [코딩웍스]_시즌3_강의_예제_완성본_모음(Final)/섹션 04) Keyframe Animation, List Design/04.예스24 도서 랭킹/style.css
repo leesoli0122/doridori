@@ -1,0 +1,94 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 20px;
+	line-height: 1.5em;
+	background-color: #fff;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: #222;
+}
+
+/* 실전예제 CSS */
+.book-club {
+	border: 1px solid #ddd;
+	width: 250px;
+	padding: 15px;
+	background-color: #fff;
+	font-size: 13px;
+}
+.book-club-header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.book-club-header a:hover {
+	text-decoration: underline;
+}
+.book-club-items {
+	counter-reset: rank;
+}
+.book-club-item {
+	display: flex;
+	gap: 10px;
+	margin-bottom: 10px;
+}
+.book-club-thum {
+	/*width: 80px;*/
+	flex-basis: 80px;
+	position: relative;
+}
+.book-club-thum:before {
+	content: counter(rank);
+	counter-increment: rank;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: red;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	top: -2px;
+	left: -2px;
+	transition: 0.5s
+}
+.book-club-item:hover .book-club-thum:before {
+	background-color: #000;
+}
+.book-club-thum img {
+	width: 100%;
+	border: 1px solid #eee;
+}
+.book-club-summary {
+	display: flex;
+	flex-direction: column;
+}
+.book-club-summary .title {
+	margin-bottom: auto;
+}
+.book-club-summary .writer {}
+.book-club-summary .price {
+	color: orangered;
+	font-weight: semibold;
+}
+
+
+
+
+
+
+
+
+
+
+

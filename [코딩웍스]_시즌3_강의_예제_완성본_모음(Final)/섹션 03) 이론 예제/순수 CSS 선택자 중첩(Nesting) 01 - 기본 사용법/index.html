@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - 순수 CSS 선택자 중첩(Nesting) without SCSS(SASS)</title>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <!-- 
+    ✅CSS 선택자 중첩(Selector Nesting)이란?
+
+    SCSS나 SASS와 같은 CSS 전처리기를 사용할 수 밖에 없었는데 Nesting을 CSS 자체적으로 지원하게 되었습니다. 그래서 읽기 편하고 유지 보수 편해졌습니다.
+
+    1년전에는 파이어폭스에서 지원하지 않았지만 지금은 일부 모바일 브라우저를 제외하고 메이저 브라우저는 모두 지원합니다.
+
+    https://caniuse.com/css-nesting
+  -->
+
+  <div class="frame">
+    <div class="frame-inner">
+      <h1>Welcome to CodingWorks Class</h1>
+      <h2>항상 응원합니다~!!</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus iste error minus veritatis praesentium quia temporibus corrupti explicabo assumenda, ex quae eveniet fuga ipsam eum nostrum ea iure sequi maiores.
+        <a href="#none">Learn More</a>
+      </p>
+      <a href="#none">
+        click here
+        <span class="notice">notic text here</span>
+      </a>
+    </div>
+  </div>
+  
+</body>
+</html>

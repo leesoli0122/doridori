@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>순수 CSS 선택자 중첩(Nesting)- 활용예제(로그인 폼)</title>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <!-- 
+    ✅선택자의 종류
+    태그선택, 클래스선택, 아이디선택, 다중선택, 속성선택, 가상클래스 선택
+    인접선택, 형제선택, 자손선택, 자식선택
+
+    & : 엠퍼샌드(ampersand)
+  -->
+
+  <div class="login">
+    <h1>member login</h1>
+    <p class="login-info">
+      This login is limited to those who have <b>registered as members</b>.
+    </p>
+    <div class="fields">
+      <div class="field">
+        <input type="email" placeholder="email here">
+        <img src="images/icon-email.svg">
+      </div>
+      <div class="field">
+        <input type="email" placeholder="email here">
+        <img src="images/icon-password.svg">
+      </div>
+    </div>
+    <div class="status">
+      <label>
+        <input type="checkbox"><em></em><span>Save ID</span>
+      </label>
+      <a href="#none">Forgot password</a>
+    </div>
+    <button id="bt-login">login</button>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 - CSS Perspective Card Flip</title>
+  <style>
+    /* Google Web Font */
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .frame {
+      border: 5px solid #000;
+      perspective: 500px;
+    }
+    .frame div {
+      width: 400px;
+      height: 400px;
+      background-color: yellowgreen;
+      transform: rotateX(45deg);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    ✅Perspective : 원근법(관점,전망,시각)
+
+    - 멀리 떨어진 부분은 작게 보이고, 가까운 부분은 크게 보이는 원근감
+    - 값이 작으면 작을 수록 원근감이 커짐
+    - perspective 속성은 바로 아래의 자식 요소에게만 적용
+
+    https://www.w3schools.com/cssref/playdemo.php?filename=playcss_perspective
+   -->
+
+  <div class="frame">
+    <div></div>
+  </div>
+  
+</body>
+</html>

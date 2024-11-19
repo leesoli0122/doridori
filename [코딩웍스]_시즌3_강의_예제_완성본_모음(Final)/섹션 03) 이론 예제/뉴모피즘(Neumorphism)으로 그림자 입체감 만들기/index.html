@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론예제 - 모피즘(Neumorphism)으로 그림자 입체감 만들기</title>
+  <style>
+    /* Google Web Font */
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+    * {
+      font-family: "Montserrat", sans-serif;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 15px;
+      line-height: 1.5em;
+      color: #222;
+      background-color: #e0e0e0;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* 이론예제 CSS */
+    .frame {
+      /* border: 1px solid #000; */
+      width: 300px;
+      height: 300px;
+      margin: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+      border-radius: 20px;
+      transition: 0.5s;
+    }
+    .frame1:hover {
+      box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.2),
+                 -15px -15px 15px white;
+    }
+    .frame2:hover {
+      box-shadow: inset 15px 15px 15px rgba(0, 0, 0, 0.2),
+                 inset -15px -15px 15px white;
+    }
+    .frame3:hover {
+      border-radius: 50px;
+      background: linear-gradient(45deg, #cacaca, #f0f0f0);
+      box-shadow:  20px -20px 60px #bebebe,
+                  -20px 20px 60px #ffffff;
+    }
+  </style>
+</head>
+<body>
+	
+  <!-- 
+    ✅뉴모피즘(Neumorphism)
+
+    - 그림자 음영을 이용한 입체감 디자인
+
+    뉴모피즘이란 New(새로운) + Skeuomorphism(스큐어모피즘)의 합성어입니다. 애플에서 처음 출시한 아이폰에서 활용되었던 사실주의에 기반한 디자인 트렌드입니다.
+   -->
+  
+   <div class="frame frame1">Neumorphism</div> 
+   <div class="frame frame2">Neumorphism</div> 
+   <div class="frame frame3">Neumorphism</div> 
+  
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 로그인 폼 CSS 유효성 검사(Form Validation) without JavaScript</title>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <div class="login">
+    <header>
+      <img src="images/logo.png">
+      <h2>Only CSS Validation Check</h2>
+      <p>
+        Is this your first time? <a href="#none">Membership here</a>
+      </p>
+    </header>
+    <form action="login.html">
+      <div class="fields">
+        <input type="email" placeholder="Enter your email" required>
+        <input type="password" placeholder="Enter your password" required minlength="6" maxlength="12">
+        <p>The password must be 6 digits long.</p>
+        <button type="submit">login</button>
+      </div>
+    </form>
+  </div>
+  
+</body>
+</html>

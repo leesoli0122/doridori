@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>다크모드(Dark Mode) 웹페이지</title>
+	<!-- jQuery CDN -->
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<!-- Custom CSS & JS -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+	<div class="container">
+		<header>
+			<nav>
+				<div class="logo">
+					<a href="#none"><img src="images/logo.png" alt="logo"></a>
+				</div>
+				<div class="gnb">
+					<a href="#none">education</a>
+					<a href="#none">markets</a>
+					<a href="#none">simulator</a>
+					<a href="#none">advisors</a>
+					<a href="#none">academy</a>
+				</div>
+				<div class="lnb">
+					<span>Startup with a brilliant business</span>
+					<a href="#none" class="btn-more">join now</a>
+					<div class="mode"></div>
+				</div>
+			</nav>
+		</header>
+		<section class="about">
+			<div class="section-inner">
+				<div class="about-items">
+					<div class="info">
+						<h1 class="headline">How It Works</h1>
+						<h4>Compete Risk Free with $100,000 in Virtual Cash</h4>
+						<p>
+							A startup with a brilliant business idea is aiming to get its operations up and running. From humble beginnings, the company proves the worthiness of its model and products, steadily growing thanks to the generosity of friends, family and the founders' own financial resources. <br><br>
+
+							Over time, its customer base begins to grow, and the business begins to expand its operations and its aims. Before long, the company has risen through the ranks of its competitors to become highly valued.
+						</p>
+						<a href="#none" class="btn-more">our services</a>
+					</div>
+					<div class="skill">
+						<div class="skill-items">
+							<div class="skill-item">
+								<img src="images/skill-01.png" alt="skill item">
+								<h1 class="headline">Pre-Seed Funding</h1>
+								<p>
+									In most cases, the investors in a pre-seed funding situation are the company founders themselves.
+								</p>
+							</div>
+							<div class="skill-item">
+								<img src="images/skill-02.png" alt="skill item">
+								<h1 class="headline">Seed Funding</h1>
+								<p>
+									It's common for firms going through Series A funding rounds to be valued at up to $24 million.
+								</p>
+							</div>
+						</div>
+						<div class="skill-items">
+							<div class="skill-item">
+								<img src="images/skill-03.png" alt="skill item">
+								<h1 class="headline">Series A Funding</h1>
+								<p>
+									Between the rounds, investors make slightly different demands on the startup.
+								</p>
+							</div>
+							<div class="skill-item">
+								<img src="images/skill-04.png" alt="skill item">
+								<h1 class="headline">Series B Funding</h1>
+								<p>
+									Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error, optio?
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<script>
+		$('.mode').click(function(){
+			$('.container').toggleClass('dark');
+		});
+	</script>
+	
+</body>
+</html>

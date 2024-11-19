@@ -1,0 +1,8 @@
+로그인 폼에 쓰이는 가상클래스 & 유효성 검사 가상클래스
+
+::placeholder       입력요소에 미리 보이는 텍스트
+:focus              입력요소를 클릭했을 때 상태
+:valid              입력요소가 유효한 상태
+:invalid            입력요소가 유효하지 않은 상태
+:not                특정 선택자를 제외
+:placeholder-shown  입력요소의 placeholder가 보여지고 있는 상태

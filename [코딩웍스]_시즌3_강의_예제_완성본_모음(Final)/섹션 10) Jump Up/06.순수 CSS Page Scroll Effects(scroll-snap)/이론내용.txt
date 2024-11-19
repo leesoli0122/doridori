@@ -1,0 +1,19 @@
+✅Scroll snap 속성
+
+scroll-snap-type : 축결정 스냅의 업격도(부모요소에 사용)
+ex) scroll-snap-type: y mandatory;
+ex) scroll-snap-type: x proximity;
+
+scroll-snap-align : 스냅 영역 안의 정렬방식(자식요소에 사용)
+ex) scroll-snap-align: start;
+ex) scroll-snap-align: center;
+ex) scroll-snap-align: end;
+
+scroll-padding : 스냅 영역의 패딩 적용
+scroll-margin : 스냅 영역의 마진 적용
+---------------------------------------------------------
+Easy to use, stylish placeholders
+https://picsum.photos/
+
+A simple, fast and free image placeholder service
+https://placehold.co/

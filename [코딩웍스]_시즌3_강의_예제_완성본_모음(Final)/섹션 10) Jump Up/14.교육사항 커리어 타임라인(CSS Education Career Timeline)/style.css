@@ -1,0 +1,129 @@
+/* Google Web Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+:root {
+	--timelineColor: #686de0;
+}
+
+/* CSS Education Career Timeline */
+section {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+.timeline {
+	display: flex;
+	gap: 30px;
+}
+.edu-timeline,
+.career-timeline {
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 15px;
+	width: 400px;
+}
+.edu-timeline h3,
+.career-timeline h3 {
+	font-size: 1.5rem;
+	margin-top: 0;
+	font-weight: 800;
+}
+.timeline-items {
+	border-left: 4px solid var(--timelineColor);
+	padding-left: 30px;
+}
+.career-timeline .timeline-items {
+	border-color: yellowgreen;
+}
+.timeline-item {
+	margin-bottom: 20px;
+	position: relative;
+}
+.timeline-item:last-child {
+	margin-bottom: 0;
+}
+.timeline-item:before {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: var(--timelineColor);
+	border: 5px solid #ddd;
+	top: 0;
+	left: -42px;
+	z-index: 1;
+}
+.career-timeline .timeline-item:before {
+	background-color: yellowgreen;
+}
+.timeline-item:last-child:after {
+	content: '';
+	position: absolute;
+	width: 10px;
+	height: 100%;
+	background-color: #fff;
+	top: 5px;
+	left: -38px;
+}
+.timeline-item .title span {
+	display: block;
+}
+.timeline-item .detail {
+	border: 1px solid #ddd;
+	padding: 5px 15px;
+	border-radius: 15px;
+	position: relative;
+	margin-top: 10px;
+}
+.timeline-item .detail:before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 10px 0 0 10px;
+	border-color: transparent transparent transparent #ddd;
+	top: -10px;
+}
+.timeline-item .detail p {
+	font-size: 13px;
+	margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

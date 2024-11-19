@@ -1,0 +1,121 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* Box Icons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+:root {
+	--naviSize: 70px;
+}
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	background-color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.navi {
+	position: relative;
+}
+.navi * {
+	transition: 0.35s;
+}
+.navi ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+}
+.navi ul li {
+	/* border: 1px solid #fff; */
+	color: #fff;
+	width: var(--naviSize);
+	height: var(--naviSize);
+	font-size: 36px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.navi ul li i {
+	transform: translateY(8px);
+}
+.navi ul li.active i {
+	font-size: 32px;
+	transform: translateY(0);
+}
+.navi ul li span {
+	/* display: none; */
+	font-size: 12px;
+	display: block;
+	transform: translateY(8px);
+	opacity: 0;
+	text-transform: uppercase;
+}
+.navi ul li.active span {
+	transform: translateY(-2px);
+	opacity: 1;
+}
+.indicator {
+	background-color: #fc5c65;
+	width: var(--naviSize);
+	height: var(--naviSize);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	border-radius: 10px;
+	box-shadow: 0 0 15px #fc5c65;
+}
+
+/* Indicatior Function */
+.navi ul li:nth-child(1).active ~ .indicator {
+	left: calc(var(--naviSize) * 0); /* left: 0; */
+}
+.navi ul li:nth-child(2).active ~ .indicator {
+	left: calc(var(--naviSize) * 1); /* left: 70px; */
+}
+.navi ul li:nth-child(3).active ~ .indicator {
+	left: calc(var(--naviSize) * 2); /* left: 140px; */
+}
+.navi ul li:nth-child(4).active ~ .indicator {
+	left: calc(var(--naviSize) * 3); /* left: 210px; */
+}
+.navi ul li:nth-child(5).active ~ .indicator {
+	left: calc(var(--naviSize) * 4); /* left: 280px; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

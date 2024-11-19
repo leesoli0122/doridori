@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 팬시(fancy)한 목록 디자인</title>
+  <style>
+		/* Google Web Font */
+		@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+		* {
+			font-family: "Montserrat", sans-serif;
+			box-sizing: border-box;
+		}
+		body {
+			margin: 20px;
+			line-height: 1.5em;
+			background-color: #fff;
+			color: #222;
+			background-color: #222;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+		a {
+			text-decoration: none;
+			color: #222;
+		}
+
+		/* 실전예제 CSS */
+		.list {
+			list-style: none;
+			padding: 0;
+			counter-reset: num;
+			/*list-style: decimal-leading-zero*/
+		}
+		.list li {
+			color: #999;
+		}
+		.list li:before {
+			counter-increment: num;
+			content: counter(num, decimal-leading-zero) ".";
+			display: inline-block;
+			margin-right: 10px;
+		}
+		.list li:hover {
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	
+  <ul class="list">
+    <li>Fans attending the AB Sundecks 1895 and Betfred Challenge Cup Finals on Saturday.</li>
+    <li>Tottenham Hotspur Stadium</li>
+    <li>Elizabeth line</li>
+    <li>Queue management systems will be in place at all stations.</li>
+    <li>Tottenham Hale</li>
+  </ul>
+  
+</body>
+</html>

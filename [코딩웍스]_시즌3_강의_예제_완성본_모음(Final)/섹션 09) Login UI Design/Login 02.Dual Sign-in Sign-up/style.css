@@ -1,0 +1,234 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* Box Icons */
+@import url("https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css");
+
+:root {
+	--primary: #2ecc71;
+	--secondary: #D0D0D0;
+	--focus: #1e90ff;
+	--loginSize: 375px;
+}
+
+/* Common CSS */
+.field {
+	position: relative;
+}
+.inputUi {
+	border: 1px solid var(--secondary);
+	width: 100%;
+	padding: 15px;
+	border-radius: 50px;
+	padding-left: 50px;
+	outline: none;
+	display: block;
+	margin: 10px 0;
+}
+.inputUi + i {
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	transform: translateY(-50%);
+	font-size: 20px;
+	color: var(--secondary);
+}
+.inputUi::placeholder {
+	color: var(--secondary);
+}
+.inputUi:focus {
+	border: 1px solid var(--primary);
+}
+.inputUi:focus + i {
+	color: var(--primary);
+}
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	background-color: #85FFBD;
+	background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Mobile SignUp */
+.mobile-signup-outer {
+	width: var(--loginSize);
+	background-color: #fff;
+	border-radius: 40px;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+	/* padding: 25px; */
+	overflow: hidden;
+}
+.mobile-signup {
+	display: flex;
+	width: calc(var(--loginSize) * 2);
+	justify-content: space-between;
+	transition: 0.5s;
+}
+.mobile-signup > div {
+	flex: 1;
+	padding: 25px;
+}
+.mobile-signup.active {
+	/* transform: translateX(-448px); */
+	transform: translateX(calc(var(--loginSize) * -1));
+}
+.signup-content {}
+.signup-header {
+	text-align: center;
+}
+.signup-header img {}
+.signup-header h1 {
+	text-transform: capitalize;
+	margin: 0;
+}
+.signup-header p {
+	color: var(--secondary);
+}
+.signup-content .fields {}
+/* .signup-content .fields .field {}
+.signup-content .fields .field input[type=email] {}
+.signup-content .fields .field input[type=password] {}
+.signup-content .fields .field i {} */
+
+.status {
+	display: flex;
+	justify-content: space-between;
+	margin: 10px 0;
+}
+.status label {
+	cursor: pointer;
+}
+.status label input[type=checkbox] {
+	display: none;
+}
+.status label input[type=checkbox] + em {
+	/* border: 1px solid #000; */
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin-right: 3px;
+	background: url('images/icon-radio.png') no-repeat;
+	background-position: left;
+	/* vertical-align: middle; */
+	transform: translateY(3px);
+}
+.status label input[type=checkbox]:checked + em {
+	background-position: right;
+}
+.status a {
+	text-transform: capitalize;
+}
+.status a:hover {
+	text-decoration: underline;
+}
+.btn-signup,
+.btn-create {
+	background-color: var(--primary);
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 15px;
+	text-transform: uppercase;
+	padding: 13px 70px;
+	border-radius: 30px;
+	margin: 20px auto;
+	display: block;
+	cursor: pointer;
+}
+.btn-create {
+	background-color: var(--focus);
+}
+
+/* SNS Sign Up */
+.sns-signup {
+	text-align: center;
+}
+.sns-signup span {
+	display: block;
+	color: var(--secondary);
+	position: relative;
+	margin-bottom: 10px;
+}
+.sns-signup span:before,
+.sns-signup span:after {
+	content: '';
+	position: absolute;
+	background-color: var(--secondary);
+	height: 1px;
+	width: 30%;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.sns-signup span:before {
+	left: 0;
+}
+.sns-signup span:after {
+	right: 0;
+}
+.sns-signup div {}
+.sns-signup div a {
+	color: #fff;
+	padding: 7px;
+	border-radius: 7px;
+	width: 120px;
+	font-size: 0.8em;
+	display: inline-block;
+	text-transform: capitalize;
+}
+.sns-signup div a:nth-child(1) {
+	background-color: #1877F2;
+}
+.sns-signup div a:nth-child(2) {
+	background-color: #CD201F;
+}
+.sns-signup div a i {
+	font-size: 18px;
+	transform: translateY(4px);
+}
+
+.swap-account {
+	text-align: center;
+	margin-top: 20px;
+}
+.swap-account a {
+	margin-left: 5px;
+	text-transform: capitalize;
+	color: var(--focus);
+}
+.swap-account a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

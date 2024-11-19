@@ -1,0 +1,100 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	line-height: 1.5em;
+	background-color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+/* 실전예제 CSS */
+.scanner {
+	width: 100px;
+}
+.scanner .fingerprint {
+	/*border: 2px solid #fff;*/
+	height: 130px;
+	background: url(images/fingerprint-down.svg) no-repeat center top;
+	position: relative;
+	background-size: 120px;
+}
+.scanner .fingerprint:before {
+	content: '';
+	position: absolute;
+	/*background: url(images/fingerprint-up.svg) no-repeat center top;*/
+	background: url(images/fingerprint-down.svg) no-repeat center top;
+	filter: invert(55%) sepia(98%) saturate(776%) hue-rotate(166deg) brightness(95%) contrast(85%);
+	background-size: 120px;
+	/*
+	width: 100%;
+	height: 100%;
+	*/
+	height: 0;
+	width: 100%;
+	animation: fingerprint 3s infinite;
+}
+.scanner .fingerprint:after {
+	content: '';
+	position: absolute;
+	background-color: #34ace0;
+	width: 120%;
+	height: 5px;
+	border-radius: 10px;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 0;
+	animation: scan-bar 3s infinite;
+}
+.scanner .scanning {
+	color: #34ace0;
+	text-transform: uppercase;
+	font-size: 14px;
+	animation: scanning 1s linear infinite;
+	/*border: 2px solid #fff;*/
+	display: block;
+	text-align: center;
+}
+
+@keyframes scanning {
+	0%, 100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes fingerprint {
+	0%, 100% {
+		height: 0;
+	}
+	50% {
+		height: 100%;
+	}
+}
+
+@keyframes scan-bar {
+	0%, 100% {
+		top: 0;
+	}
+	50% {
+		top: 93%;
+	}
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,92 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.flip-card {
+	/* border: 5px solid #000; */
+	width: 400px;
+	aspect-ratio: 9/14;
+	perspective: 1300px;
+}
+.flip-card:hover .flip-card-inner {
+	transform: rotateY(180deg);
+}
+.flip-card-inner {
+	width: inherit;
+	height: 100%;
+	position: relative;
+	transition: 0.5s;
+	transform-style: preserve-3d;
+}
+.flip-card-inner > div {
+	width: inherit;
+	height: 100%;
+	position: absolute;
+}
+.flip-card-inner .front {}
+.flip-card-inner .front img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.flip-card-inner .back {
+	background-color: #eee;
+	text-align: center;
+	transform: rotateY(180deg);
+	backface-visibility: hidden;
+}
+.flip-card-inner .back .thum {}
+.flip-card-inner .back .thum img {
+	width: 100%;
+}
+.flip-card-inner .back .desc {
+	padding: 20px;
+}
+.flip-card-inner .back .desc a {
+	text-transform: uppercase;
+	background-color: #000;
+	color: #fff;
+	padding: 5px 15px;
+	border-radius: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

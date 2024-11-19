@@ -1,0 +1,41 @@
+.login-frame
+	.naver-login
+		img.main-logo
+		.tab-inner
+			.tab-btn
+				(label > font-icon) * 3
+			.tabs
+				.tab.id-login
+					.fields
+						.field
+							input[type=text]
+							font-icon
+						.field
+							input[type=password]
+							font-icon
+					.status
+						label > input[type=checkbox]
+						span.ip
+					button.btn-login
+				.tab.disposable-login
+					p > em
+					input[type=password]
+					button.btn-login
+				.tab.qr-login
+					.qr-inner
+						.qr-image
+							img
+							span.time
+						.qr-info
+							p * 2
+		.find-register
+			a * 3
+		.banner
+			a > img
+		.login-footer
+			.footer-link
+				a * 4
+			p.copyright
+				a > img, span > b
+				
+				

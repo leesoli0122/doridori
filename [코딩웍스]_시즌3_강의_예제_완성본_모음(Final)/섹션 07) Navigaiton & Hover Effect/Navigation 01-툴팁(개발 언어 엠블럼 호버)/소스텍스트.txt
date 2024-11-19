@@ -1,0 +1,11 @@
+HTML5 is a markup language used for structuring and presenting content.
+
+CSS (Cascading Style Sheets) allows you to create great-looking web pages.
+
+JavaScript is a scripting or programming language that allows.
+
+AngularJS is a JavaScript framework. It can be added to an HTMLpage.
+
+React (also known as React.js or ReactJS) is a free and open-source.
+
+Vue.js is model–view–viewmodel front end JavaScript framework.

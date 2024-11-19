@@ -1,0 +1,108 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+/* Box Icons */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #222;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.frame {
+	display: flex;
+}
+.icon {
+	position: relative;
+}
+.icon i {
+	font-size: 80px;
+	cursor: pointer;
+}
+.icon:nth-child(1) i {
+	color: #DD4B25;
+}
+.icon:nth-child(2) i {
+	color: #28A4D8;
+}
+.icon:nth-child(3) i {
+	color: #28A4D8;
+}
+.icon:nth-child(4) i {
+	color: #D6002F;
+}
+.icon:nth-child(5) i {
+	color: #5ED3F3;
+}
+.icon:nth-child(6) i {
+	color: #3FB27F;
+}
+.tooltip {
+	/* display: none; */
+	position: absolute;
+	background-color: #000;
+	color: #fff;
+	font-size: 14px;
+	border-radius: 3px;
+	padding: 5px;
+	text-align: center;
+	width: 300px;
+	top: -60px;
+	left: 50%;
+	transform: translateX(-50%) translateY(-10px);
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.35s;
+}
+.icon:hover .tooltip {
+	/* display: block; */
+	opacity: 1;
+	visibility: visible;
+	transform: translateX(-50%) translateY(0);
+}
+.tooltip:after {
+	content: '';
+	background-color: #000;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

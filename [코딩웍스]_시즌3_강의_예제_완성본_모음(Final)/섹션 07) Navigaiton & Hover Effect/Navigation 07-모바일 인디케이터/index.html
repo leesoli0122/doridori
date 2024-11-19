@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 모바일 네비게이션 애니메이션 인디케이터(Click, Hover)</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Custom CSS & JS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <div class="navi">
+    <ul>
+      <li class="active">
+        <i class='bx bx-home'></i>
+        <span>home</span>
+      </li>
+      <li>
+        <i class='bx bx-user'></i>
+        <span>profile</span>
+      </li>
+      <li>
+        <i class='bx bx-message-rounded'></i>
+        <span>message</span>
+      </li>
+      <li>
+        <i class='bx bx-help-circle'></i>
+        <span>help</span>
+      </li>
+      <li>
+        <i class='bx bx-cog'></i>
+        <span>settings</span>
+      </li>
+      <div class="indicator"></div>
+    </ul>
+  </div>
+
+  <script>
+    $('.navi ul li').click(function(){
+      $(this).addClass('active');
+      $(this).siblings().removeClass('active');
+    });
+  </script>
+  
+</body>
+</html>

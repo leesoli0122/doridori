@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - Dual Sign-in Sign-up</title>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+  <div class="mobile-signup-outer">
+    <div class="mobile-signup">
+      <div class="signup-content signin">
+        <div class="signup-header">
+          <img src="images/signin.png" alt="header">
+          <h1>welcome back!</h1>
+          <p>
+            Please log in using your current account.
+          </p>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <input class="inputUi" type="email" placeholder="email">
+            <i class='bx bx-envelope'></i>
+          </div>
+          <div class="field">
+            <input class="inputUi" type="password" placeholder="password">
+            <i class='bx bx-lock-alt'></i>
+          </div>
+        </div>
+        <div class="status">
+          <label>
+            <input type="checkbox"><em></em>Save ID
+          </label>
+          <a href="#none">forgot password?</a>
+        </div>
+        <button class="btn-signup">sign in</button>
+        <div class="sns-signup">
+          <span>Or connet using</span>
+          <div>
+            <a href="#none"><i class='bx bxl-facebook' ></i> facebook</a>
+            <a href="#none"><i class='bx bxl-google' ></i> google</a>
+          </div>
+        </div>
+        <div class="swap-account">
+          Don't have an account?<a href="#none">sign up</a>
+        </div>
+      </div>
+      <div class="signup-content signup">
+        <div class="signup-header">
+          <img src="images/signup.png" alt="signup">
+          <h1>let's get started!</h1>
+          <p>Create an account to use now.</p>
+        </div>
+        <div class="fields">
+          <div class="field">
+            <input class="inputUi" type="text" placeholder="name">
+            <i class='bx bx-user'></i>
+          </div>
+          <div class="field">
+            <input class="inputUi" type="email" placeholder="email">
+            <i class='bx bx-envelope'></i>
+          </div>
+          <div class="field">
+            <input class="inputUi" type="password" placeholder="password">
+            <i class='bx bx-lock-alt'></i>
+          </div>
+          <div class="field">
+            <input class="inputUi" type="password" placeholder="confirm password">
+            <i class='bx bx-lock-alt'></i>
+          </div>
+          <div class="field">
+            <input class="inputUi" type="tel" placeholder="phone number">
+            <i class='bx bx-mobile-alt'></i>
+          </div>
+        </div>
+        <button class="btn-create">create</button>
+        <div class="swap-account">
+          Already have an account? <a href="#none">login here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('.signin .swap-account a').click(function(){
+      $('.mobile-signup').addClass('active');
+    });
+    $('.signup .swap-account a').click(function(){
+      $('.mobile-signup').removeClass('active');
+    });
+  </script>
+  
+</body>
+</html>

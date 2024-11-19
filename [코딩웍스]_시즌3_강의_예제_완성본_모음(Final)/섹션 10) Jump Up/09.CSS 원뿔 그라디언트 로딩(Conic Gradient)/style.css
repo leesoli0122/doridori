@@ -1,0 +1,93 @@
+/* Google Web Font */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+
+* {
+	font-family: "Montserrat", sans-serif;
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #fff;
+	background-color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 실전예제 CSS */
+.loading {
+	width: 250px;
+}
+.loading h4 {
+	text-align: center;
+	margin-bottom: 30px;
+}
+.conic {
+	width: 150px;
+	height: 150px;
+	margin: auto;
+	border-radius: 50%;
+	position: relative;
+}
+.conic:before,
+.conic:after {
+	content: '';
+	position: absolute;
+	background-color: red;
+	/* width: inherit;
+	height: inherit; */
+	border-radius: inherit;
+	background-image: conic-gradient(#2ecc71, #9b59b6, #e74c3c, #3498db, #2ecc71);
+	inset: -10px;
+	z-index: -1;
+	animation: spin 3s linear infinite;
+}
+.conic:after {
+	filter: blur(20px);
+	opacity: 0.8;
+}
+.conic div {
+	background-color: #222;
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	border-radius: inherit;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@keyframes spin {
+	0% {
+		rotate: 0deg;
+	}
+	100% {
+		rotate: 360deg;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

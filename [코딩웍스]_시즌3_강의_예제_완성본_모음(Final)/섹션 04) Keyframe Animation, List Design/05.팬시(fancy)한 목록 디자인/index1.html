@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실전예제 - 팬시(fancy)한 목록 디자인 with jQuery</title>
+  <style>
+		/* Google Web Font */
+		@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap");
+		* {
+			font-family: "Montserrat", sans-serif;
+			box-sizing: border-box;
+		}
+		body {
+			margin: 20px;
+			line-height: 1.5em;
+			background-color: #fff;
+			color: #222;
+		}
+		a {
+			text-decoration: none;
+			color: #222;
+		}
+
+		/* 실전예제 CSS */
+		.list1 {
+			list-style: none;
+			padding: 0;
+		}
+		.list1 li:before {
+			content: attr(data-icon);
+		}
+		
+		.list2 {
+			list-style: none;
+			padding: 0;
+			counter-reset: num;
+		}
+		.list2 li:before {
+			counter-increment: num;
+			content: counter(num);
+			background-color: crimson;
+			color: #fff;
+			width: 20px;
+			height: 20px;
+			/*position: absolute;*/
+			display: inline-block;
+			margin-right: 10px;
+			text-align: center;
+			font-size: 13px;
+			line-height: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+  <ul class="list1">
+    <li data-icon="😀">Those are May's contenders - now it’s up to you!</li>
+    <li data-icon="❤️">In a month in which 20 goals were scored across</li>
+    <li data-icon="🌈">Pick your favourite now!</li>
+  </ul>
+
+  <hr style="margin: 30px;">
+
+  <ul class="list2">
+    <li>Those are May's contenders</li>
+    <li>Now it’s up to you!</li>
+    <li>Vote for your May Goal of the Month!</li>
+    <li>Pick your favourite now!</li>
+  </ul>
+  
+</body>
+</html>

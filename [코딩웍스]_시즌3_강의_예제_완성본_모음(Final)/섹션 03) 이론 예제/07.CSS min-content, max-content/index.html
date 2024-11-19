@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
+		body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+    }
+		
+		/* min-content, max-content */
+		.frame {
+			border: 5px solid;
+			width: 200px;
+			padding: 10px;
+		}
+		.frame div {
+			background-color: #ddd;
+			margin: 10px 0;
+			/*width: max-content;*/
+			width: min-content;
+		}
+		
+		.gnb1,
+		.gnb2 {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.gnb1 li {}
+		.gnb1 li a {
+			font-size: 3em;
+			text-decoration: none;
+			color: #000;
+			text-transform: uppercase;
+			position: relative;
+		}
+		.gnb1 li a:before {
+			content: '';
+			background-color: deepskyblue;
+			position: absolute;
+			height: 10px;
+			width: 0;
+			bottom: 10px;
+			z-index: -1;
+			transition: 0.5s;
+		}
+		.gnb1 li:hover a:before {
+			width: 100%;
+		}
+		
+		.gnb2 a {
+			font-size: 3em;
+			text-decoration: none;
+			color: #000;
+			text-transform: uppercase;
+			position: relative;
+			display: block;
+			/*border: 2px solid;*/
+			/*width: min-content;*/
+			width: max-content;
+		}
+		.gnb2 a:before {
+			content: '';
+			background-color: deepskyblue;
+			position: absolute;
+			height: 10px;
+			width: 0;
+			bottom: 10px;
+			z-index: -1;
+			transition: 0.5s;
+		}
+		.gnb2 a:hover:before {
+			width: 100%;
+		}
+  </style>
+</head>
+<body>
+	
+	<!-- 
+    min-content는 최소한의 컨텐츠 크기를, max-content는 최대한의 컨텐츠 크기를 가지게 해주는 값
+    
+    🚩width: min-content
+		엘리먼트의 너비를 줄일 수 있는 만큼 최소로 줄이고 싶을 때 사용
+    
+    🚩width: max-content
+		엘리먼트의 너비를 늘일 수 있는 만큼 최대한 늘이고 싶을 때 사용
+  -->
+  
+  <div class="frame">
+    <div>Lorem</div>
+    <div>
+    	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, mollitia. Autem deleniti, fugit doloribus quisquam, nihil eaque labore accusamus placeat deserunt quae, distinctio voluptate? Id, earum iusto cumque animi ducimus.
+    </div>
+  </div>
+  
+  <hr style="margin: 30px 0">
+
+  <ul class="gnb1">
+  	<li><a href="#none">about</a></li>
+  	<li><a href="#none">service</a></li>
+  	<li><a href="#none">portfolio</a></li>
+  	<li><a href="#none">contact us</a></li>
+  </ul>
+  
+  <hr style="margin: 30px 0">
+  
+  <div class="gnb2">
+  	<a href="#none">about</a>
+  	<a href="#none">service</a>
+  	<a href="#none">portfolio</a>
+  	<a href="#none">contact us</a>
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

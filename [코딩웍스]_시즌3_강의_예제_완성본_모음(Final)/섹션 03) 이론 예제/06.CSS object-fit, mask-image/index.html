@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>이론 활용</title>
+  <style>
+    /* Web Fonts : Noto Sans */
+		@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+		
+		body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-weight: 300;
+    }
+		.frame1,
+		.frame2,
+		.frame3 {
+			border: 2px solid;
+			width: 400px;
+			height: 400px;
+			/*
+			background: url(images/back.jpg) no-repeat;
+			background-size: cover;
+			background-position: center center;
+			*/
+		}
+		.frame1 img,
+		.frame2 img,
+		.frame3 img {
+			/*display: block;*/
+			/*margin-bottom: -5px;*/
+			/*
+			width: 100%;
+			height: 100%;
+			*/
+			width: inherit;
+			height: inherit;
+			object-fit: cover;
+			-webkit-mask-size: 350px;
+			-webkit-mask-repeat: no-repeat;
+			-webkit-mask-position: center center;
+		}
+		.frame1 img {
+			-webkit-mask-image: url(images/heart.png);
+		}
+		.frame2 img {
+			-webkit-mask-image: url(images/heart.svg);
+		}
+		.frame3 img {
+			-webkit-mask-image: url(images/blush.png);
+		}
+  </style>
+</head>
+<body>
+
+	<!--
+		object-fit : 부모요소에 이미지(img) 가득 채우기
+		mask-image : 클리핑 마스크
+	-->
+	
+	<!--
+		✅webkit 이란?
+		
+		벤더 프리픽스란 CSS3 속성 중에서 최근에 생긴 속성을 낮은 버전의 브라우저와 타 브라우저에 동일하게 적용하기 위한 엔진
+		
+		✅자세한 내용이 궁금하면 참고 : http://dolly77.tistory.com/9
+	
+		✅CSS3 벤더 프리픽스(브라우저 접두어)는 크로스 브라우징을 위해서 필요
+		-webkit- : 구글, 사파리
+		-mox- : 파리어폭스
+		-ms- : 익스플로러
+		-o- :오페라 하우스
+		
+		🌈📖예시
+		border-radius : CSS3 표준속성
+		-webkit-border-radius : 사파리, 크롬
+		-moz-border-radius : 파이어폭스
+		-o-border-radius : 오페라
+		-ms-border-radius : 인터넷 익스플로러
+	-->
+	
+	<div class="frame1">
+    <img src="images/back.jpg" alt="">
+  </div>
+		<div class="frame2">
+    <img src="images/back.jpg" alt="">
+  </div>
+  <div class="frame3">
+    <img src="images/back.jpg" alt="">
+  </div>
+  <div class="frame4">
+    <img src="images/boat.jpg" alt="">
+  </div>
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

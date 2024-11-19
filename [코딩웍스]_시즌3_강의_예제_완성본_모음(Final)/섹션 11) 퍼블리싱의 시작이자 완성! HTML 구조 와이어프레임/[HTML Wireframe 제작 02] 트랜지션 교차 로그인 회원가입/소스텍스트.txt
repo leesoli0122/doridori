@@ -1,0 +1,44 @@
+Hello Again
+Welcome back you've been missed.
+Enter Email
+Enter Password
+Save ID
+Forgot password?
+Register
+Quick Login
+
+Login Now
+===============================
+Welcome CodingWorks
+It's good to have you.
+Enter Email
+Enter Password
+Confirm Password
+Register
+Quick Login
+
+Register Now
+    
+
+
+In each case, the company processes personal information for the following purposes in accordance with relevant laws and regulations. Personal information being processed will not be used for purposes other than the following.
+
+
+
+.quick-login a:nth-child(1) {
+  background-color: #fae500;
+}
+.quick-login a:nth-child(2) {
+  background-color: #f8f8f8;
+}
+.quick-login a:nth-child(3) {
+  background-color: #3c4043;
+  color: #fff;
+}
+.quick-login a:nth-child(4) {
+  background-color: #325ca6;
+  color: #fff;
+}
+.quick-login a:nth-child(5) {
+  background-color: #fff;
+}
