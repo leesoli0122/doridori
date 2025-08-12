@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 조작 첫걸음</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrap" id="DOM-p1">
+        <h1>🐣 DOM 조작 첫걸음</h1>
+        
+        <!-- 1단계: 텍스트 변경 버튼들 -->
+        <div class="step" id="step1">
+            <h3><span class="step-number">1</span>텍스트 변경하기</h3>
+            
+            <div class="result-box" id="textBox">원래 텍스트</div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="changeText('안녕하세요!')">안녕하세요</button>
+                <button class="btn btn-secondary" onclick="changeText('잘 가세요!')">잘 가세요</button>
+                <button class="btn btn-success" onclick="changeText('반갑습니다!')">반갑습니다</button>
+                <button class="btn btn-warning" onclick="changeText('🎉 성공!')">성공 메시지</button>
+                <button class="btn btn-danger" onclick="resetText()">초기화</button>
+            </div>
+            
+            <div class="hint">
+                💡 <strong>목표:</strong> 각 버튼을 눌러서 다른 텍스트로 바꿔보기
+            </div>
+        </div>
+
+        <!-- 2단계: 색상 변경 버튼들 -->
+        <div class="step" id="step2">
+            <h3><span class="step-number">2</span>색상 변경하기</h3>
+            
+            <div class="result-box" id="colorBox">색상을 바꿔보세요</div>
+            
+            <div class="button-group">
+                <button class="btn btn-danger" onclick="changeBackgroundColor('lightcoral')">빨간색</button>
+                <button class="btn btn-primary" onclick="changeBackgroundColor('lightblue')">파란색</button>
+                <button class="btn btn-success" onclick="changeBackgroundColor('lightgreen')">초록색</button>
+                <button class="btn btn-warning" onclick="changeBackgroundColor('lightyellow')">노란색</button>
+                <button class="btn btn-info" onclick="changeBackgroundColor('lightpink')">분홍색</button>
+                <button class="btn btn-secondary" onclick="resetColor()">원래 색</button>
+            </div>
+            
+            <div class="hint">
+                💡 <strong>목표:</strong> 각 버튼으로 다른 색상으로 바꿔보기
+            </div>
+        </div>
+
+        <!-- 3단계: 입력과 표시 -->
+        <div class="step" id="step3">
+            <h3><span class="step-number">3</span>입력값 활용하기</h3>
+            
+            <div class="input-group">
+                <input type="text" id="userInput" placeholder="메시지를 입력하세요">
+            </div>
+            
+            <div class="result-box" id="displayBox">입력한 내용이 여기에 표시됩니다</div>
+            
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="displayInput()">그대로 표시</button>
+                <button class="btn btn-success" onclick="displayWithGreeting()">인사와 함께</button>
+                <button class="btn btn-warning" onclick="displayUppercase()">대문자로</button>
+                <button class="btn btn-info" onclick="displayLength()">글자 수 세기</button>
+                <button class="btn btn-danger" onclick="clearInput()">입력창 지우기</button>
+            </div>
+            
+            <div class="hint">
+                💡 <strong>목표:</strong> 입력한 텍스트를 다양한 방식으로 처리해보기
+            </div>
+        </div>
+
+        <!-- 4단계: 카운터 버튼들 -->
+        <div class="step" id="step4">
+            <h3><span class="step-number">4</span>숫자 카운터</h3>
+            
+            <div class="result-box">
+                <span class="counter" id="counter">0</span>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-success" onclick="increment()">+1 증가</button>
+                <button class="btn btn-primary" onclick="increment(5)">+5 증가</button>
+                <button class="btn btn-warning" onclick="increment(10)">+10 증가</button>
+                <button class="btn btn-danger" onclick="decrement()">-1 감소</button>
+                <button class="btn btn-info" onclick="decrement(5)">-5 감소</button>
+                <button class="btn btn-secondary" onclick="resetCounter()">0으로 초기화</button>
+            </div>
+            
+            <div class="hint">
+                💡 <strong>목표:</strong> 버튼으로 숫자를 증가, 감소시키기
+            </div>
+        </div>
+
+        <!-- 5단계: 요소 추가/삭제 -->
+        <div class="step" id="step5">
+            <h3><span class="step-number">5</span>요소 동적 생성</h3>
+            
+            <div class="input-group">
+                <input type="text" id="itemInput" placeholder="추가할 아이템 이름">
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-success" onclick="addItem()">아이템 추가</button>
+                <button class="btn btn-primary" onclick="addRandomItem()">랜덤 아이템</button>
+                <button class="btn btn-warning" onclick="addColorfulItem()">컬러 아이템</button>
+                <button class="btn btn-danger" onclick="clearAllItems()">전체 삭제</button>
+            </div>
+            
+            <div class="dynamic-box" id="itemContainer">
+                <p style="text-align: center; color: #64748b; margin: 0;">
+                    버튼을 눌러서 아이템을 추가해보세요!
+                </p>
+            </div>
+            
+            <div class="hint">
+                💡 <strong>목표:</strong> 새로운 HTML 요소를 동적으로 만들어보기
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/day_1_dom_p.js"></script>
+</html>

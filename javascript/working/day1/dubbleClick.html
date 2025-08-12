@@ -32,4 +32,55 @@
         </div>
     </div>
 </body>
+<script>
+    let users = [
+            { id: 1, name: "김개발", role: "프론트엔드 개발자" },
+            { id: 2, name: "이디자인", role: "UI/UX 디자이너" },
+            { id: 3, name: "박백엔드", role: "백엔드 개발자" }
+        ];
+    let userId = 4;
+
+    // 사용자 추가
+    function addUser() {
+        const nameInput = document.getElementById('newUserName');
+        const roleInput = document.getElementById('newUserRole');
+        
+        const name = nameInput.value.trim();
+        const role = roleInput.value.trim();
+        
+        if (!name || !role) {
+            alert('이름과 직무를 모두 입력해주세요!');
+            return;
+        }
+        
+        users.push({
+            id: userId++,
+            name: name,
+            role: role
+        });
+        
+        nameInput.value = '';
+        roleInput.value = '';
+        
+        renderUsers();
+    }
+
+    // 🎯 미션 1: 더블클릭 이벤트로 편집 모드 진입
+    function startEdit(userId) {
+        // 힌트:
+        // 1. 이미 편집 중이면 이전 편집 취소
+        // 2. editingUserId 변수에 현재 편집 중인 ID 저장
+        // 3. renderUsers() 호출해서 편집 모드로 다시 렌더링
+        
+        console.log('편집 시작:', userId);
+        
+        // 여기에 코드 작성하세요
+        if (editingUserId !== null) {
+            cancelEdit();
+        }
+        
+        editingUserId = userId;
+        renderUsers();
+    }
+</script>
 </html>
