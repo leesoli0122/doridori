@@ -1,12 +1,12 @@
 /* 공통 */
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
 .container { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
+.user-card { background: white; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 10px 0; transition: all 0.3s ease; }
 
 /*---------------------------------------------
 	#day1
 ---------------------------------------------*/
 /* DOM 조작 실습 */
-#DOM .user-card { background: white; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 10px 0; transition: all 0.3s ease; }
 #DOM .user-card.active { border-color: #3b82f6; background: #eff6ff; }
 #DOM .user-card.premium { background: linear-gradient(135deg, #fef3c7, #fde68a); border-color: #f59e0b; }
 #DOM button { background: #3b82f6; color: white; border: none; padding: 10px 16px; border-radius: 6px; cursor: pointer; margin: 5px; transition: background 0.2s; }
@@ -24,3 +24,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sa
 #DOM .status { padding: 4px 8px; border-radius: 4px; font-size: 0.875rem; font-weight: 500; }
 #DOM .status.online { background: #dcfce7; color: #166534; }
 #DOM .status.offline { background: #fee2e2; color: #991b1b; }
+
+/* 실전 */
+#DOM-W1 .user-card:hover { border-color: #3b82f6; background: #eff6ff; }
+#DOM-W1 .user-card.editing { border-color: #f59e0b; background: #fef3c7; }
+#DOM-W1 .user-name { font-size: 1.5rem; font-weight: bold; color: #1e293b;  margin-bottom: 8px; }
+#DOM-W1 .user-role { color: #64748b; font-size: 1rem; }
+#DOM-W1 .edit-input { background: white; border: 2px solid #3b82f6; border-radius: 4px; padding: 8px 12px; font-size: 1.5rem; font-weight: bold; width: 100%;  margin-bottom: 8px; }
+#DOM-W1 .edit-buttons { display: flex; gap: 8px; margin-top: 10px; }
+#DOM-W1 .btn { padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.875rem; }
+#DOM-W1 .btn-save { background: #10b981; color: white; }
+#DOM-W1 .btn-cancel { background: #6b7280; color: white; }
+#DOM-W1 .hint-box { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 15px; margin: 20px 0; }
+#DOM-W1 .hint-title { font-weight: bold; color: #92400e; margin-bottom: 8px; }
+#DOM-W1 .input-section { display: flex; gap: 10px; margin-bottom: 20px; }
+#DOM-W1 .input-section input { flex: 1; padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 4px; }
+#DOM-W1 .btn-add { background: #3b82f6; color: white; border: none; padding: 10px 16px; border-radius: 4px; cursor: pointer; }

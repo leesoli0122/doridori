@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../main.css">
+</head>
+<body>
+    <div class="wrap" id="DOM-W1">
+        <h1>🎯 사용자 편집 기능</h1>
+        <div class="container">
+            <div class="hint-box">
+                <div class="hint-title">📝 구현해야 할 기능:</div>
+                <ol>
+                    <li><strong>더블클릭 이벤트</strong>: 사용자 이름을 더블클릭하면 편집 모드로 전환</li>
+                    <li><strong>편집 모드</strong>: input 필드가 나타나고 기존 이름이 입력되어 있음</li>
+                    <li><strong>저장/취소</strong>: 저장 버튼 클릭 또는 Enter키로 저장, 취소 버튼으로 원복</li>
+                    <li><strong>ESC키 처리</strong>: ESC키를 누르면 편집 모드 취소</li>
+                </ol>
+            </div>
+            
+            <!-- 사용자 추가 -->
+            <div class="input-section">
+                <input type="text" id="newUserName" placeholder="이름">
+                <input type="text" id="newUserRole" placeholder="직무">
+                <button class="btn-add" onclick="addUser()">사용자 추가</button>
+            </div>
+            
+            <!-- 사용자 목록 -->
+            <div id="userList"></div>
+        </div>
+    </div>
+</body>
+</html>
