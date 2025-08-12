@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrap" id="DOM">
+        <h1>🎯 DOM 조작 실무 기법 실습</h1>
+        
+        <div class="container">
+            <h2>1. 요소 선택과 스타일 변경</h2>
+            <div id="userCard" class="user-card">
+                <h3 id="userName">김개발</h3>
+                <p>웹퍼블리셔 3년차</p>
+                <span id="userStatus" class="status offline">오프라인</span>
+            </div>
+            
+            <button onclick="toggleUserStatus()">상태 토글</button>
+            <button onclick="makePremium()">프리미엄 전환</button>
+            <button onclick="resetCard()">초기화</button>
+        </div>
+        
+        <div class="container">
+            <h2>2. 동적 콘텐츠 생성</h2>
+            <div class="input-group">
+                <input type="text" id="newUserName" placeholder="새 사용자 이름">
+                <input type="text" id="newUserRole" placeholder="직무">
+                <button onclick="addUser()">사용자 추가</button>
+            </div>
+            
+            <div id="userList"></div>
+            <button class="danger" onclick="clearAllUsers()">전체 삭제</button>
+        </div>
+        
+        <div class="container">
+            <h2>3. 이벤트 처리와 데이터 조작</h2>
+            <div id="clickCounter">
+                <p>클릭 횟수: <span id="count">0</span></p>
+                <button onclick="incrementCounter()">클릭!</button>
+                <button onclick="resetCounter()">리셋</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/day1_dom.js"></script>
+</html>
