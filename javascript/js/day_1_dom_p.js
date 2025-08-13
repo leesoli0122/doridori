@@ -127,15 +127,124 @@ function resetCounter() {
 }
 
 // 5단계
+// 아이템 추가
 function addItem() {
     const input = document.getElementById('itemInput');
     const container = document.getElementById('itemContainer');
 
     let itemName
-    if (input.value.trim() === '') {
+    if (input.value.trim() === '') { //만약 아무것도 안 적었으면 아이템~로 자동 이름 붙이기
         itemName = `아이템 ${++itemCount}`;
+    } else {//있다면 그 글자 그대로 아이템 이름으로 사용
+        itemName = input.value.trim();
+        itemCount++;//itemCount는 추가된 아이템 개수를 세는 변수
+    }
+
+    // 첫 번째 아이템이면 안내 메시지 제거
+    if (itemCount === 1) {
+        container.innerHTML = '';
+    }
+
+    // 새로운 아이템 생성
+    const newItem = document.createElement('div');
+    newItem.className = 'new-item';
+    newItem.innerHTML = `
+    <span>${itemName}</span>
+    <button class="btn btn-danger" style="padding: 5px 10px; font-size: 12px;" onclick="removeItem(this)">삭제</button>`;
+
+    container.appendChild(newItem);
+    input.value = '';
+
+    showSuccess('step5', `"${itemName}"를 추가했습니다!`);
+}
+
+// 랜덤 아이템
+function addRandomItem() {
+    const randomItems = ['🍎 사과', '🍌 바나나', '🍕 피자', '🎂 케이크', '☕ 커피', '🍔 햄버거', '🍦 아이스크림', '🍿 팝콘'];
+    const randomItem = randomItems[Math.floor(Math.random() * randomItems.length)]; //Math.random(); 0~1사이 랜덤 숫자, Math.floor(); 소수점 버리기, 리스트 길이를 곱해서 랜덤 위치의 음식 선택
+
+    document.getElementById('itemInput').value = randomItem;
+    addItem();
+}
+
+// 컬러 아이템
+function addColorfulItem() {
+    const input = document.getElementById('itemInput');
+    const container = document.getElementById('itemContainer');
+
+    let itemName;
+    if (input.value.trin() === '') {
+        itemName = `컬러 아이템 ${++itemCount}`;
     } else {
         itemName = input.value.trim();
         itemCount++;
     }
+
+    // 첫 번째 아이템이면 안내 메시지 제거
+    if (itemCount === 1) {
+        container.innerHTML = '';
+    }
+
+    const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#f9ca24', '#6c5ce7', '#fd79a8'];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    
+    // 새로운 컬러풀 아이템 생성
+    const newItem = document.createElement('div');
+    newItem.className = 'new-item';
+    newItem.style.backgroundColor = randomColor;
+    newItem.style.color = 'white';
+    newItem.style.borderColor = randomColor;
+    newItem.innerHTML = `
+        <span>${itemName}</span>
+        <button class="btn btn-danger" style="padding: 5px 10px; font-size: 12px;" onclick="removeItem(this)">삭제</button>
+    `;
+    
+    container.appendChild(newItem);
+    input.value = '';
+
+    showSuccess('step5', `컬러풀한 "${itemName}"를 추가했습니다!`);
 }
+
+// 삭제
+function removeItem(button) {
+    const item = button.parentElement;
+    const itemName = item.querySelector('span').textContent;
+    item.remove();
+    
+    // 모든 아이템이 삭제되면 안내 메시지 다시 표시
+    const container = document.getElementById('itemContainer');
+    if (container.children.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: #64748b; margin: 0;">버튼을 눌러서 아이템을 추가해보세요!</p>';
+        itemCount = 0;
+    }
+    
+    showSuccess('step5', `"${itemName}"를 삭제했습니다!`);
+}
+
+// 전체 삭제
+function clearAllItems() {
+    const container = document.getElementById('itemContainer');
+    container.innerHTML = '<p style="text-align: center; color: #64748b; margin: 0;">버튼을 눌러서 아이템을 추가해보세요!</p>';
+    itemCount = 0;
+    showSuccess('step5', '모든 아이템을 삭제했습니다!');
+}
+
+// Enter 키 이벤트 처리 : 사용자가 입력창에 글을 쓰고 Enter 키만 눌러도 버튼 클릭 없이 바로 실행되게 함
+document.getElementById('userInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        displayInput();
+    }
+});
+
+document.getElementById('itemInput').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+        addItem();
+    }
+});
+
+// 페이지 로드 시 안내
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🎉 각 단계별 버튼 연습 페이지가 준비되었습니다!');
+    console.log('💡 각 단계의 버튼들을 차례대로 눌러보세요!');
+    console.log('💡 F12를 눌러서 콘솔에서 실행 로그를 확인할 수 있습니다.');
+});
