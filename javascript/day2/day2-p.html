@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrap" id="FUN">
+        <div class="container">
+            <h1>🛒 상품 관리 시스템 만들기</h1>
+    
+            <!-- 1단계: Product 생성자 함수 -->
+            <div class="step complete" id="step1">
+                <h3>1단계: Product 만들기 (완성 ✅)</h3>
+                <div class="code-explanation">
+                    <strong>설명:</strong> 상품 하나를 만드는 틀을 만들어요. 
+                    마치 "상품 정보 카드"를 찍어내는 도장 같은 것!
+                </div>
+                <button onclick="testStep1()">1단계 테스트</button>
+                <div id="result1" class="result"></div>
+            </div>
+    
+            <!-- 2단계: ProductManager 기본 구조 -->
+            <div class="step complete" id="step2">
+                <h3>2단계: 상품들을 관리할 매니저 만들기 (완성 ✅)</h3>
+                <div class="code-explanation">
+                    <strong>설명:</strong> 여러 상품들을 담아둘 상자와 그 상자를 관리하는 사람을 만들어요.
+                </div>
+                <button onclick="testStep2()">2단계 테스트</button>
+                <div id="result2" class="result"></div>
+            </div>
+    
+            <!-- 3단계: 상품 추가 기능 -->
+            <div class="step complete" id="step3">
+                <h3>3단계: 상품 추가하기 (완성 ✅)</h3>
+                <div class="code-explanation">
+                    <strong>설명:</strong> 새 상품을 상자에 넣는 기능을 만들어요.
+                </div>
+                <button onclick="testStep3()">3단계 테스트</button>
+                <div id="result3" class="result"></div>
+            </div>
+    
+            <!-- 4단계: 상품 찾기 기능 -->
+            <div class="step complete" id="step4">
+                <h3>4단계: 상품 찾기 (완성 ✅)</h3>
+                <div class="code-explanation">
+                    <strong>설명:</strong> 상품 이름으로 특정 상품을 찾는 기능을 만들어요.
+                </div>
+                <button onclick="testStep4()">4단계 테스트</button>
+                <div id="result4" class="result"></div>
+            </div>
+    
+            <!-- 5단계: 할인 적용 -->
+            <div class="step complete" id="step5">
+                <h3>5단계: 할인 적용하기 (완성 ✅)</h3>
+                <div class="code-explanation">
+                    <strong>설명:</strong> 모든 상품에 할인을 적용하는 기능을 만들어요. 
+                    (화살표 함수의 특별한 점도 확인!)
+                </div>
+                <button onclick="testStep5()">5단계 테스트</button>
+                <div id="result5" class="result"></div>
+            </div>
+    
+            <!-- 전체 테스트 -->
+            <div class="step">
+                <h3>🎉 전체 테스트</h3>
+                <button onclick="testAll()">모든 기능 한번에 테스트</button>
+                <div id="resultAll" class="result"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/day2_fun.js"></script>
+</html>
