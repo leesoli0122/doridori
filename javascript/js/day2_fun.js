@@ -91,16 +91,16 @@ function testStep4() {
 }
 
 // 5단계: 할인 적용 가능(화살표 함수의 특별함 보여주기)
-productManager.applyDiscountWrong = (discountRate) => {
+productManager.applyDiscountWrong = (discountRate) => { //왜 화살표 함수가 안 되는 지 보여주려고 만든 함수일 뿐
     // ❌ 화살표 함수에서는 this가 productManager를 가리키지 않음
     return `할인 적용 실패: this. products는 ${typeof this.products}입니다.`;
 }
 
 productManager.applyDiscount = function (discountRate) {
     // 일반 함수로 수정: this가 제대로 productManager를 가리킴
-    const discountedProducts = this.products.map(product => {
+    const discountedProducts = this.products.map(product => { //map: 모든 상품에 할인을 적용하려고
         // 여기서는 화살표 함수 사용 OK(this가 필요 없음)
-        const discountedPrice = Math.floor(product.price * (1 - discountRate));
+        const discountedPrice = Math.floor(product.price * (1 - discountRate)); //math.floor: 할인된 가격을 정수로 만들려고
         return `${product.name}: ${product.price}원 -> ${discountedPrice}원`;
     });
     return discountedProducts;
@@ -141,6 +141,13 @@ function testAll() {
                 discountedPrice: Math.floor(p.price * (1 - rate))
             }));
         }
+        // 간단한 버전 (이렇게 해도 됨)
+        // applyDiscount: function(discountRate) {
+        //     return this.products.map(product => {
+        //     const newPrice = product.price * (1 - discountRate);
+        //     return product.name + ': ' + newPrice + '원';
+        //     });
+        // }
     };
 
     // 테스트 실행
