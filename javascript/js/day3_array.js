@@ -23,3 +23,34 @@ function step1() {
 
     output.textContent = result;
 }
+
+// step2 메뉴 객체 다루기
+function step2() {
+    const output = document.getElementById('output2');
+    let result = '';
+
+    // 메뉴를 객체로 관리(링크 포함)
+    const menuItem = {
+        name: '서비스',
+        url: '/services',
+        icon: 'service-icon'
+    };
+
+    result += `기본 메뉴 객체:\n${JSON.stringify(menuItem, null, 2)}\n\n`;
+
+    // 속성 추가
+    menuItem.isActive = true;
+    menuItem.order = 2;
+    result += `속성 추가 후:\n${JSON.stringify(menuItem, null, 2)}\n\n`;
+
+    // 동적 접근
+    const property = 'name';
+    result += `동적 접근 = ${property}: ${menuItem[property]}\n`;
+
+    // 객체 속성 확인
+    result += `'description' 속성 있나요? ${'descriotion' in menuItem ? '있음' : '없음'}\n`;
+
+    result += `\n 객체 조작 완료`;
+
+    output.textContent = result;
+}
