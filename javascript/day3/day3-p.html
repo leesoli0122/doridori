@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 실전 과제</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .task-section {
+            background: #e8f5e8;
+            border: 2px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        
+        .task-section h3 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+        
+        .code-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 300px;
+            font-family: 'Consolas', monospace;
+            font-size: 14px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            resize: vertical;
+            background: #f8f9fa;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .result-area {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Consolas', monospace;
+            white-space: pre-line;
+            min-height: 280px;
+            overflow-y: auto;
+        }
+        
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 5px;
+        }
+        
+        button:hover {
+            background: #2980b9;
+        }
+        
+        button.success {
+            background: #27ae60;
+        }
+        
+        button.danger {
+            background: #e74c3c;
+        }
+        
+        .hint {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 10px 0;
+        }
+        
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        
+        .error {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Day 3 실전 과제 - 직접 코딩하기</h1>
+        
+        <div class="task-section">
+            <h3>📋 과제: 회사 직원 정보 관리하기</h3>
+            <p>주어진 데이터를 활용해서 3가지 문제를 해결해보세요!</p>
+            
+            <div class="step">
+                <strong>📊 주어진 데이터:</strong>
+                <pre style="background: #2c3e50; color: #ecf0f1; padding: 10px; border-radius: 4px;">const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+const company = {
+  name: '테크컴퍼니',
+  location: '서울',
+  established: 2020
+};</pre>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h4>🎯 1번 문제: 비구조화 할당으로 첫 번째 직원 정보 추출</h4>
+            <p>첫 번째 직원의 이름과 부서를 비구조화 할당으로 추출하세요.</p>
+            <div class="hint">
+                💡 힌트: employees[0]에서 { name, department }를 추출하세요
+            </div>
+        </div>
+        
+        <div class="code-area">
+            <div>
+                <h4>✏️ 여기에 코드 작성:</h4>
+                <textarea id="code1" placeholder="// 1번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+// 여기서부터 작성하세요!
+// 첫 번째 직원의 이름과 부서를 추출하세요"></textarea>
+                <button onclick="runCode1()">코드 실행</button>
+                <button class="success" onclick="showHint1()">힌트 보기</button>
+            </div>
+            <div>
+                <h4>📊 실행 결과:</h4>
+                <div id="result1" class="result-area">코드를 실행하면 결과가 여기에 표시됩니다...</div>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h4>🎯 2번 문제: 스프레드 연산자로 새 직원 추가</h4>
+            <p>기존 employees 배열에 새 직원을 추가한 새로운 배열을 만드세요.</p>
+            <div class="hint">
+                💡 힌트: [...기존배열, 새객체] 형태로 사용하세요
+            </div>
+        </div>
+        
+        <div class="code-area">
+            <div>
+                <h4>✏️ 여기에 코드 작성:</h4>
+                <textarea id="code2" placeholder="// 2번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+// 새 직원 정보
+const newEmployee = { name: '최지우', department: '마케팅팀', age: 26 };
+
+// 여기서부터 작성하세요!
+// 스프레드 연산자로 새 직원을 추가한 배열 만들기"></textarea>
+                <button onclick="runCode2()">코드 실행</button>
+                <button class="success" onclick="showHint2()">힌트 보기</button>
+            </div>
+            <div>
+                <h4>📊 실행 결과:</h4>
+                <div id="result2" class="result-area">코드를 실행하면 결과가 여기에 표시됩니다...</div>
+            </div>
+        </div>
+        
+        <div class="step">
+            <h4>🎯 3번 문제: 회사 정보에 직원 수 추가</h4>
+            <p>company 객체에 직원 수(employees.length)를 추가한 새 객체를 만드세요.</p>
+            <div class="hint">
+                💡 힌트: { ...기존객체, 새속성: 값 } 형태로 사용하세요
+            </div>
+        </div>
+        
+        <div class="code-area">
+            <div>
+                <h4>✏️ 여기에 코드 작성:</h4>
+                <textarea id="code3" placeholder="// 3번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+const company = {
+  name: '테크컴퍼니',
+  location: '서울',
+  established: 2020
+};
+
+// 여기서부터 작성하세요!
+// company에 직원 수를 추가한 새 객체 만들기"></textarea>
+                <button onclick="runCode3()">코드 실행</button>
+                <button class="success" onclick="showHint3()">힌트 보기</button>
+            </div>
+            <div>
+                <h4>📊 실행 결과:</h4>
+                <div id="result3" class="result-area">코드를 실행하면 결과가 여기에 표시됩니다...</div>
+            </div>
+        </div>
+        
+        <div class="task-section">
+            <h3>🏆 모든 문제를 다 푸셨나요?</h3>
+            <button class="success" onclick="showAnswers()">정답 확인하기</button>
+            <button class="danger" onclick="clearAll()">모든 코드 지우고 다시하기</button>
+        </div>
+    </div>
+
+    <script>
+        function runCode1() {
+            const code = document.getElementById('code1').value;
+            const result = document.getElementById('result1');
+            
+            try {
+                // 실행을 위한 함수 생성
+                const func = new Function(code + `
+                    return {
+                        firstEmployeeName: typeof 이름 !== 'undefined' ? 이름 : (typeof name !== 'undefined' ? name : '변수 없음'),
+                        firstEmployeeDept: typeof 부서 !== 'undefined' ? 부서 : (typeof department !== 'undefined' ? department : '변수 없음')
+                    };
+                `);
+                
+                const output = func();
+                
+                let resultText = '✅ 코드 실행 성공!\n\n';
+                resultText += `추출된 이름: ${output.firstEmployeeName}\n`;
+                resultText += `추출된 부서: ${output.firstEmployeeDept}\n\n`;
+                
+                if (output.firstEmployeeName === '김철수' && output.firstEmployeeDept === '개발팀') {
+                    resultText += '🎉 정답입니다! 비구조화 할당을 올바르게 사용하셨네요!';
+                } else {
+                    resultText += '❌ 다시 시도해보세요. 비구조화 할당으로 name과 department를 추출해야 합니다.';
+                }
+                
+                result.textContent = resultText;
+                result.style.color = '#ecf0f1';
+                
+            } catch (error) {
+                result.textContent = `❌ 오류 발생:\n${error.message}\n\n💡 코드를 다시 확인해보세요!`;
+                result.style.color = '#e74c3c';
+            }
+        }
+        
+        function runCode2() {
+            const code = document.getElementById('code2').value;
+            const result = document.getElementById('result2');
+            
+            try {
+                const func = new Function(code + `
+                    return {
+                        hasNewEmployees: typeof newEmployees !== 'undefined' ? newEmployees : (typeof updatedEmployees !== 'undefined' ? updatedEmployees : null),
+                        length: typeof newEmployees !== 'undefined' ? newEmployees.length : (typeof updatedEmployees !== 'undefined' ? updatedEmployees.length : 0)
+                    };
+                `);
+                
+                const output = func();
+                
+                let resultText = '✅ 코드 실행 성공!\n\n';
+                
+                if (output.hasNewEmployees && output.length === 4) {
+                    resultText += `새로운 직원 배열 길이: ${output.length}명\n`;
+                    resultText += `마지막 직원: ${JSON.stringify(output.hasNewEmployees[3], null, 2)}\n\n`;
+                    resultText += '🎉 정답입니다! 스프레드 연산자를 올바르게 사용하셨네요!';
+                } else {
+                    resultText += `현재 배열 길이: ${output.length}\n`;
+                    resultText += '❌ 다시 시도해보세요. 스프레드 연산자로 새 직원을 추가해야 합니다.';
+                }
+                
+                result.textContent = resultText;
+                result.style.color = '#ecf0f1';
+                
+            } catch (error) {
+                result.textContent = `❌ 오류 발생:\n${error.message}\n\n💡 코드를 다시 확인해보세요!`;
+                result.style.color = '#e74c3c';
+            }
+        }
+        
+        function runCode3() {
+            const code = document.getElementById('code3').value;
+            const result = document.getElementById('result3');
+            
+            try {
+                const func = new Function(code + `
+                    return {
+                        hasNewCompany: typeof newCompany !== 'undefined' ? newCompany : (typeof updatedCompany !== 'undefined' ? updatedCompany : null)
+                    };
+                `);
+                
+                const output = func();
+                
+                let resultText = '✅ 코드 실행 성공!\n\n';
+                
+                if (output.hasNewCompany && output.hasNewCompany.employeeCount === 3) {
+                    resultText += `회사 정보:\n${JSON.stringify(output.hasNewCompany, null, 2)}\n\n`;
+                    resultText += '🎉 정답입니다! 스프레드 연산자로 객체를 올바르게 확장하셨네요!';
+                } else {
+                    resultText += '❌ 다시 시도해보세요. 스프레드 연산자로 employeeCount를 추가해야 합니다.';
+                    if (output.hasNewCompany) {
+                        resultText += `\n현재 결과:\n${JSON.stringify(output.hasNewCompany, null, 2)}`;
+                    }
+                }
+                
+                result.textContent = resultText;
+                result.style.color = '#ecf0f1';
+                
+            } catch (error) {
+                result.textContent = `❌ 오류 발생:\n${error.message}\n\n💡 코드를 다시 확인해보세요!`;
+                result.style.color = '#e74c3c';
+            }
+        }
+        
+        function showHint1() {
+            const hint = `💡 힌트 1번:
+            
+const { name, department } = employees[0];
+// 또는
+const { name: 이름, department: 부서 } = employees[0];
+
+console.log(이름, 부서); // 결과 확인`;
+            
+            document.getElementById('result1').textContent = hint;
+        }
+        
+        function showHint2() {
+            const hint = `💡 힌트 2번:
+            
+const newEmployees = [...employees, newEmployee];
+// 또는
+const updatedEmployees = [...employees, { name: '최지우', department: '마케팅팀', age: 26 }];
+
+console.log(newEmployees.length); // 4가 나와야 함`;
+            
+            document.getElementById('result2').textContent = hint;
+        }
+        
+        function showHint3() {
+            const hint = `💡 힌트 3번:
+            
+const newCompany = { ...company, employeeCount: employees.length };
+// 또는  
+const updatedCompany = { 
+    ...company, 
+    employeeCount: employees.length 
+};
+
+console.log(newCompany.employeeCount); // 3이 나와야 함`;
+            
+            document.getElementById('result3').textContent = hint;
+        }
+        
+        function showAnswers() {
+            const answers = `🏆 정답 코드:
+
+1번 문제:
+const { name, department } = employees[0];
+console.log('이름:', name, '부서:', department);
+
+2번 문제:  
+const newEmployee = { name: '최지우', department: '마케팅팀', age: 26 };
+const newEmployees = [...employees, newEmployee];
+console.log('총 직원 수:', newEmployees.length);
+
+3번 문제:
+const updatedCompany = { ...company, employeeCount: employees.length };
+console.log('회사 정보:', updatedCompany);`;
+            
+            alert(answers);
+        }
+        
+        function clearAll() {
+            if (confirm('정말로 모든 코드를 지우고 다시 시작하시겠습니까?')) {
+                document.getElementById('code1').value = `// 1번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+// 여기서부터 작성하세요!
+// 첫 번째 직원의 이름과 부서를 추출하세요`;
+
+                document.getElementById('code2').value = `// 2번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+// 새 직원 정보
+const newEmployee = { name: '최지우', department: '마케팅팀', age: 26 };
+
+// 여기서부터 작성하세요!
+// 스프레드 연산자로 새 직원을 추가한 배열 만들기`;
+
+                document.getElementById('code3').value = `// 3번 문제 코드 작성
+const employees = [
+  { name: '김철수', department: '개발팀', age: 30 },
+  { name: '이영희', department: '디자인팀', age: 28 },
+  { name: '박민수', department: '개발팀', age: 32 }
+];
+
+const company = {
+  name: '테크컴퍼니',
+  location: '서울',
+  established: 2020
+};
+
+// 여기서부터 작성하세요!
+// company에 직원 수를 추가한 새 객체 만들기`;
+                
+                document.getElementById('result1').textContent = '코드를 실행하면 결과가 여기에 표시됩니다...';
+                document.getElementById('result2').textContent = '코드를 실행하면 결과가 여기에 표시됩니다...';
+                document.getElementById('result3').textContent = '코드를 실행하면 결과가 여기에 표시됩니다...';
+            }
+        }
+    </script>
+</body>
+</html>
