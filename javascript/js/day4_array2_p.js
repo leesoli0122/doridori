@@ -30,12 +30,37 @@ function renderProducts(productsToRender) {
         const stockStatus = product.stock > 0 ? 'in-stock' : 'out-of-stock';
         const stockText = product.stock > 0 ? `재고: ${product.stock}개` : '품절';
         
+        // 새로운 기능: 할인가격 계산
+        let priceHTML = '';
+        if (product.discount > 0) {
+            const originalPrice = product.price;
+            const discountedPrice = Math.floor(originalPrice * (1 - product.discount));
+            const discountPercent = Math.floor(product.discount * 100);
+
+            priceHTML = `
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #95a5a6; font-size: 14px;">
+                        ${originalPrice.toLocaleString()}원
+                    </span>
+                    <br>
+                    <span style="color: #e74c3c; font-size: 18px; font-weight: bold;">
+                        ${discountedPrice.toLocaleString()}원
+                    </span>
+                    <span style="background: #e74c3c; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                        ${discountPercent}% 할인
+                    </span>
+                </div>
+            `;
+        } else {
+            priceHTML = `<div class="price">${product.price.toLocaleString()}원</div>`;
+        }
+
         // 각 상품마다 HTML 카드를 만들어서 반환
         return `
             <div class="product-card">
                 <div class="category-tag">${product.category}</div>
                 <h3>${product.name}</h3>
-                <div class="price">${product.price.toLocaleString()}원</div>
+                ${pri}
                 <div class="stock ${stockStatus}">${stockText}</div>
             </div>
         `;
