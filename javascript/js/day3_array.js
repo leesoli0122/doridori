@@ -54,3 +54,39 @@ function step2() {
 
     output.textContent = result;
 }
+
+// step3 비구조화 할당
+function step3() {
+    const output = document.getElementById('output3');
+    let result = '';
+
+    // 복잡한 메뉴 데이터
+    const navigationDate = {
+        header: {
+            logo: 'MyCompany',
+            menus: ['홈', '서비스', '포트폴리오', '연락처']
+        },
+        footer: {
+            copyright: '2024 MyCompany',
+            socialLinks: ['facebook', 'instagram', 'twitter']
+        }
+    };
+
+    result += `원본 데이터 구조:\n${JSON.stringify(navigationDate, null, 2)}\n\n`;
+
+    // 비구조화 할당으로 깔끔하게 추출
+    const {
+        header: { logo, menu },
+        footer: { copyright, socialLinks }
+    } = navigationDate;
+
+    result += `비구조화로 추출한 데이터:\n`;
+    result += `- 로고: ${logo}\n`;
+    result += `- 메뉴들:${menus.join(', ')}\n`;
+    result += `- 저작권: ${copyright}\n`;
+    result += `- 소셜링크: ${socialLinks.join(', ')}\n`;
+
+    result += `\n 비구조화 할당 완료`;
+
+    output.textContent = result;
+}
