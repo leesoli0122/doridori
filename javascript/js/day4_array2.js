@@ -127,4 +127,45 @@ function reduceExample1() {
             `;
 }
 // 장바구니 총액 계산
+function reduceExample2() {
+    const cart = [
+        { name: '노트북', price: 1000000, quantity: 1 },
+        { name: '마우스', price: 30000, quantity: 2 },
+        { name: '키보드', price: 80000, quantity: 1 }
+    ];
+
+    const totalAmount = cart.reduce((total, item) => {
+        return total + (item.price * item.quantity);
+    }, 0);
+
+    document.getElementById('reduceResult2').innerHTML = `
+                <p><strong>장바구니:</strong></p>
+                ${cart.map(item => `<p>- ${item.name}: ${item.price.toLocaleString()}원 × ${item.quantity}개</p>`).join('')}
+                <p><strong>총액:</strong> ${totalAmount.toLocaleString()}원</p>
+            `;
+}
 // 카테고리별 상품 그룹핑
+function reduceExample3() {
+    const products = [
+        { name: '맥북', category: '노트북' },
+        { name: '아이폰', category: '스마트폰' },
+        { name: '갤럭시', category: '스마트폰' },
+        { name: '서피스', category: '노트북' }
+    ];
+
+    // 카테고리별로 그룹핑
+    const groupedByCategory = products.reduce((groups, product) => {
+        const category = product.category;
+        if (!groups[category]) {
+            groups[category] = [];
+        }
+        groups[category].push(product.name);
+        return groups;
+    }, {});
+
+    const resultHTML = Object.entries(groupedByCategory)
+                .map(([category, items]) => `<p><strong>${category}:</strong> ${items.join(', ')}</p>`)
+                .join('');
+
+    document.getElementById('reduceResult3').innerHTML = resultHTML;
+}

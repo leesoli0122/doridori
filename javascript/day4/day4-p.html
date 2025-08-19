@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="wrap" id="ARRAY2P">
+        <div class="container">
+            <h2>🔄 map() - 배열 변환의 달인</h2>
+            
+            <div class="example">
+                <h3>예제 1: 숫자 배열 → 제곱 배열</h3>
+                <button onclick="example1()">실행</button>
+                <div id="result1" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 2: 사용자 데이터 → HTML 카드</h3>
+                <button onclick="example2()">사용자 카드 생성</button>
+                <div id="result2" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 3: 상품 데이터 → 할인가 계산</h3>
+                <button onclick="example3()">할인가 계산</button>
+                <div id="result3" class="result"></div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2>🎯 filter() - 조건에 맞는 것만 골라내기</h2>
+            
+            <div class="example">
+                <h3>예제 1: 짝수만 필터링</h3>
+                <button onclick="filterExample1()">짝수 찾기</button>
+                <div id="filterResult1" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 2: 성인 사용자만 필터링</h3>
+                <button onclick="filterExample2()">성인 사용자 찾기</button>
+                <div id="filterResult2" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 3: 재고 있는 상품만 필터링</h3>
+                <button onclick="filterExample3()">재고 상품 찾기</button>
+                <div id="filterResult3" class="result"></div>
+            </div>
+        </div>
+    
+        <div class="container">
+            <h2>🧮 reduce() - 모든 것을 하나로 합치기</h2>
+            
+            <div class="example">
+                <h3>예제 1: 배열 합계 구하기</h3>
+                <button onclick="reduceExample1()">합계 계산</button>
+                <div id="reduceResult1" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 2: 장바구니 총액 계산</h3>
+                <button onclick="reduceExample2()">총액 계산</button>
+                <div id="reduceResult2" class="result"></div>
+            </div>
+    
+            <div class="example">
+                <h3>예제 3: 카테고리별 상품 그룹핑</h3>
+                <button onclick="reduceExample3()">그룹핑</button>
+                <div id="reduceResult3" class="result"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/day4_array2.js"></script>
+</html>
