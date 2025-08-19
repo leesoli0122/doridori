@@ -67,3 +67,64 @@ function example3() {
 
     document.getElementById('result3').innerHTML = resultHTML;
 }
+
+// FILTER 예제들
+// 짝수만 필터링
+function filterExample1() {
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const evenNumbers = numbers.filter(num => num % 2 === 0);
+
+    document.getElementById('filterResult1').innerHTML = `
+        <p><strong>원본:</strong> [${numbers.join(', ')}]</p>
+        <p><strong>짝수만:</strong> [${evenNumbers.join(', ')}]</p>
+        <p><strong>코드:</strong> numbers.filter(num => num % 2 === 0)</p>
+    `;
+}
+// 성인 사용자만 필터링
+function filterExample2() {
+    const users = [
+        { name: '김철수', age: 17 },
+        { name: '이영희', age: 25 },
+        { name: '박민수', age: 16 },
+        { name: '최지은', age: 30 }
+    ];
+
+    const adults = users.filter(user => users.age >= 18);
+
+    document.getElementById('filterResult2').innerHTML = `
+                <p><strong>전체 사용자:</strong> ${users.map(u => `${u.name}(${u.age})`).join(', ')}</p>
+                <p><strong>성인만:</strong> ${adults.map(u => `${u.name}(${u.age})`).join(', ')}</p>
+            `;
+}
+// 재고 있는 상품만 필터링
+function filterExample3() {
+    const products = [
+        { name: '노트북', stock: 5 },
+        { name: '마우스', stock: 0 },
+        { name: '키보드', stock: 3 },
+        { name: '모니터', stock: 0 }
+    ];
+
+    const inStock = products.filter(product => product.stock > 0);
+
+    document.getElementById('filterResult3').innerHTML = `
+                <p><strong>재고 있는 상품:</strong> ${inStock.map(p => `${p.name}(${p.stock}개)`).join(', ')}</p>
+            `;
+}
+
+// REDUCE 예제들
+// 배열 합계 구하기
+function reduceExample1() {
+    const numbers = [1, 2, 3, 4, 5];
+
+    // reduce로 합계 구하기
+    const sum = numbers.reduce((accumulator, current) => accumulator + current, 0);
+
+    document.getElementById('reduceResult1').innerHTML = `
+                <p><strong>배열:</strong> [${numbers.join(', ')}]</p>
+                <p><strong>합계:</strong> ${sum}</p>
+                <p><strong>코드:</strong> numbers.reduce((acc, cur) => acc + cur, 0)</p>
+            `;
+}
+// 장바구니 총액 계산
+// 카테고리별 상품 그룹핑
