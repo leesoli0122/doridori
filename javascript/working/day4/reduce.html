@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce() 완전 해부</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .step {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 5px solid #007bff;
+            border-radius: 8px;
+        }
+        .code-box {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+        .highlight {
+            background: #ffd700;
+            color: #000;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .accumulator {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .current {
+            background: #4ecdc4;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .initial {
+            background: #45b7d1;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-size: 14px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .animation-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        .step-by-step {
+            background: #f0f8f0;
+            border: 2px solid #4caf50;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        .result-row {
+            background: #d4edda;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 reduce() 완전 해부</h1>
+        
+        <div class="step">
+            <h3>🎯 먼저 문법 분해해보기</h3>
+            <div class="code-box">
+const sum = numbers.reduce(<span class="highlight">(accumulator, current) => accumulator + current</span>, <span class="initial">0</span>);
+            </div>
+            
+            <h4>각 부분의 의미:</h4>
+            <ul>
+                <li><span class="accumulator">accumulator</span>: 누적값 (계속 쌓이는 결과)</li>
+                <li><span class="current">current</span>: 현재 처리 중인 배열 요소</li>
+                <li><span class="highlight">accumulator + current</span>: 누적값과 현재값을 더하기</li>
+                <li><span class="initial">0</span>: 시작값 (초기 누적값)</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>🔍 실제 동작 과정 보기</h3>
+            <button onclick="showStepByStep()">단계별 실행 과정 보기</button>
+            <div id="stepResult"></div>
+        </div>
+
+        <div class="step">
+            <h3>🎮 다양한 예제로 이해하기</h3>
+            <button onclick="showExamples()">다른 예제들 보기</button>
+            <div id="exampleResult"></div>
+        </div>
+
+        <div class="step">
+            <h3>🤔 왜 reduce를 쓸까?</h3>
+            <button onclick="showComparison()">다른 방법과 비교하기</button>
+            <div id="comparisonResult"></div>
+        </div>
+
+        <div class="step">
+            <h3>💡 실무에서 자주 쓰는 패턴</h3>
+            <button onclick="showRealWorldExamples()">실무 예제 보기</button>
+            <div id="realWorldResult"></div>
+        </div>
+    </div>
+
+    <script>
+        function showStepByStep() {
+            const html = `
+                <div class="animation-box">
+                    <h4>🔢 배열: [1, 2, 3, 4, 5]</h4>
+                    <h4>📝 코드: numbers.reduce((acc, cur) => acc + cur, 0)</h4>
+                    
+                    <table>
+                        <tr>
+                            <th>단계</th>
+                            <th>accumulator<br>(누적값)</th>
+                            <th>current<br>(현재값)</th>
+                            <th>계산</th>
+                            <th>결과</th>
+                        </tr>
+                        <tr>
+                            <td>시작</td>
+                            <td class="initial">0</td>
+                            <td>-</td>
+                            <td>초기값 설정</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>1회전</td>
+                            <td class="accumulator">0</td>
+                            <td class="current">1</td>
+                            <td>0 + 1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2회전</td>
+                            <td class="accumulator">1</td>
+                            <td class="current">2</td>
+                            <td>1 + 2</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>3회전</td>
+                            <td class="accumulator">3</td>
+                            <td class="current">3</td>
+                            <td>3 + 3</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>4회전</td>
+                            <td class="accumulator">6</td>
+                            <td class="current">4</td>
+                            <td>6 + 4</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>5회전</td>
+                            <td class="accumulator">10</td>
+                            <td class="current">5</td>
+                            <td>10 + 5</td>
+                            <td>15</td>
+                        </tr>
+                        <tr class="result-row">
+                            <td colspan="4"><strong>최종 결과</strong></td>
+                            <td><strong>15</strong></td>
+                        </tr>
+                    </table>
+                    
+                    <div class="step-by-step">
+                        <h4>💡 핵심 포인트:</h4>
+                        <ul>
+                            <li><strong>accumulator</strong>는 이전 단계의 결과를 기억</li>
+                            <li><strong>current</strong>는 배열을 하나씩 순서대로 가져옴</li>
+                            <li>매번 <strong>accumulator + current</strong>의 결과가 다음 accumulator가 됨</li>
+                            <li>모든 요소를 처리하면 최종 결과 반환</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            document.getElementById('stepResult').innerHTML = html;
+        }
+
+        function showExamples() {
+            const html = `
+                <div class="step-by-step">
+                    <h4>1️⃣ 곱셈 예제</h4>
+                    <div class="code-box">
+const numbers = [2, 3, 4];
+const product = numbers.reduce((acc, cur) => acc * cur, 1);
+// 시작: 1, 1×2=2, 2×3=6, 6×4=24
+// 결과: 24
+                    </div>
+                    
+                    <h4>2️⃣ 최댓값 찾기</h4>
+                    <div class="code-box">
+const numbers = [5, 2, 8, 1, 9];
+const max = numbers.reduce((acc, cur) => {
+    return cur > acc ? cur : acc;
+}, 0);
+// 시작: 0, max(0,5)=5, max(5,2)=5, max(5,8)=8, max(8,1)=8, max(8,9)=9
+// 결과: 9
+                    </div>
+                    
+                    <h4>3️⃣ 문자열 합치기</h4>
+                    <div class="code-box">
+const words = ['Hello', ' ', 'World', '!'];
+const sentence = words.reduce((acc, cur) => acc + cur, '');
+// 시작: '', ''+'Hello'='Hello', 'Hello'+' '='Hello ', ...
+// 결과: 'Hello World!'
+                    </div>
+                    
+                    <h4>4️⃣ 배열을 객체로 변환</h4>
+                    <div class="code-box">
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana'];
+const count = fruits.reduce((acc, cur) => {
+    acc[cur] = (acc[cur] || 0) + 1;
+    return acc;
+}, {});
+// 결과: { apple: 2, banana: 2, orange: 1 }
+                    </div>
+                </div>
+            `;
+            document.getElementById('exampleResult').innerHTML = html;
+        }
+
+        function showComparison() {
+            const html = `
+                <div class="step-by-step">
+                    <h4>🔍 같은 결과, 다른 방법</h4>
+                    
+                    <h5>❌ 전통적인 방법 (for문)</h5>
+                    <div class="code-box">
+const numbers = [1, 2, 3, 4, 5];
+let sum = 0;  // 누적값
+for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];  // 하나씩 더하기
+}
+console.log(sum); // 15
+                    </div>
+                    
+                    <h5>✅ reduce 방법 (함수형)</h5>
+                    <div class="code-box">
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, cur) => acc + cur, 0);
+console.log(sum); // 15
+                    </div>
+                    
+                    <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <h4>🎯 reduce의 장점:</h4>
+                        <ul>
+                            <li><strong>간결함:</strong> 한 줄로 끝</li>
+                            <li><strong>함수형:</strong> 더 현대적인 방식</li>
+                            <li><strong>체이닝:</strong> 다른 메서드와 연결 가능</li>
+                            <li><strong>불변성:</strong> 원본 배열 변경 없음</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            document.getElementById('comparisonResult').innerHTML = html;
+        }
+
+        function showRealWorldExamples() {
+            const html = `
+                <div class="step-by-step">
+                    <h4>💼 실무에서 자주 쓰는 패턴들</h4>
+                    
+                    <h5>1️⃣ 장바구니 총액 계산</h5>
+                    <div class="code-box">
+const cart = [
+    { name: '노트북', price: 1000000, quantity: 1 },
+    { name: '마우스', price: 30000, quantity: 2 }
+];
+
+const total = cart.reduce((총액, 상품) => {
+    return 총액 + (상품.price * 상품.quantity);
+}, 0);
+// 결과: 1,060,000
+                    </div>
+                    
+                    <h5>2️⃣ 카테고리별 그룹핑</h5>
+                    <div class="code-box">
+const products = [
+    { name: '맥북', category: '전자제품' },
+    { name: '의자', category: '가구' },
+    { name: '아이폰', category: '전자제품' }
+];
+
+const grouped = products.reduce((그룹, 상품) => {
+    const 카테고리 = 상품.category;
+    if (!그룹[카테고리]) {
+        그룹[카테고리] = [];
+    }
+    그룹[카테고리].push(상품);
+    return 그룹;
+}, {});
+// 결과: { '전자제품': [맥북, 아이폰], '가구': [의자] }
+                    </div>
+                    
+                    <h5>3️⃣ 평균값 계산</h5>
+                    <div class="code-box">
+const scores = [85, 90, 78, 92, 88];
+
+const average = scores.reduce((합계, 점수, 인덱스, 배열) => {
+    합계 += 점수;
+    if (인덱스 === 배열.length - 1) {
+        return 합계 / 배열.length;  // 마지막에 평균 계산
+    }
+    return 합계;
+}, 0);
+// 결과: 86.6
+                    </div>
+                    
+                    <div style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                        <h4>🔥 실무 팁:</h4>
+                        <p><strong>reduce는 "집계"가 필요할 때 사용!</strong></p>
+                        <ul>
+                            <li>합계, 평균, 최댓값/최솟값</li>
+                            <li>배열 → 객체 변환</li>
+                            <li>그룹핑, 카운팅</li>
+                            <li>복잡한 변환 로직</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+            document.getElementById('realWorldResult').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
