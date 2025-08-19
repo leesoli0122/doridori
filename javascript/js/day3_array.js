@@ -90,3 +90,48 @@ function step3() {
 
     output.textContent = result;
 }
+
+// Step 4: 스프레드 연산자
+function step4() {
+    const output = document.getElementById('output4');
+    let result = '';
+    
+    // 기존 메뉴들
+    const mainMenus = ['홈', '서비스', '포트폴리오'];
+    const userMenus = ['로그인', '회원가입'];
+    
+    result += `메인 메뉴: ${JSON.stringify(mainMenus)}\n`;
+    result += `사용자 메뉴: ${JSON.stringify(userMenus)}\n\n`;
+    
+    // 배열 합치기
+    const allMenus = [...mainMenus, ...userMenus, '고객센터'];
+    result += `모든 메뉴 합치기:\n${JSON.stringify(allMenus)}\n\n`;
+    
+    // 객체 스프레드
+    const defaultConfig = {
+        theme: 'light',
+        language: 'ko',
+        showIcons: true
+    };
+    
+    const userConfig = {
+        theme: 'dark',
+        fontSize: 'large'
+    };
+    
+    // 설정 합치기 (userConfig가 defaultConfig 덮어씀)
+    const finalConfig = { ...defaultConfig, ...userConfig };
+    
+    result += `기본 설정:\n${JSON.stringify(defaultConfig, null, 2)}\n\n`;
+    result += `사용자 설정:\n${JSON.stringify(userConfig, null, 2)}\n\n`;
+    result += `최종 설정 (합친 결과):\n${JSON.stringify(finalConfig, null, 2)}\n`;
+    
+    result += `\n 스프레드 연산자 활용 완료!`;
+    
+    output.textContent = result;
+}
+
+// 페이지 로드 시 안내 메시지
+window.onload = function() {
+    console.log('실습 준비 완료! 각 단계별로 버튼을 눌러보세요.');
+}
