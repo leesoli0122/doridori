@@ -11,6 +11,31 @@
         <div class="container">
             <h1>📦 상품 관리 시스템</h1>
             
+            <!-- 🔥 새로운 검색 섹션 -->
+            <div class="search-section" style="margin-bottom: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                    <input 
+                        type="text" 
+                        id="searchInput" 
+                        placeholder="상품명 또는 카테고리 검색..." 
+                        style="flex: 1; min-width: 200px; padding: 12px; border: 2px solid #ddd; border-radius: 8px;"
+                        oninput="searchProducts()"
+                    >
+                    <select 
+                        id="sortSelect" 
+                        onchange="sortProducts()"
+                        style="padding: 12px; border: 2px solid #ddd; border-radius: 8px;"
+                    >
+                        <option value="">정렬 선택</option>
+                        <option value="name-asc">이름순 (ㄱ-ㅎ)</option>
+                        <option value="name-desc">이름순 (ㅎ-ㄱ)</option>
+                        <option value="price-asc">가격순 (낮은→높은)</option>
+                        <option value="price-desc">가격순 (높은→낮은)</option>
+                        <option value="stock-asc">재고순 (적은→많은)</option>
+                        <option value="stock-desc">재고순 (많은→적은)</option>
+                    </select>
+                </div>
+            </div>
             <!-- ✅ Step 4: 컨트롤 버튼들 HTML 구조 -->
             <div class="controls">
                 <button onclick="showAllProducts()">전체 상품</button>
@@ -24,6 +49,9 @@
                     <option value="가구">가구</option>
                 </select>
                 <input type="number" id="maxPrice" placeholder="최대 가격" onchange="filterByPrice()">
+                <!-- 🔥 새로운 버튼들 추가 -->
+                <button onclick="applyAllFilters()" style="background: #e74c3c;">복합 필터 적용</button>
+                <button onclick="resetFilters()" style="background: #95a5a6;">필터 초기화</button>
             </div>
             
             <!-- ✅ Step 5: 상품 표시 영역 -->

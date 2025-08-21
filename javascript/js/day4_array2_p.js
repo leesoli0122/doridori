@@ -1,4 +1,6 @@
-// ✅ Step 6: 전체 상품 데이터
+/*---------------------------------------------
+	#전체 상품 데이터
+---------------------------------------------*/
 let products = [
     { id: 1, name: '맥북 프로', category: '전자제품', price: 2500000, stock: 5, discount: 0 },
     { id: 2, name: '아이폰 15', category: '전자제품', price: 1200000, stock: 0, discount: 0.05 },
@@ -12,6 +14,8 @@ let products = [
 
 // ✅ Step 7: 가장 기본적인 함수부터 만들어보세요
 function showAllProducts() {
+    console.log('전체 상품 보기');
+    updateCurrentProducts(products); //currentProducts 업데이트
     renderProducts(products);
 }
 
@@ -60,7 +64,7 @@ function renderProducts(productsToRender) {
             <div class="product-card">
                 <div class="category-tag">${product.category}</div>
                 <h3>${product.name}</h3>
-                ${pri}
+                ${priceHTML}
                 <div class="stock ${stockStatus}">${stockText}</div>
             </div>
         `;
@@ -70,26 +74,24 @@ function renderProducts(productsToRender) {
     productGrid.innerHTML = productCards;
 }
 
-// ✅ Step 9: 나머지 필터 함수들은 비워둡니다 (나중에 구현)
+/*---------------------------------------------
+	#필터 함수
+---------------------------------------------*/
 function showInStock() {
+    console.log('재고 있는 상품만 보기');
     // 핵심 : filter를 사용해서 stock > 0인 상품만 추출
-    const inStockProducts = products.filter(product => {
-        return product.stock > 0; // 재고가 0보다 큰 상품만 통과
-    });
-
-    console.log('재고 있는 상품:', inStockProducts);
+    const inStockProducts = products.filter(product => product.stock > 0); // 재고가 0보다 큰 상품만 통과
+    updateCurrentProducts(inStockProducts); // currentProducts 업데이트
 
     // 필터링된 상품들을 화면에 표시
     renderProducts(inStockProducts);
 }
 
 function showOnSale() {
+    console.log('할인 상품만 보기');
     // 핵심: discount가 0보다 큰 상품만 필터링
-    const saleProducts = products.filter(product => {
-        return product.discount > 0;
-    });
-
-    console.log('할인 중인 상품:', saleProducts);
+    const saleProducts = products.filter(product => product.discount > 0);
+    updateCurrentProducts(saleProducts); // currentProducts 업데이트
 
     // 필터링된 상품들을 화면에 표시
     renderProducts(saleProducts);
@@ -97,12 +99,173 @@ function showOnSale() {
 
 function filterByCategory() {
     console.log('카테고리 필터링');
-    // TODO: 선택된 카테고리로 필터링하기
+    const selectedCategory = document.getElementById('categoryFilter').value;
+
+    // 빈 값이면 전체 상품 보여주기
+    if (selectedCategory === '') {
+        updateCurrentProducts(products);
+        renderProducts(products);
+        return;
+    }
+
+    // 핵심: 선택된 카테고리와 일치하는 상품만 필터링
+    const filteredProducts = products.filter(products => products.category === selectedCategory);
+    updateCurrentProducts(filteredProducts); // currentProducts 업데이트
+
+    // 필터링된 상품들을 화면에 표시
+    renderProducts(filteredProducts);
 }
 
 function filterByPrice() {
     console.log('가격 필터링');
-    // TODO: 최대 가격으로 필터링하기
+    const maxPrice = parseInt(document.getElementById('maxPrice').value);
+
+    // 입력값이 없거나 유효하지 않으면 전체 상품 보여주기
+    if (isNaN(maxPrice) || maxPrice <= 0) {
+        renderProducts(products);
+        return;
+    }
+
+    // 핵심: 최대 가격 이하인 상품만 필터링
+    const filteredProducts = products.filter(product => product.price <= maxPrice);
+    updateCurrentProducts(filteredProducts); // currentProducts 업데이트
+
+    // 필터링된 상품들을 화면에 표시
+    renderProducts(filteredProducts);
+}
+
+// 복합 필터링 함수 추가
+function applyAllFilters() {
+    console.log('복합 필터링 적용');
+
+    // 현재 설정된 모든 필터 조건 가져오기
+    const selectedCategory = document.getElementById('categoryFilter').value;
+    const maxPrice = parseInt(document.getElementById('maxPrice').value);
+
+    console.log('필터 조건:', { selectedCategory, maxPrice });
+
+    // 핵심: 여러 조건을 동시에 체크하는 필터링
+    const filteredProducts = products.filter(product => {
+        // 조건1: 카테고리 체크
+        const categoryMatch = selectedCategory === '' || product.category === selectedCategory;
+        // 조건2: 가격 체크
+        const priceMatch = isNaN(maxPrice) || maxPrice <= 0 || product.price <= maxPrice;
+        
+        // 핵심: 모든 조건이 참이어야 통과
+        return categoryMatch && priceMatch;
+    });
+
+    console.log('복합 조건에 맞는 상품:', filteredProducts);
+
+    renderProducts(filteredProducts);
+}
+// 필터 초기화 함수 추가
+function resetFilters() {
+    console.log('필터 초기화');
+
+    // 모든 입력값 초기화
+    document.getElementById('categoryFilter').value = '';
+    document.getElementById('maxPrice').value = '';
+
+    // 전체 상품 다시 표시
+    showAllProducts();
+}
+
+/*---------------------------------------------
+	#검색 기능
+---------------------------------------------*/
+// 검색 기능 구현
+function searchProducts() {
+    console.log('상품 검색');
+    const serachTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    // 검색어가 비어있으면 전체 상품 표시
+    if (serachTerm === '') {
+        renderProducts(products);
+        return;
+    }
+
+    // 핵심: 상품명에 검색어가 표함된 상품 찾기
+    const searchResults = products.filter(product => {
+        const productName = product.name.toLowerCase();// 대소문자 구분 없이 검색
+        const productCategory = product.category.toLowerCase();
+        return productName.includes(serachTerm) || productCategory.includes(searchTerm);// includes()로 부분 일치 검색
+    });
+
+    updateCurrentProducts(searchResults); // currentProducts 업데이트
+
+    renderProducts(searchResults);
+}
+// 고급 검색(상품명+카테고리)
+function advancedSearch() {
+    console.log('고급 검색');
+
+    const serachTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+
+    if (serachTerm === '') {
+        renderProducts(products);
+        return;
+    }
+
+    // 핵심: 상품명 또는 카테고리에서 검색어 찾기
+    const searchResults = products.filter(product => {
+        const productName = product.name.toLowerCase();
+        const productCategory = product.category.toLowerCase();
+
+        // 상품명 또는 카테고리에 검색어가 포함되면 결과에 포함
+        return productName.includes(serachTerm) || productCategory.includes(serachTerm);
+    });
+
+    console.log('고급 검색 결과:', searchResults);
+    renderProducts(searchResults);
+}
+// 정렬 기능 구현
+let currentProducts = [...products]; //원본 배열 복사
+function sortProducts() {
+    console.log('상품 정렬');
+
+    // 핵심: select에서 정렬 기준 가져오기
+    const sortSelect = document.getElementById('sortSelect');
+    const sortBy = sortSelect.value;
+
+    console.log('정렬 기준:', sortBy);
+
+    // 현재 표시중인 상품들을 복사해서 정렬
+    let sortedProducts = [...currentProducts];
+
+    // 핵심: 정렬 기준에 따라 다른 정렬 로직 적용
+    switch (sortBy) {
+        case 'name-asc':
+            sortedProducts.sort((a, b) => a.name.localeCompare(b.name)); //이름 오름차순
+            break;
+        case 'name-desc':
+            sortedProducts.sort((a, b) => b.name.localeCompare(a.name)); //이름 내림차순
+            break;
+        case 'price-asc':
+            sortedProducts.sort((a, b) => a.price - b.price); //가격 오름차순
+            break;
+        case 'price-desc':
+            sortedProducts.sort((a, b) => b.price - a.price); //가격 내림차순
+            break;
+        case 'stock-asc':
+            sortedProducts.sort((a, b) => a.stock - b.stock); //재고 오름차순
+            break;
+        case 'stock-desc':
+            sortedProducts.sort((a, b) => b.stock - a.stock); //재고 내림차순
+            break;
+        default:
+            // 기본값: 원본 순서 유지
+            break;
+    }
+    console.log('정렬 결과:', sortedProducts);
+
+    // 정렬된 상품 표시
+    renderProducts(sortedProducts);
+}
+// currentProducts 업데이트하는 헬퍼 함수들
+function updateCurrentProducts(newProducts) {
+    currentProducts = [...newProducts];
+    console.log('현재 상품 목록 업데이트:', currentProducts.length, '개');
 }
 
 // 페이지 로드 시 실행
