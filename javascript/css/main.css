@@ -118,3 +118,13 @@ button:hover { background: #0056b3; }
 #ARRAY2P .stock.out-of-stock { color: #e74c3c; font-weight: bold; }
 #ARRAY2P .pagination-controls { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 20px 0; }
 #ARRAY2P .stats-section { background: #ecf0f1; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+/*---------------------------------------------
+	#day5
+---------------------------------------------*/
+#EVENT h2 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
+#EVENT input { padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; margin: 5px; width: 200px; }
+#EVENT input:focus { border-color: #007bff; outline: none; }
+#EVENT .result { background: #e9ecef; padding: 15px; border-radius: 6px; margin: 10px 0; border-left: 4px solid #007bff; }
+#EVENT .todo-item { background: #f8f9fa; padding: 10px; margin: 5px 0; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
+#EVENT .delete-btn { background: #dc3545; padding: 5px 10px; font-size: 12px; }
+#EVENT .delete-btn:hover { background: #c82333; }
