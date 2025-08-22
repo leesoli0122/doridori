@@ -1,6 +1,7 @@
 // 1. 기본 클릭 이벤트
 const basicBtn = document.getElementById('basicBtn');
 const basicResult = document.getElementById('basicResult');
+let clickCount = 0;
 
 basicBtn.addEventListener('click', function () {
     clickCount++;
