@@ -1,4 +1,5 @@
 /* 공통 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.6; }
 .container { background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0; }
 .user-card { background: white; border: 2px solid #e2e8f0; border-radius: 8px; padding: 20px; margin: 10px 0; transition: all 0.3s ease; }
@@ -153,3 +154,61 @@ button:hover { background: #0056b3; }
 #FETCH select { padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; margin: 5px; }
 #FETCH input:focus,
 #FETCH select:focus { border-color: #007bff; outline: none; }
+
+#EF-P .search-container { max-width: 800px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); overflow: hidden; }
+#EF-P .header { background: linear-gradient(45deg, #007bff, #0056b3); color: white; padding: 30px; text-align: center; }
+#EF-P .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+#EF-P .header p { opacity: 0.9; font-size: 1.1em; }
+#EF-P .search-section { padding: 30px; }
+#EF-P .search-box { position: relative; margin-bottom: 20px; }
+#EF-P #searchInput { width: 100%; padding: 20px 60px 20px 20px; font-size: 18px; border: 3px solid #e9ecef; border-radius: 12px; outline: none; transition: all 0.3s ease; }
+#EF-P #searchInput:focus { border-color: #007bff; box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1); }
+#EF-P .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #6c757d; font-size: 20px; }
+#EF-P .stats { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-size: 14px; color: #6c757d; }
+#EF-P .loading { display: flex; justify-content: center; align-items: center; padding: 40px; color: #007bff; font-size: 18px; }
+#EF-P .spinner { width: 30px; height: 30px; border: 3px solid #f3f3f3; border-top: 3px solid #007bff; border-radius: 50%; animation: spin 1s linear infinite; margin-right: 15px; }
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#EF-P .error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; border-radius: 8px; padding: 20px; margin: 20px 0; text-align: center; }
+#EF-P .no-results { text-align: center; padding: 40px; color: #6c757d; }
+#EF-P .no-results h3 { margin-bottom: 10px; color: #495057; }
+#EF-P .user-card { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 12px; padding: 20px; margin: 15px 0; cursor: pointer; transition: all 0.3s ease; position: relative; }
+#EF-P .user-card:hover { background: #e9ecef; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+#EF-P .user-card.selected { border-color: #007bff; background: #e7f3ff; }
+#EF-P .user-info { display: flex; align-items: center; margin-bottom: 15px; }
+#EF-P .user-avatar { width: 60px; height: 60px; background: linear-gradient(45deg, #007bff, #28a745); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 24px; font-weight: bold; margin-right: 15px; }
+#EF-P .user-details h3 { color: #333; margin-bottom: 5px; font-size: 1.2em; }
+#EF-P .user-username { color: #007bff; font-weight: 500; margin-bottom: 5px; }
+#EF-P .user-email { color: #6c757d; display: flex; align-items: center; gap: 5px; }
+#EF-P .user-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 14px; color: #6c757d; }
+#EF-P .meta-item { display: flex; align-items: center; gap: 8px; }
+#EF-P .user-card-expanded { margin-top: 15px; padding-top: 15px; border-top: 1px solid #dee2e6; display: none; }
+#EF-P .user-card.selected .user-card-expanded { display: block; animation: slideDown 0.3s ease; }
+
+@keyframes slideDown {
+	from {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+#EF-P .company-info { background: #fff; padding: 15px; border-radius: 8px; margin-bottom: 10px; }
+#EF-P .address-info { background: #fff; padding: 15px; border-radius: 8px; }
+#EF-P .highlight { background: #fff3cd; padding: 2px 4px; border-radius: 3px; font-weight: bold; }
+
+@media (max-width: 768px) {
+	#EF-P .search-container { margin: 10px; }
+	#EF-P .header { padding: 20px; }
+	#EF-P .header h1 { font-size: 2em; }
+	#EF-P .search-section { padding: 20px; }
+	#EF-P #searchInput { padding: 15px 50px 15px 15px; font-size: 16px; }
+	#EF-P .user-meta { grid-template-columns: 1fr; gap: 10px; }
+}

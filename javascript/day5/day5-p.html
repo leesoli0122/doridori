@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="wrap" id="EF-P">
+        <div class="search-container">
+            <div class="header">
+                <h1>🔍 사용자 검색</h1>
+                <p>이름, 사용자명, 이메일로 검색해보세요</p>
+            </div>
+            
+            <div class="search-section">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="검색어를 입력하세요... (예: John, Bret, Sincere@april.biz)">
+                    <div class="search-icon">🔍</div>
+                </div>
+                
+                <div class="stats">
+                    <span id="searchStats">검색을 시작해보세요</span>
+                    <span id="loadingStatus"></span>
+                </div>
+                
+                <div id="searchResults"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../js/day5_fetch.js"></script>
+</html>
