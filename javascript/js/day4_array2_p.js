@@ -16,62 +16,14 @@ let products = [
 function showAllProducts() {
     console.log('전체 상품 보기');
     updateCurrentProducts(products); //currentProducts 업데이트
-    renderProducts(products);
+    currentPage = 1; // 첫 페이지로 리셋
+    renderProductsWithPagination(products);
 }
 
 // ✅ Step 8: 모든 상품 카드를 map으로 만들기
 function renderProducts(productsToRender) {
-    const productGrid = document.getElementById('productGrid');
-    
-    // 상품이 없으면 "조건에 맞는 상품이 없습니다" 메시지 표시
-    if (productsToRender.length === 0) {
-        productGrid.innerHTML = '<p style="text-align: center; color: #7f8c8d;">조건에 맞는 상품이 없습니다.</p>';
-        return;
-    }
-    
-    // 핵심: map을 사용해서 모든 상품을 HTML로 변환
-    const productCards = productsToRender.map(product => {
-        const stockStatus = product.stock > 0 ? 'in-stock' : 'out-of-stock';
-        const stockText = product.stock > 0 ? `재고: ${product.stock}개` : '품절';
-        
-        // 새로운 기능: 할인가격 계산
-        let priceHTML = '';
-        if (product.discount > 0) {
-            const originalPrice = product.price;
-            const discountedPrice = Math.floor(originalPrice * (1 - product.discount));
-            const discountPercent = Math.floor(product.discount * 100);
-
-            priceHTML = `
-                <div class="price">
-                    <span style="text-decoration: line-through; color: #95a5a6; font-size: 14px;">
-                        ${originalPrice.toLocaleString()}원
-                    </span>
-                    <br>
-                    <span style="color: #e74c3c; font-size: 18px; font-weight: bold;">
-                        ${discountedPrice.toLocaleString()}원
-                    </span>
-                    <span style="background: #e74c3c; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
-                        ${discountPercent}% 할인
-                    </span>
-                </div>
-            `;
-        } else {
-            priceHTML = `<div class="price">${product.price.toLocaleString()}원</div>`;
-        }
-
-        // 각 상품마다 HTML 카드를 만들어서 반환
-        return `
-            <div class="product-card">
-                <div class="category-tag">${product.category}</div>
-                <h3>${product.name}</h3>
-                ${priceHTML}
-                <div class="stock ${stockStatus}">${stockText}</div>
-            </div>
-        `;
-    }).join(''); // 배열을 하나의 문자열로 합치기
-    
-    // 완성된 HTML을 화면에 표시
-    productGrid.innerHTML = productCards;
+    //renderProducts 함수를 renderProductsWithPagination으로 교체
+    renderProductsWithPagination(productsToRender);
 }
 
 /*---------------------------------------------
@@ -82,9 +34,8 @@ function showInStock() {
     // 핵심 : filter를 사용해서 stock > 0인 상품만 추출
     const inStockProducts = products.filter(product => product.stock > 0); // 재고가 0보다 큰 상품만 통과
     updateCurrentProducts(inStockProducts); // currentProducts 업데이트
-
-    // 필터링된 상품들을 화면에 표시
-    renderProducts(inStockProducts);
+    currentPage = 1; // 첫 페이지로 리셋
+    renderProductsWithPagination(inStockProducts);
 }
 
 function showOnSale() {
@@ -92,9 +43,8 @@ function showOnSale() {
     // 핵심: discount가 0보다 큰 상품만 필터링
     const saleProducts = products.filter(product => product.discount > 0);
     updateCurrentProducts(saleProducts); // currentProducts 업데이트
-
-    // 필터링된 상품들을 화면에 표시
-    renderProducts(saleProducts);
+    currentPage = 1; // 첫 페이지로 리셋
+    renderProductsWithPagination(saleProducts);
 }
 
 function filterByCategory() {
@@ -104,16 +54,16 @@ function filterByCategory() {
     // 빈 값이면 전체 상품 보여주기
     if (selectedCategory === '') {
         updateCurrentProducts(products);
-        renderProducts(products);
+        currentPage = 1;
+        renderProductsWithPagination(products);
         return;
     }
 
     // 핵심: 선택된 카테고리와 일치하는 상품만 필터링
     const filteredProducts = products.filter(products => products.category === selectedCategory);
     updateCurrentProducts(filteredProducts); // currentProducts 업데이트
-
-    // 필터링된 상품들을 화면에 표시
-    renderProducts(filteredProducts);
+    currentPage = 1;
+    renderProductsWithPagination(filteredProducts);
 }
 
 function filterByPrice() {
@@ -123,15 +73,16 @@ function filterByPrice() {
     // 입력값이 없거나 유효하지 않으면 전체 상품 보여주기
     if (isNaN(maxPrice) || maxPrice <= 0) {
         renderProducts(products);
+        currentPage = 1;
+        renderProductsWithPagination(products);
         return;
     }
 
     // 핵심: 최대 가격 이하인 상품만 필터링
     const filteredProducts = products.filter(product => product.price <= maxPrice);
     updateCurrentProducts(filteredProducts); // currentProducts 업데이트
-
-    // 필터링된 상품들을 화면에 표시
-    renderProducts(filteredProducts);
+    currentPage = 1;
+    renderProductsWithPagination(filteredProducts);
 }
 
 // 복합 필터링 함수 추가
@@ -181,7 +132,9 @@ function searchProducts() {
 
     // 검색어가 비어있으면 전체 상품 표시
     if (serachTerm === '') {
-        renderProducts(products);
+        updateCurrentProducts(products);
+        currentPage = 1;
+        renderProductsWithPagination(products);
         return;
     }
 
@@ -193,8 +146,8 @@ function searchProducts() {
     });
 
     updateCurrentProducts(searchResults); // currentProducts 업데이트
-
-    renderProducts(searchResults);
+    currentPage = 1;
+    renderProductsWithPagination(searchResults);
 }
 // 고급 검색(상품명+카테고리)
 function advancedSearch() {
@@ -225,7 +178,6 @@ function sortProducts() {
     console.log('상품 정렬');
 
     // 핵심: select에서 정렬 기준 가져오기
-    const sortSelect = document.getElementById('sortSelect');
     const sortBy = sortSelect.value;
 
     console.log('정렬 기준:', sortBy);
@@ -259,8 +211,8 @@ function sortProducts() {
     }
     console.log('정렬 결과:', sortedProducts);
 
-    // 정렬된 상품 표시
-    renderProducts(sortedProducts);
+    // 정렬은 currentPage 리셋하지 않음 (현재 페이지 유지)
+    renderProductsWithPagination(sortedProducts);
 }
 // currentProducts 업데이트하는 헬퍼 함수들
 function updateCurrentProducts(newProducts) {
@@ -305,7 +257,7 @@ function renderProductsWithPagination(productsToRender) {
     renderProductCount(productsToRender.length, startIndex + 1, Math.min(endIndex, productsToRender.length));
 }
 // 상품 카드만 렌더링하는 분리된 함수
-function renderProductCards() {
+function renderProductCards(productsToRender) {
     const productGrid = document.getElementById('productGrid');
 
     if (productsToRender.length === 0) {
@@ -440,6 +392,94 @@ function changeItemsPerPage() {
 
     // 현재 상품들로 다시 렌더링
     renderProductsWithPagination(currentProducts);
+}
+
+// 즐겨찾기 시스템 구현
+let favoriteProducts = [];
+
+// 핵심: 즐겨찾기 토글 함수
+function toggleFavorite(productId) {
+    console.log('즐겨찾기 토글:', productId);
+
+    const isFavorite = favoriteProducts.includes(productId);
+
+    if (isFavorite) {
+        // 이미 즐겨찾기에 있으면 제거
+        favoriteProducts = favoriteProducts.filter(id => id !== productId);
+        console.log('즐겨찾기에서 제거:', productId);
+    } else {
+        // 즐겨찾기에 없으면 추가
+        favoriteProducts.push(productId);
+        console.log('즐겨찾기에 추가:', productId);
+    }
+
+    console.log('현재 즐겨찾기 목록:', favoriteProducts);
+
+    // UI 업데이트
+    updateFavoriteButtons();
+    updateFavoriteCount();
+}
+// 즐겨찾기 버튼 UI 업데이트
+function updateFavoriteButtons() {
+    const productCards = document.querySelectorAll('.product-card');
+
+    productCards.forEach(card => {
+        const button = card.querySelector('button[onclick*="toggleFavorite"]');
+        if (button) {
+            const productId = parseInt(button.getAttribute('onclick').match(/\d+/)[0]);
+            const isFavorite = favoriteProducts.includes(productId);
+
+            if (isFavorite) {
+                button.style.background = '#e74c3c';
+                button.innerHTML = '❤️ 즐겨찾기 해제';
+            } else {
+                button.style.background = '#f39c12';
+                button.innerHTML = '⭐ 즐겨찾기';
+            }
+        }
+    });
+}
+// 즐겨찾기 개수 표시 업데이트
+function updateFavoriteCount() {
+    const countSpan = document.getElementById('favoriteCount');
+    if (countSpan) {
+        countSpan.textContent = favoriteProducts.length;
+    }
+}
+// 즐겨찾기 상품만 보기
+function showFavoriteProducts() {
+    console.log('즐겨찾기 상품만 보기');
+
+    if (favoriteProducts.length === 0) {
+        alert('즐겨찾기한 상품이 없습니다');
+        return;
+    }
+
+    // 즐겨찾기 ID에 해당하는 상품들 필터링
+    const favoriteItems = products.filter(product => favoriteProducts.includes(product.id));
+    console.log('즐겨찾기 상품들:', favoriteItems);
+    
+    updateCurrentProducts(favoriteItems);
+    currentPage = 1; // 첫 페이지로 리셋
+    renderProductsWithPagination(favoriteItems);
+}
+// 즐겨찾기 전체 삭제
+function clearAllFavorites() {
+    if (favoriteProducts.length === 0) {
+        alert('즐겨찾기가 비었습니다');
+        return;
+    }
+
+    const confirmed = confirm('모든 즐겨찾기를 삭제하시겠습니까?');
+    if (confirmed) {
+        favoriteProducts = [];
+        console.log('모든 즐겨찾기 삭제');
+
+        updateFavoriteButtons();
+        updateFavoriteCount();
+
+        alert('즐겨찾기가 모두 삭제되었습니다!');
+    }
 }
 
 // 페이지 로드 시 실행
