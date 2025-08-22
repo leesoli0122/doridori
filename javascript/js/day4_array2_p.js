@@ -268,6 +268,180 @@ function updateCurrentProducts(newProducts) {
     console.log('현재 상품 목록 업데이트:', currentProducts.length, '개');
 }
 
+/*---------------------------------------------
+	#페이지네이션과 고급 기능
+---------------------------------------------*/
+// 페이지네이션 전역 변수들
+let currentPage = 1;
+let itemsPerPage = 4; // 페이지당 상품 수
+let totalPages = 1;
+
+// 핵심: 페이지네이션이 적용된 렌더링 함수
+function renderProductsWithPagination(productsToRender) {
+    console.log('페이지네이션 렌더링:', productsToRender.length, '개 상품');
+
+    // 전체 페이지 수 계산
+    totalPages = Math.ceil(productsToRender.length / itemsPerPage);
+
+    // 현재 페이지가 전체 페이지 수를 넘으면 첫 페이지로
+    if (currentPage > totalPages) {
+        currentPage = 1;
+    }
+
+    // 핵심: 현재 페이지에 표시할 상품들만 추출
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const endIndex = startIndex + itemsPerPage;
+    const updateCurrentProducts = productsToRender.slice(startIndex, endIndex);
+
+    console.log(`페이지 ${currentPage}/${totalPages}: ${startIndex}~${endIndex - 1} 인덱스`);
+
+    // 상품 카드 렌더링(기존 로직 재사용)
+    renderProductCards(updateCurrentProducts);
+
+    // 페이지네이션 컨트롤 렌더링
+    renderPaginationControls();
+
+    // 상품 개수 정보 표시
+    renderProductCount(productsToRender.length, startIndex + 1, Math.min(endIndex, productsToRender.length));
+}
+// 상품 카드만 렌더링하는 분리된 함수
+function renderProductCards() {
+    const productGrid = document.getElementById('productGrid');
+
+    if (productsToRender.length === 0) {
+        productGrid.innerHTML = `<p style="text-align:center; color:#7f8c8d;">조건에 맞는 상품이 없습니다.</p>`;
+        return;
+    }
+
+    const productCards = productsToRender.map(product => {
+        const stockStatus = product.stock > 0 ? 'in-stock' : 'out-of-stock';
+        const stockText = product.stock > 0 ? `재고: ${product.stock}개` : '품절';
+
+        // 할인가격 계산
+        let priceHTML = '';
+        if (product.discount > 0) {
+            const originalPrice = product.price;
+            const discountedPrice = Math.floor(originalPrice * (1 - product.discount));
+            const discountPercent = Math.floor(product.discount * 100);
+
+            priceHTML = `
+                <div class="price">
+                    <span style="text-decoration: line-through; color: #95a5a6; font-size: 14px;">
+                        ${originalPrice.toLocaleString()}원
+                    </span>
+                    <br>
+                    <span style="color: #e74c3c; font-size: 18px; font-weight: bold;">
+                        ${discountedPrice.toLocaleString()}원
+                    </span>
+                    <span style="background: #e74c3c; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-left: 8px;">
+                        ${discountPercent}% 할인
+                    </span>
+                </div>
+            `;
+        } else {
+            priceHTML = `<div class="price">${product.price.toLocaleString()}원</div>`;
+        }
+
+        return `
+            <div class="product-card">
+                <div class="category-tag">${product.category}</div>
+                <h3>${product.name}</h3>
+                ${priceHTML}
+                <div class="stock ${stockStatus}">${stockText}</div>
+                <div class="product-actions" style="margin-top: 10px;">
+                    <button onclick="toggleFavorite(${product.id})" 
+                            style="background: #f39c12; padding: 6px 12px; font-size: 12px;">
+                        ⭐ 즐겨찾기
+                    </button>
+                </div>
+            </div>
+        `;
+    }).join('');
+
+    productGrid.innerHTML = productCards;
+}
+
+// 페이지네이션 컨트롤 UI
+function renderPaginationControls() {
+    const paginationDiv = document.getElementById('pagination');
+
+    if (totalPages <= 1) {
+        paginationDiv.innerHTML = '';
+        return;
+    }
+
+    let paginationHTML = `< class="pagination-controls" style="display:felx; justify-content: center; align-items: center; gap: 10px; margin: 20px 0;">`;
+
+    // 이전 페이지 버튼
+    paginationHTML += `
+        <button onclick="goToPage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} style="padding:8px 12px; ${currentPage === 1 ? 'opacity:0.5;' : ''}">◀ 이전</button>
+    `;
+
+    // 페이지 번호 버튼들
+    for (let page = 1; page <= totalPages; page++) {
+        const isCurrentPage = page === currentPage;
+        paginationHTML += `
+            <button onclick="goToPage(${page})" 
+                    style="padding: 8px 12px; ${isCurrentPage ? 'background: #3498db; color: white;' : 'background: #ecf0f1;'}">
+                ${page}
+            </button>
+        `;
+    }
+
+    // 다음 페이지 버튼
+    paginationHTML += `
+        <button onclick="goToPage(${currentPage + 1})" 
+                ${currentPage === totalPages ? 'disabled' : ''} 
+                style="padding: 8px 12px; ${currentPage === totalPages ? 'opacity: 0.5;' : ''}">
+            다음 ▶
+        </button>
+    `;
+
+    paginationHTML += '</div>';
+
+    paginationDiv.innerHTML = paginationHTML;
+}
+
+// 페이지 이동 함수
+function goToPage(pageNumber) {
+    console.log('페이지 이동:', pageNumber);
+
+    // 유효한 페이지 번호인지 확인
+    if (pageNumber < 1 || pageNumber > totalPages) {
+        console.log(['유효하지 않은 페이지 번호']);
+        return;
+    }
+
+    currentPage = pageNumber;
+    console.log('현재 페이지:', currentPage);
+
+    // 현재 필터링된 상품들로 다시 렌더링
+    renderProductsWithPagination(currentProducts);
+}
+
+// 상품 개수 정보 표시
+function renderProductCount(totalCount, startItem, endItem) {
+    const countDiv = document.getElementById('productCount');
+
+    const countHTML = `
+        <div style="text-align:center;margin:10px 0;color:#7f8c8d;font-size:14px;">전체 ${totalCount}개 상품 중 ${startItem}-${endItem}번째 표시(페이지 ${currentPage}/${totalPages})</div>
+    `;
+
+    countDiv.innerHTML = countHTML;
+}
+
+// 페이지당 상품 수 변경
+function changeItemsPerPage() {
+    const select = document.getElementById('itemsPerPageSelect');
+    itemsPerPage = parseInt(select.value);
+    currentPage = 1; //첫 페이지로 리셋
+
+    console.log('페이지당 상품 수 변경:', itemsPerPage);
+
+    // 현재 상품들로 다시 렌더링
+    renderProductsWithPagination(currentProducts);
+}
+
 // 페이지 로드 시 실행
 window.onload = function() {
     showAllProducts();
