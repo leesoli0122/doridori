@@ -121,10 +121,35 @@ button:hover { background: #0056b3; }
 /*---------------------------------------------
 	#day5
 ---------------------------------------------*/
-#EVENT h2 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
+#EVENT h2,
+#FETCH h2 { color: #333; border-bottom: 3px solid #007bff; padding-bottom: 10px; }
 #EVENT input { padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; margin: 5px; width: 200px; }
 #EVENT input:focus { border-color: #007bff; outline: none; }
 #EVENT .result { background: #e9ecef; padding: 15px; border-radius: 6px; margin: 10px 0; border-left: 4px solid #007bff; }
 #EVENT .todo-item { background: #f8f9fa; padding: 10px; margin: 5px 0; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; }
 #EVENT .delete-btn { background: #dc3545; padding: 5px 10px; font-size: 12px; }
 #EVENT .delete-btn:hover { background: #c82333; }
+
+#FETCH button:disabled { background: #6c757d; cursor: not-allowed; transform: none; }
+#FETCH .loading { color: #007bff; font-style: italic; display: flex; align-items: center; gap: 10px; }
+#FETCH .spinner { width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #007bff; border-radius: 50%; animation: spin 1s linear infinite; }
+
+@keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}
+
+#FETCH .error { color: #dc3545; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 15px; margin: 10px 0; }
+#FETCH .success { color: #155724; background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 15px; margin: 10px 0; }
+#FETCH .user-card { background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 15px 0; transition: transform 0.2s; }
+#FETCH .user-card:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+#FETCH .user-name { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 5px; }
+#FETCH .user-email { color: #666; margin-bottom: 10px; }
+#FETCH .user-details { font-size: 14px; color: #888; }
+#FETCH .post-item { background: #ffffff; border-left: 4px solid #007bff; padding: 15px; margin: 10px 0; border-radius: 0 6px 6px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+#FETCH .post-title { font-weight: bold; color: #333; margin-bottom: 8px; font-size: 16px; }
+#FETCH .post-body { color: #666; line-height: 1.5; }
+#FETCH input,
+#FETCH select { padding: 10px; border: 2px solid #ddd; border-radius: 6px; font-size: 16px; margin: 5px; }
+#FETCH input:focus,
+#FETCH select:focus { border-color: #007bff; outline: none; }
